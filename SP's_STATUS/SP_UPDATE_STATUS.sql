@@ -1,0 +1,4 @@
+CREATE PROCEDURE `SP_UPDATE_STATUS`(IN _Id_Status INT,IN _Status VARCHAR(100))
+BEGIN
+UPDATE status SET Status= _Status WHERE Id_Status = _Id_Status;
+END

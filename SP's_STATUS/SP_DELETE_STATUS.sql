@@ -1,0 +1,4 @@
+CREATE PROCEDURE `SP_DELETE_STATUS`(_Id_Status INT)
+BEGIN
+DELETE FROM status WHERE Id_Status = _Id_Status;
+END
