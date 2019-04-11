@@ -1,22 +1,16 @@
-CREATE PROCEDURE `SP_CREATE_USER`(
+
+/*/*STORE PROCEDURE PARA LA CREACIÓN DE UNA USUARIOS*/
+CREATE PROCEDURE `SP_CREATE_USER`
+/* DECALRACIÓN DE VARIABLES*/
+(
 User_Name VARCHAR(200),
 Email VARCHAR(150),
 rol INT, 
 Status INT
 )
 BEGIN
+/*CONSULTA A LA BD*/
 INSERT INTO USERS 
-(
-User_Name,
-Email,
-rol,
-Status
-)
-VALUE
-(
-User_Name,
-Email,
-rol,
-Status
-);
+(User_Name,Email,rol,Status)
+VALUE(User_Name,Email,rol,Status);
 END
