@@ -15,7 +15,7 @@ PK = responsable_id
 CREATE TABLE IF NOT EXISTS Responsible(
     responsable_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
-    name VARCHAR UNIQUE NOT NULL,
+    name VARCHAR(50) UNIQUE NOT NULL,
     phone VARCHAR(15),
     email VARCHAR(50),
     payment_permission BINARY NOT NULL,

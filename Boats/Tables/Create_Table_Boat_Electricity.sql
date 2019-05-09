@@ -11,7 +11,7 @@ PK = boat_electricity_id
 */
 CREATE TABLE IF NOT EXISTS Boat_Electricity(
     boat_electricity_id INT NOT NULL AUTO_INCREMENT,
-    boat_type_id INT NOT NULL,
+    boat_id INT NOT NULL,
     cable_type_id INT NOT NULL,
     socket_type_id INT NOT NULL,
 

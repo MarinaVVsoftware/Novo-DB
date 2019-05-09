@@ -34,15 +34,15 @@ ALTER TABLE Boat_Electricity
 ADD CONSTRAINT FK_boat_electricity_boat_id
 FOREIGN KEY (boat_id) REFERENCES Boats(boat_id);
 
-/* Boat_Electricity -> Cables */
+/* Boat_Electricity -> Cable_Types */
 ALTER TABLE Boat_Electricity
 ADD CONSTRAINT FK_boat_electricity_cable_type_id
-FOREIGN KEY (cable_type_id) REFERENCES Cables(cable_type_id);
+FOREIGN KEY (cable_type_id) REFERENCES Cable_Types(cable_type_id);
 
-/* Boat_Electricity -> Sockets */
+/* Boat_Electricity -> Socket_Types */
 ALTER TABLE Boat_Electricity
 ADD CONSTRAINT FK_boat_electricity_socket_type_id
-FOREIGN KEY (socket_type_id) REFERENCES Sockets(socket_type_id);
+FOREIGN KEY (socket_type_id) REFERENCES Socket_Types(socket_type_id);
 
 /* Slips -> Slip_Types */
 ALTER TABLE Slips

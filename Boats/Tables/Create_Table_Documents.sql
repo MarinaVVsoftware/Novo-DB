@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS Documents(
     document_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
     document_type_id INT NOT NULL,
-    url VARCHAR NOT NULL,
+    url VARCHAR(250) NOT NULL,
     last_update_date DATETIME,
 
     PRIMARY KEY (document_id)
