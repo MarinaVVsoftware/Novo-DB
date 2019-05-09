@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS Marina_Quotations (
     tax FLOAT(16,8),
     total FLOAT(16,8), 
     subtotal FLOAT(16,8),
-    logical_deleted BOOLEAN,
+    logical_deleted BOOLEAN DEFAULT 0,
     logical_deleted_date DATETIME
 );
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS Marina_Mooring_Rates (
     ft_min SMALLINT,
     ft_max SMALLINT,
     price FLOAT(16,8),
-    logical_deleted BOOLEAN,
+    logical_deleted BOOLEAN DEFAULT 0,
     logical_deleted_date DATETIME
 );
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Services (
     subtotal FLOAT(16,8),
     quantity SMALLINT,
     creation_date DATETIME,
-    logical_deleted BOOLEAN,
+    logical_deleted BOOLEAN DEFAULT 0,
     logical_deleted_date DATETIME
 );
 
