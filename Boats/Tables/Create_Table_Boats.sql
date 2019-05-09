@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS boats(
     client_id INT NOT NULL,
     name VARCHAR(50) UNIQUE NOT NULL,
     model VARCHAR(50),
-    loa FLOAT(3,2) NOT NULL,
-    draft FLOAT(3,2),
-    beam FLOAT(3,2),
+    loa DECIMAL(6,2) NOT NULL,
+    draft DECIMAL(6,2),
+    beam DECIMAL(6,2),
 
     PRIMARY KEY (boat_id)
 );
