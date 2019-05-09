@@ -28,8 +28,8 @@ CREATE TABLE IF NOT EXISTS Marina_Mooring_Rates (
     marina_mooring_rate_type_id INT NOT NULL,
     name VARCHAR(100),
     description VARCHAR(300),
-    ft_min SMALLINT NOT NULL,
-    ft_max SMALLINT NOT NULL,
+    ft_min SMALLINT,
+    ft_max SMALLINT,
     price FLOAT(12,6)
 );
 
