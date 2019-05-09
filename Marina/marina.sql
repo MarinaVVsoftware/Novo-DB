@@ -6,14 +6,16 @@ CREATE TABLE IF NOT EXISTS Marina_Quotations (
     boat_id INT NOT NULL,
     marina_quotation_status_id INT NOT NULL,
     marina_mooring_rate_id INT NOT NULL,
-    arrival_date DATE,
-    departure_date DATE,
+    arrival_date DATETIME,
+    departure_date DATETIME,
     arrival_status BOOLEAN, 
     days_stay INT, 
     discount_stay FLOAT(16,8),
     tax FLOAT(16,8),
     total FLOAT(16,8), 
-    subtotal FLOAT(16,8)
+    subtotal FLOAT(16,8),
+    logical_deleted BOOLEAN,
+    logical_deleted_date DATETIME
 );
 
 /* CREATE TABLE Marina_Quotation_Status */
@@ -30,7 +32,9 @@ CREATE TABLE IF NOT EXISTS Marina_Mooring_Rates (
     description VARCHAR(300),
     ft_min SMALLINT,
     ft_max SMALLINT,
-    price FLOAT(16,8)
+    price FLOAT(16,8),
+    logical_deleted BOOLEAN,
+    logical_deleted_date DATETIME
 );
 
 /* CREATE TABLE Marina_Mooring_Rates_Types */
@@ -49,7 +53,9 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Services (
     total FLOAT(16,8),
     subtotal FLOAT(16,8),
     quantity SMALLINT,
-    creation_date DATE
+    creation_date DATETIME,
+    logical_deleted BOOLEAN,
+    logical_deleted_date DATETIME
 );
 
 /* CREATE TABLE Marina_Services */
@@ -74,10 +80,10 @@ CREATE TABLE IF NOT EXISTS Marina_Payments (
     client_id INT NOT NULL,
     folio INT,
     currency VARCHAR(10),
-    currency_date DATE,
+    currency_date DATETIME,
     payment_received FLOAT(16,8),
     converted_amount FLOAT(16,8),
-    creation_date DATE
+    creation_date DATETIME
 );
 
 /* CREATE TABLE Payment_Types */
@@ -100,7 +106,7 @@ CREATE TABLE IF NOT EXISTS Marina_Pending_Payments (
     client_id INT NOT NULL,
     folio INT,
     amount FLOAT(16,8),
-    creation_date DATE
+    creation_date DATETIME
 );
 
 /* CREATE TABLE Marina_Debts */
@@ -109,5 +115,5 @@ CREATE TABLE IF NOT EXISTS Marina_Debts (
     client_id INT NOT NULL,
     folio INT,
     amount FLOAT(16,8),
-    creation_date DATE
+    creation_date DATETIME
 );

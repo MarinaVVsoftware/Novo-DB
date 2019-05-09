@@ -5,10 +5,10 @@ CREATE PROCEDURE `SP_UPDATE_MARINA_PAYMENT`
     _client_id INT,
     _folio INT,
     _currency VARCHAR(10),
-    _currency_date DATE,
+    _currency_date DATETIME,
     _payment_received FLOAT(16,8),
     _converted_amount FLOAT(16,8),
-    _creation_date DATE
+    _creation_date DATETIME
 )
 BEGIN
 

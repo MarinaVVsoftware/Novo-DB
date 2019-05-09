@@ -7,7 +7,7 @@ CREATE PROCEDURE `SP_CREATE_MARINA_QUOTATION_SERVICE`
     _total FLOAT(16,8),
     _subtotal FLOAT(16,8),
     _quantity SMALLINT,
-    _creation_date DATE
+    _creation_date DATETIME
 )
 
 BEGIN

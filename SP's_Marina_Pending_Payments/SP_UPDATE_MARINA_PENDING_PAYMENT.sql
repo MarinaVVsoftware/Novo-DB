@@ -4,7 +4,7 @@ CREATE PROCEDURE `SP_UPDATE_MARINA_PENDING_PAYMENT`
     _client_id INT,
     _folio INT,
     _amount FLOAT(16,8),
-    _creation_date DATE
+    _creation_date DATETIME
 )
 BEGIN
 
