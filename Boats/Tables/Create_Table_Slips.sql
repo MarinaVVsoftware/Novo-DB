@@ -10,7 +10,7 @@ slip_name       -> Nombre del slip (código interno)
 
 PK = slip_id 
 */
-CREATE TABLE IF NOT EXISTS Slips(
+CREATE TABLE IF NOT EXISTS slips(
     slip_id INT NOT NULL AUTO_INCREMENT,
     slip_type_id INT NOT NULL,
     boat_id INT,

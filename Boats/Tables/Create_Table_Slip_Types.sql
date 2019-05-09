@@ -7,7 +7,7 @@ slip_type       -> Tipo de slip
 
 PK = slip_type_id 
 */
-CREATE TABLE IF NOT EXISTS Slip_Types(
+CREATE TABLE IF NOT EXISTS slip_types(
     slip_type_id INT NOT NULL AUTO_INCREMENT,
     slip_type VARCHAR(50) NOT NULL,
 

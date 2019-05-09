@@ -9,7 +9,7 @@ price           -> Precio del cable
 
 PK = cable_id 
 */
-CREATE TABLE IF NOT EXISTS Cable_Types(
+CREATE TABLE IF NOT EXISTS cable_types(
     cable_type_id INT NOT NULL AUTO_INCREMENT,
     cable_type VARCHAR(50) UNIQUE NOT NULL,
     amperage SMALLINT NOT NULL,

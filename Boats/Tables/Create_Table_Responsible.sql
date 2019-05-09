@@ -12,7 +12,7 @@ aceptation_permission   -> si posee permiso para realizar aceptaciones
 
 PK = responsable_id 
 */
-CREATE TABLE IF NOT EXISTS Responsible(
+CREATE TABLE IF NOT EXISTS responsible(
     responsable_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
     name VARCHAR(50) UNIQUE NOT NULL,

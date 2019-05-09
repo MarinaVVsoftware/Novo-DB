@@ -9,7 +9,7 @@ brand       -> Marca del motor
 
 PK = engine_id 
 */
-CREATE TABLE IF NOT EXISTS Engines(
+CREATE TABLE IF NOT EXISTS engines(
     engine_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
     model VARCHAR(50) NOT NULL,

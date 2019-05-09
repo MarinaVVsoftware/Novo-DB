@@ -1,21 +1,21 @@
 /* Primero las tablas débiles */
-DROP TABLE Document_Types;
+DROP TABLE document_Types;
 
 /* Cable_Types y Socket_Types dependen de esta tabla */
-DROP TABLE Boat_Electricity;
-DROP TABLE Socket_Types;
-DROP TABLE Cable_Types;
+DROP TABLE boat_Electricity;
+DROP TABLE socket_Types;
+DROP TABLE cable_Types;
 
 /* Slip_Types depende de slips */
-DROP TABLE Slips;
-DROP TABLE Slip_Types;
+DROP TABLE slips;
+DROP TABLE slip_Types;
 
 /* Tablas externas */
-DROP TABLE Captains;
-DROP TABLE Responsible;
-DROP TABLE Engines;
-DROP TABLE Documents;
-DROP TABLE Slips;
+DROP TABLE captains;
+DROP TABLE responsible;
+DROP TABLE engines;
+DROP TABLE documents;
+DROP TABLE slips;
 
 /* Tabla Padre */
-DROP TABLE Boats;
+DROP TABLE boats;

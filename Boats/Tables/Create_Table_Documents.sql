@@ -10,7 +10,7 @@ last_update_date        -> última fecha de actualización
 
 PK = document_id 
 */
-CREATE TABLE IF NOT EXISTS Documents(
+CREATE TABLE IF NOT EXISTS documents(
     document_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
     document_type_id INT NOT NULL,

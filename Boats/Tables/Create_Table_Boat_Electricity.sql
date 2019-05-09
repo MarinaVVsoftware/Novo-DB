@@ -9,7 +9,7 @@ socket_type_id          -> FK con la tabla "Sockets"
 
 PK = boat_electricity_id 
 */
-CREATE TABLE IF NOT EXISTS Boat_Electricity(
+CREATE TABLE IF NOT EXISTS boat_electricity(
     boat_electricity_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
     cable_type_id INT NOT NULL,

@@ -12,7 +12,7 @@ beam        -> manga. estas medidas son float (3,2).
 
 PK = boat_id 
 */
-CREATE TABLE IF NOT EXISTS Boats(
+CREATE TABLE IF NOT EXISTS boats(
     boat_id INT NOT NULL AUTO_INCREMENT,
     client_id INT NOT NULL,
     name VARCHAR(50) UNIQUE NOT NULL,

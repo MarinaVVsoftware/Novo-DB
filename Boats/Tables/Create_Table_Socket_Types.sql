@@ -7,7 +7,7 @@ description     -> Descripción del socket
 
 PK = socket_type_id 
 */
-CREATE TABLE IF NOT EXISTS Socket_Types(
+CREATE TABLE IF NOT EXISTS socket_types(
     socket_type_id INT NOT NULL AUTO_INCREMENT,
     socket_type VARCHAR(50) UNIQUE NOT NULL,
     description VARCHAR(200),
