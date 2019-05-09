@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS boats(
     loa DECIMAL(6,2) NOT NULL,
     draft DECIMAL(6,2),
     beam DECIMAL(6,2),
-    creation_date DATETIME,
+    creation_date DATETIME NOT NULL,
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,
 
