@@ -16,8 +16,6 @@ BEGIN
         draft,
         beam,
         creation_date,
-        logic_delete,
-        logic_delete_date
     )
     VALUES(
         _client_id,
@@ -26,8 +24,6 @@ BEGIN
         _loa,
         _draft,
         _beam,
-        NOW(),
-        0,
-        NULL
+        NOW()
     );
 END

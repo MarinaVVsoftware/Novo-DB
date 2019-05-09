@@ -49,7 +49,12 @@ ALTER TABLE slips
 ADD CONSTRAINT FK_slips_slip_type_id
 FOREIGN KEY (slip_type_id) REFERENCES slip_Types(slip_type_id);
 
-/* Slips -> Boats */
-ALTER TABLE slips
-ADD CONSTRAINT FK_slips_boat_id
+/* Slips_Occupation -> Boats */
+ALTER TABLE slips_occupation
+ADD CONSTRAINT FK_slips_occupation_boat_id
 FOREIGN KEY (boat_id) REFERENCES boats(boat_id);
+
+/* Slips_Occupation -> Slips */
+ALTER TABLE slips_occupation
+ADD CONSTRAINT FK_slips_occupation_slip_id
+FOREIGN KEY (slip_id) REFERENCES slips(slip_id);
