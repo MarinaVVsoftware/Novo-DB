@@ -10,8 +10,8 @@ loa             -> eslora
 draft           -> calado
 beam            -> manga. estas medidas son float (3,2).
 creation_date   -> fecha de creación del bote
-logic_delete    -> borrado lógico
-logic_delete_date -> fecha de borrado lógico
+logic_deleted    -> borrado lógico
+logic_deleted_date -> fecha de borrado lógico
 
 PK = boat_id 
 */
@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS boats(
     draft DECIMAL(6,2),
     beam DECIMAL(6,2),
     creation_date DATETIME,
-    logic_delete BINARY NOT NULL,
-    logic_delete_date DATETIME,
+    logical_deleted BOOLEAN NOT NULL DEFAULT 0,
+    logical_deleted_date DATETIME DEFAULT NULL,
 
     PRIMARY KEY (boat_id)
 );

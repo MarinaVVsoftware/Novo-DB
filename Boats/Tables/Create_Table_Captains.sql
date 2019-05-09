@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS captains(
     name VARCHAR(50) UNIQUE NOT NULL,
     phone VARCHAR(15),
     email VARCHAR(50),
-    payment_permission BINARY NOT NULL,
-    aceptation_permission BINARY NOT NULL,
+    payment_permission BOOLEAN NOT NULL,
+    aceptation_permission BOOLEAN NOT NULL,
 
     PRIMARY KEY (captain_id)
 );
