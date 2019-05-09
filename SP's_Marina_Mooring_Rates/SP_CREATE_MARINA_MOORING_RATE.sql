@@ -5,7 +5,7 @@ CREATE PROCEDURE `SP_CREATE_MARINA_MOORING_RATE`
     _description varchar(300),
     _ft_min SMALLINT,
     _ft_max SMALLINT,
-    _price FLOAT(12,6)
+    _price FLOAT(16,8)
 )
 
 BEGIN
