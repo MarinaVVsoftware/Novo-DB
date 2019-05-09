@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS slips_occupation(
     boat_id INT NOT NULL,
     start_date DATETIME NOT NULL,
     end_date DATETIME NOT NULL,
-    creation_date DATETIME NOT NULL,
+    creation_date DATETIME DEFAULT NOW(),
     creation_responsable VARCHAR(50),
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,
