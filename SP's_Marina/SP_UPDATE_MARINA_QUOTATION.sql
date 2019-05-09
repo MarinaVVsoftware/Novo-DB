@@ -1,5 +1,6 @@
 CREATE PROCEDURE `SP_UPDATE_MARINA_QUOTATION`
 (
+	_marina_quotation_id INT,
     _boat_id INT,
     _marina_quotation_status_id INT,
     _marina_mooring_rate_id INT,
@@ -12,13 +13,12 @@ CREATE PROCEDURE `SP_UPDATE_MARINA_QUOTATION`
     _total FLOAT(12,6), 
     _subtotal FLOAT(12,6)
 )
-
 BEGIN
 
 UPDATE Marina_Quotations SET  
     boat_id = _boat_id, 
     marina_quotation_status_id = _marina_quotation_status_id, 
-    marina_mooring_rate_id =  _marina_mooring_rate_id,
+    marina_mooring_rates_id =  _marina_mooring_rate_id,
     arrival_date = _arrival_date,
     departure_date = _departure_date,
     arrival_status = _arrival_status,
@@ -27,7 +27,7 @@ UPDATE Marina_Quotations SET
     tax = _tax,
     total = _total,
     subtotal = _subtotal
-WHERE 
-    marina_quotation_id = _marina_quotation_id
+    
+WHERE marina_quotation_id = _marina_quotation_id;
 
 END
