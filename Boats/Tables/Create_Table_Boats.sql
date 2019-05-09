@@ -2,13 +2,16 @@
 Almacena la información de los botes asociados a un cliente.
 Un cliente puede tener muchos botes.
 
-boat_id     -> id natural
-client_id   -> FK con la tabla "Clients"
-name        -> Nombre del barco
-model       -> Modelo del barco
-loa         -> eslora
-draft       -> calado
-beam        -> manga. estas medidas son float (3,2).
+boat_id         -> id natural
+client_id       -> FK con la tabla "Clients"
+name            -> Nombre del barco
+model           -> Modelo del barco
+loa             -> eslora
+draft           -> calado
+beam            -> manga. estas medidas son float (3,2).
+creation_date   -> fecha de creación del bote
+logic_delete    -> borrado lógico
+logic_delete_date -> fecha de borrado lógico
 
 PK = boat_id 
 */
@@ -20,6 +23,9 @@ CREATE TABLE IF NOT EXISTS boats(
     loa DECIMAL(6,2) NOT NULL,
     draft DECIMAL(6,2),
     beam DECIMAL(6,2),
+    creation_date DATETIME,
+    logic_delete BINARY NOT NULL,
+    logic_delete_date DATETIME,
 
     PRIMARY KEY (boat_id)
 );

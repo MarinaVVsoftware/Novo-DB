@@ -14,7 +14,10 @@ BEGIN
         model,
         loa,
         draft,
-        beam
+        beam,
+        creation_date,
+        logic_delete,
+        logic_delete_date
     )
     VALUES(
         _client_id,
@@ -22,6 +25,9 @@ BEGIN
         _model,
         _loa,
         _draft,
-        _beam
+        _beam,
+        NOW(),
+        0,
+        NULL
     );
 END

@@ -2,8 +2,8 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_BOATS`(_id_boat INT)
 BEGIN
     IF (_id_boat IS NULL) THEN 
-        SELECT * FROM boats;
+        SELECT * FROM boats WHERE logic_delete = 0;
     ELSE
-        SELECT * FROM boats WHERE boat_id = _id_boat;
+        SELECT * FROM boats WHERE boat_id = _id_boat AND logic_delete = 0;
     END IF;
 END
