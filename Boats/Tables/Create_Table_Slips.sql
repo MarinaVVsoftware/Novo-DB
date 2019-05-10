@@ -14,7 +14,7 @@ PK = slip_id
 CREATE TABLE IF NOT EXISTS slips(
     slip_id INT NOT NULL AUTO_INCREMENT,
     slip_type_id INT NOT NULL,
-    slip_name VARCHAR(20),
+    slip_name VARCHAR(100),
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,
 

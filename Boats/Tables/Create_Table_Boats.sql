@@ -18,8 +18,8 @@ PK = boat_id
 CREATE TABLE IF NOT EXISTS boats(
     boat_id INT NOT NULL AUTO_INCREMENT,
     client_id INT NOT NULL,
-    name VARCHAR(50) UNIQUE NOT NULL,
-    model VARCHAR(50),
+    name VARCHAR(100) UNIQUE NOT NULL,
+    model VARCHAR(100),
     loa DECIMAL(6,2) NOT NULL,
     draft DECIMAL(6,2),
     beam DECIMAL(6,2),

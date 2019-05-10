@@ -1,7 +1,7 @@
 /* SP SP_UPDATE_SLIP_TYPE: Actualiza un tipo de slip. */
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_SLIP_TYPE`(
     _slip_type_id INT,
-    _slip_type VARCHAR(50)
+    _slip_type VARCHAR(100)
 )
 BEGIN
     UPDATE slip_types SET

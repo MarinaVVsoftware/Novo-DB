@@ -14,8 +14,8 @@ PK = engine_id
 CREATE TABLE IF NOT EXISTS engines(
     engine_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
-    model VARCHAR(50) NOT NULL,
-    brand VARCHAR(50) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    brand VARCHAR(100) NOT NULL,
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,
 

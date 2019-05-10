@@ -5,7 +5,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_SLIP_OCCUPATION`(
     _boat_id INT,
     _start_date DATETIME,
     _end_date DATETIME,
-    _creation_responsable VARCHAR(50) 
+    _creation_responsable VARCHAR(100) 
 )
 BEGIN
     UPDATE slips_occupation SET

@@ -4,7 +4,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_SLIP_OCCUPATION`(
     _boat_id INT,
     _start_date VARCHAR(50),
     _end_date VARCHAR(50),
-    _creation_responsable VARCHAR(50) 
+    _creation_responsable VARCHAR(100) 
 )
 BEGIN
     INSERT INTO slips_occupation(

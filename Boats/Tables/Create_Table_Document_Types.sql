@@ -9,7 +9,7 @@ PK = document_type_id
 */
 CREATE TABLE IF NOT EXISTS document_types(
     document_type_id INT NOT NULL AUTO_INCREMENT,
-    document_type VARCHAR(50) NOT NULL,
+    document_type VARCHAR(100) NOT NULL,
     required BOOLEAN NOT NULL,
 
     PRIMARY KEY (document_type_id)

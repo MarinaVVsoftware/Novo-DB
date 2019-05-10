@@ -2,7 +2,7 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_SLIP`(
     _slip_id INT,
     _slip_type_id INT,
-    _slip_name VARCHAR(50)
+    _slip_name VARCHAR(100)
 )
 BEGIN
     UPDATE slips SET

@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS slips_occupation(
     start_date DATETIME NOT NULL,
     end_date DATETIME NOT NULL,
     creation_date DATETIME DEFAULT NOW(),
-    creation_responsable VARCHAR(50),
+    creation_responsable VARCHAR(100),
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,
 

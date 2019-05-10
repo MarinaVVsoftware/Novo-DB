@@ -1,7 +1,7 @@
 /* SP SP_UPDATE_SOCKET_TYPE: Actualiza un socket. */
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_SOCKET_TYPE`(
     _socket_type_id INT,
-    _socket_type VARCHAR(50),
+    _socket_type VARCHAR(100),
     _description VARCHAR(200)
 )
 BEGIN

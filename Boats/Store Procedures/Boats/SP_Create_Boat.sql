@@ -1,8 +1,8 @@
 /* SP SP_CREATE_BOAT: Crea un row de Barco. */
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_BOAT`(
     _client_id INT,
-    _name VARCHAR(50),
-    _model VARCHAR(50),
+    _name VARCHAR(100),
+    _model VARCHAR(100),
     _loa DECIMAL(6,2),
     _draft DECIMAL(6,2),
     _beam DECIMAL(6,2)

@@ -13,7 +13,7 @@ PK = cable_id
 */
 CREATE TABLE IF NOT EXISTS cable_types(
     cable_type_id INT NOT NULL AUTO_INCREMENT,
-    cable_type VARCHAR(50) UNIQUE NOT NULL,
+    cable_type VARCHAR(100) UNIQUE NOT NULL,
     voltage SMALLINT NOT NULL,
     description VARCHAR(200),
     price DECIMAL(12,4) NOT NULL,
