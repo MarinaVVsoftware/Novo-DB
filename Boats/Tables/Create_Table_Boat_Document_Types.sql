@@ -1,11 +1,11 @@
 /* Table "Boat_Document_Types"  - TABLA DEBIL
 Almacena la información de los tipos de documentos.
 
-document_type_id    -> id natural
-document_type       -> nombre del tipo de document
-required            -> si es requerido o no en el front
-logic_deleted       -> borrado lógico
-logic_deleted_date  -> fecha de borrado lógico
+boat_document_type_id   -> id natural
+boat_document_type      -> nombre del tipo de document
+required                -> si es requerido o no en el front
+logic_deleted           -> borrado lógico
+logic_deleted_date      -> fecha de borrado lógico
 
 PK = document_type_id 
 */
