@@ -1,9 +1,9 @@
 /* SP SP_CREATE_RESPONSABLE: Crea un responsable de barco. */
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_RESPONSABLE`(
     _boat_id INT,
-    _name varchar(50),
+    _name varchar(100),
     _phone VARCHAR(15),
-    _email VARCHAR(50),
+    _email VARCHAR(100),
     _payment_permission BOOLEAN,
     _aceptation_permission BOOLEAN
 )
