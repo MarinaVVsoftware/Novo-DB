@@ -6,6 +6,8 @@ boat_electricity_id     -> id natural
 boat_type_id            -> FK con la tabla "Boats"
 cable_type_id           -> FK con la tabla "Cables"
 socket_type_id          -> FK con la tabla "Sockets"
+logic_deleted           -> borrado lógico
+logic_deleted_date      -> fecha de borrado lógico
 
 PK = boat_electricity_id 
 */
@@ -14,6 +16,8 @@ CREATE TABLE IF NOT EXISTS boat_electricity(
     boat_id INT NOT NULL,
     cable_type_id INT NOT NULL,
     socket_type_id INT NOT NULL,
+    logical_deleted BOOLEAN NOT NULL DEFAULT 0,
+    logical_deleted_date DATETIME DEFAULT NULL,
 
     PRIMARY KEY (boat_electricity_id)
 );
