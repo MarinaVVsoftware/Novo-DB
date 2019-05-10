@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_SOCIAL_REASON`()
+BEGIN
+SELECT * FROM social_reason;
+END
