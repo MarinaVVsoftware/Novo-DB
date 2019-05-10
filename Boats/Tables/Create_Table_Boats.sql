@@ -8,7 +8,7 @@ name            -> Nombre del barco
 model           -> Modelo del barco
 loa             -> eslora
 draft           -> calado
-beam            -> manga. estas medidas son float (3,2).
+beam            -> manga. estas medidas son.
 creation_date   -> fecha de creación del bote
 logic_deleted    -> borrado lógico
 logic_deleted_date -> fecha de borrado lógico
