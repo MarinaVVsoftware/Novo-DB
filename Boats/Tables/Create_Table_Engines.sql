@@ -2,10 +2,10 @@
 Almacena la información de los motores asociados a sus barcos.
 Cada barco puede tener un varios motores.
 
-engine_id   -> id natural
-boat_id     -> FK con la tabla "Boats"
-model       -> Modelo del motor
-brand       -> Marca del motor
+engine_id           -> id natural
+boat_id             -> FK con la tabla "Boats"
+model               -> Modelo del motor
+brand               -> Marca del motor
 logic_deleted       -> borrado lógico
 logic_deleted_date  -> fecha de borrado lógico
 
