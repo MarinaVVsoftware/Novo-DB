@@ -1,0 +1,17 @@
+/* Borra todos los rows previos */
+DELETE FROM cable_types;
+TRUNCATE TABLE cable_types;
+
+CALL SP_CREATE_CABLE_TYPE('50V', '50', 'Cable de 50V', '4.88');
+CALL SP_CREATE_CABLE_TYPE('100V', '100', 'Cable de 100V', '5.88');
+CALL SP_CREATE_CABLE_TYPE('150V', '150', 'Cable de 150V', '6.77');
+CALL SP_CREATE_CABLE_TYPE('200V', '200', 'Cable de 200V', '9.00');
+
+
+CALL SP_READ_CABLE_TYPES();
+
+CALL SP_DELETE_CABLE_TYPE(1);
+CALL SP_UPDATE_CABLE_TYPE(5, '200V', '200', 'Cable de 200V', '8.19');
+CALL SP_READ_CABLE_TYPES();
+
+
