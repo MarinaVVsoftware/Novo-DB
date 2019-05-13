@@ -3,9 +3,9 @@ CREATE PROCEDURE `SP_CREATE_MARINA_QUOTATION_SERVICE`
     _boat_id INT,
     _marina_service_id INT,
     _done BOOLEAN,
-    _tax FLOAT(16,8),
-    _total FLOAT(16,8),
-    _subtotal FLOAT(16,8),
+    _tax DECIMAL(12,4),
+    _total DECIMAL(12,4),
+    _subtotal DECIMAL(12,4),
     _quantity SMALLINT,
     _creation_date DATETIME
 )

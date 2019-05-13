@@ -2,7 +2,7 @@ CREATE PROCEDURE `SP_CREATE_MARINA_DEBTS`
 (
     _client_id INT,
     _folio INT,
-    _amount FLOAT(16,8),
+    _amount DECIMAL(12,4),
     _creation_date DATETIME
 )
 

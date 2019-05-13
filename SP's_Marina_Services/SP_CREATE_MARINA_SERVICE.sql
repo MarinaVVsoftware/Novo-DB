@@ -1,7 +1,7 @@
 CREATE PROCEDURE `SP_CREATE_MARINA_SERVICE`
 (
     _name VARCHAR(100),
-    _price FLOAT(16,8)
+    _price DECIMAL(12,4)
 )
 
 BEGIN

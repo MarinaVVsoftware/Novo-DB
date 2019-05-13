@@ -10,10 +10,10 @@ CREATE TABLE IF NOT EXISTS Marina_Quotations (
     departure_date DATETIME,
     arrival_status BOOLEAN, 
     days_stay INT, 
-    discount_stay FLOAT(16,8),
-    tax FLOAT(16,8),
-    total FLOAT(16,8), 
-    subtotal FLOAT(16,8),
+    discount_stay DECIMAL(12,4),
+    tax DECIMAL(12,4),
+    total DECIMAL(12,4), 
+    subtotal DECIMAL(12,4),
     logical_deleted BOOLEAN DEFAULT 0,
     logical_deleted_date DATETIME
 );
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS Marina_Mooring_Rates (
     description VARCHAR(300),
     ft_min SMALLINT,
     ft_max SMALLINT,
-    price FLOAT(16,8),
+    price DECIMAL(12,4),
     logical_deleted BOOLEAN DEFAULT 0,
     logical_deleted_date DATETIME
 );
@@ -49,9 +49,9 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Services (
     boat_id INT NOT NULL,
     marina_service_id INT NOT NULL,
     done BOOLEAN,
-    tax FLOAT(16,8),
-    total FLOAT(16,8),
-    subtotal FLOAT(16,8),
+    tax DECIMAL(12,4),
+    total DECIMAL(12,4),
+    subtotal DECIMAL(12,4),
     quantity SMALLINT,
     creation_date DATETIME,
     logical_deleted BOOLEAN DEFAULT 0,
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Services (
 CREATE TABLE IF NOT EXISTS Marina_Services (
     marina_service_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
-    price FLOAT(16,8)
+    price DECIMAL(12,4)
 );
 
 /* CREATE TABLE Marina_Payments_Relations */
@@ -81,8 +81,8 @@ CREATE TABLE IF NOT EXISTS Marina_Payments (
     folio INT,
     currency VARCHAR(10),
     currency_date DATETIME,
-    payment_received FLOAT(16,8),
-    converted_amount FLOAT(16,8),
+    payment_received DECIMAL(12,4),
+    converted_amount DECIMAL(12,4),
     creation_date DATETIME
 );
 
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS Marina_Pending_Payments (
     marina_pending_payment_id INT AUTO_INCREMENT PRIMARY KEY,
     client_id INT NOT NULL,
     folio INT,
-    amount FLOAT(16,8),
+    amount DECIMAL(12,4),
     creation_date DATETIME
 );
 
@@ -114,6 +114,6 @@ CREATE TABLE IF NOT EXISTS Marina_Debts (
     marina_debt_id INT AUTO_INCREMENT PRIMARY KEY,
     client_id INT NOT NULL,
     folio INT,
-    amount FLOAT(16,8),
+    amount DECIMAL(12,4),
     creation_date DATETIME
 );

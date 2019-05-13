@@ -6,8 +6,8 @@ CREATE PROCEDURE `SP_UPDATE_MARINA_PAYMENT`
     _folio INT,
     _currency VARCHAR(10),
     _currency_date DATETIME,
-    _payment_received FLOAT(16,8),
-    _converted_amount FLOAT(16,8),
+    _payment_received DECIMAL(12,4),
+    _converted_amount DECIMAL(12,4),
     _creation_date DATETIME
 )
 BEGIN

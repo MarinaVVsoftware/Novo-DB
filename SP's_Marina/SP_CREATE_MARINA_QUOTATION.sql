@@ -7,10 +7,10 @@ CREATE PROCEDURE `SP_CREATE_MARINA_QUOTATION`
     _departure_date DATETIME,
     _arrival_status BOOLEAN,
     _days_stay INT, 
-    _discount_stay FLOAT(16,8),
-    _tax FLOAT(16,8),
-    _total FLOAT(16,8), 
-    _subtotal FLOAT(16,8)
+    _discount_stay DECIMAL(12,4),
+    _tax DECIMAL(12,4),
+    _total DECIMAL(12,4), 
+    _subtotal DECIMAL(12,4)
 )
 
 BEGIN
