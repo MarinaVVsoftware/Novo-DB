@@ -9,5 +9,5 @@ CREATE PROCEDURE `SP_CREATE_ROLES`
 BEGIN
 /*CONSULTA A LA BD*/
 INSERT INTO roles (Rol_Name,Jsn,Id_Grade) 
-VALUE(_Rol_Name,_Jsn,_Id_Grade);
+VALUES(_Rol_Name,_Jsn,_Id_Grade);
 END
