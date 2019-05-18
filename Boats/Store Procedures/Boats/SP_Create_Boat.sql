@@ -15,7 +15,7 @@ BEGIN
         loa,
         draft,
         beam,
-        creation_date,
+        creation_date
     )
     VALUES(
         _client_id,
