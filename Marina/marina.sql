@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Services (
 );
 
 CREATE TABLE IF NOT EXISTS Marina_Payment_Services (
-    marina_payment_services_id INT NOT NULL AUTO_INCREMENT,
+    marina_payment_service_id INT NOT NULL AUTO_INCREMENT,
     marina_quotation_service_id INT NOT NULL,
     payment_method_id INT NOT NULL,
     client_id INT NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS Marina_Payment_Services (
     payment_received DECIMAL(12,4),
     converted_amount DECIMAL(12,4),
 
-    PRIMARY KEY(marina_payment_services_id)
+    PRIMARY KEY(marina_payment_service_id)
 );
 
 /* CREATE TABLE Marina_Services */
@@ -98,13 +98,13 @@ CREATE TABLE IF NOT EXISTS Marina_Services (
 
 /* CREATE TABLE Marina_Payments_Relations */
 CREATE TABLE IF NOT EXISTS Marina_Payment_Quotation_Debt (
-    marina_payment_relation_id INT NOT NULL PRIMARY KEY,
+    marina_payment_quotation_debt_id INT NOT NULL PRIMARY KEY,
     marina_quotation_id INT NOT NULL,
     marina_payment_id INT NOT NULL,
     marina_quotation_debt_id INT NOT NULL,
     client_id INT NOT NULL,
 
-    PRIMARY KEY(marina_payment_relation_id)
+    PRIMARY KEY(marina_payment_quotation_debt_id)
 );
 
 /* CREATE TABLE Marina_Payments */
