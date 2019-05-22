@@ -10,7 +10,8 @@ CREATE PROCEDURE `SP_CREATE_MARINA_QUOTATION`
     _discount_stay DECIMAL(12,4),
     _tax DECIMAL(12,4),
     _total DECIMAL(12,4), 
-    _subtotal DECIMAL(12,4)
+    _subtotal DECIMAL(12,4),
+    _creation_responsable VARCHAR(100)
 )
 
 BEGIN
@@ -27,7 +28,9 @@ INSERT INTO Marina_Quotations
     discount_stay,
     tax,
     total,
-    subtotal
+    subtotal,
+    creation_responsable,
+    creation_date,
 )
 VALUES
 (
@@ -41,7 +44,9 @@ VALUES
     _discount_stay,
     _tax,
     _total, 
-    _subtotal
+    _subtotal,
+    _creation_responsable,
+    NOW()
 );
 
 END

@@ -14,7 +14,7 @@ phone VARCHAR
 (55),
 address VARCHAR
 (100),
-creation_date DATE,
+creation_date DATETIME,
 electronic_wallet_id INT
 );
 

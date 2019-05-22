@@ -14,8 +14,11 @@ CREATE TABLE IF NOT EXISTS Marina_Quotations (
     tax DECIMAL(12,4),
     total DECIMAL(12,4), 
     subtotal DECIMAL(12,4),
+    creation_responsable VARCHAR(100),
+    creation_date DATETIME,
     logical_deleted BOOLEAN DEFAULT 0,
     logical_deleted_date DATETIME,
+
 
     PRIMARY KEY(marina_quotation_id)
 );

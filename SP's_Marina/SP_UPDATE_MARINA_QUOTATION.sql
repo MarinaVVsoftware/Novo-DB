@@ -11,7 +11,8 @@ CREATE PROCEDURE `SP_UPDATE_MARINA_QUOTATION`
     _discount_stay DECIMAL(12,4),
     _tax DECIMAL(12,4),
     _total DECIMAL(12,4), 
-    _subtotal DECIMAL(12,4)
+    _subtotal DECIMAL(12,4),
+    creation_responsable VARCHAR(100),
 )
 BEGIN
 
@@ -26,7 +27,8 @@ UPDATE Marina_Quotations SET
     discount_stay = _discount_stay,
     tax = _tax,
     total = _total,
-    subtotal = _subtotal
+    subtotal = _subtotal,
+    creation_responsable = _creation_responsable
     
 WHERE marina_quotation_id = _marina_quotation_id;
 
