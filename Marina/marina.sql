@@ -130,6 +130,7 @@ CREATE TABLE IF NOT EXISTS Payment_Methods (
     PRIMARY KEY(payment_method_id)
 );
 
+/* COMPONER LOS STORES */
 /* CREATE TABLE Marina_Pending_Payments_Relations */
 CREATE TABLE IF NOT EXISTS Marina_Payment_Moratorium_Charge (
     marina_payment_moratorium_charge_id INT NOT NULL AUTO_INCREMENT,
