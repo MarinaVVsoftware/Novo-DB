@@ -11,7 +11,12 @@ BEGIN
     END IF;
     
     /* obtiene todos los engines de cada bote de un cliente */
-    SELECT * FROM engines 
+    SELECT 
+        engine_id,
+        boat_id,
+        model,
+        brand
+    FROM engines 
     WHERE boat_id IN (
         SELECT boat_id FROM boats WHERE client_id = _client_id
     )
