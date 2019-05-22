@@ -37,6 +37,9 @@ BEGIN
             _beam,
             NOW()
         );
+
+        /* retorna el id del row insertado */
+        SELECT LAST_INSERT_ID();
     ELSE
         SELECT boat_id INTO @boat FROM boats WHERE name = _name;
         /* De lo contrario existe, y lo sobreescribe */
@@ -49,5 +52,8 @@ BEGIN
             beam = _beam
         WHERE 
             boat_id = @boat;
+
+        /* retorna el id del row modificado */
+        SELECT boat_id FROM boats WHERE name = _name;
     END IF;
 END
