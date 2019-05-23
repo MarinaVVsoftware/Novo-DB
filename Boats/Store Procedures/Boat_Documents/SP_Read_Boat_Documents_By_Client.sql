@@ -7,7 +7,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM Clients WHERE client_id = _client_id) THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Client was not found. Can\'t read boats without a client_id.';
+        SET MESSAGE_TEXT = "Client was not found. Can\'t read boats without a client_id.";
     END IF;
     
     SELECT
@@ -25,6 +25,6 @@ BEGIN
         SELECT boat_id 
         FROM boats 
         WHERE boats.client_id = _client_id 
-        AND _boats.logical_deleted = 0
+        AND boats.logical_deleted = 0
     );
 END
