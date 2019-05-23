@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_UPDATE_MARINA_MOORING_RATE`
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_MARINA_MOORING_RATE`
 (
     _marina_mooring_rate_id INT,
     _marina_mooring_rate_type_id INT,

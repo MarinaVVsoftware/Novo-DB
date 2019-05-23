@@ -7,7 +7,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM Boats WHERE boat_id = _boat_id AND boats.logical_deleted = 0) THEN
          /* Arroja un error customizado */
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Boat does exist. Can\'t bring back electricity with no boat.';
+        SET MESSAGE_TEXT = "Boat does exist. Can\'t bring back electricity with no boat.";
     END IF;
     
     /* obtiene todas las relaciones de un barco */

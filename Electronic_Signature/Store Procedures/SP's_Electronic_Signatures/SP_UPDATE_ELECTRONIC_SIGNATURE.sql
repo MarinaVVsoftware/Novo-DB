@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_UPDATE_ELECTRONIC_SIGNATURES`
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_ELECTRONIC_SIGNATURES`
 (
     _electronic_signature_id INT,
     _signature INT,

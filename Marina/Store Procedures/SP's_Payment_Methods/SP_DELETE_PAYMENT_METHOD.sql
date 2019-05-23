@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_DELETE_PAYMENT_METHOD` ( _payment_method_id INT )
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_PAYMENT_METHOD` ( _payment_method_id INT )
 
 BEGIN
 

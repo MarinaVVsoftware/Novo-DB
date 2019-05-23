@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_DELETE_MARINA_SERVICE` ( _marina_service_id INT )
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_MARINA_SERVICE` ( _marina_service_id INT )
 
 BEGIN
 

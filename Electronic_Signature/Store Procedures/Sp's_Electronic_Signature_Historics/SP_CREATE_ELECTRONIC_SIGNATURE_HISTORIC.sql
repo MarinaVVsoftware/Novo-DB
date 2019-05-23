@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_CREATE_ELECTRONIC_SIGNATURE_HISTORIC`
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_ELECTRONIC_SIGNATURE_HISTORIC`
 (
     _electronic_signature_historic_type_id INT,
     _client_id INT,

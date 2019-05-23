@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_DELETE_MARINA_PAYMENT` ( _marina_payment_service_id INT )
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_MARINA_PAYMENT` ( _marina_payment_service_id INT )
 
 BEGIN
 

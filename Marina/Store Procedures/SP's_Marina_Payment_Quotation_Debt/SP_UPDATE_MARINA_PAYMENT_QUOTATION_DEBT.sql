@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_UPDATE_MARINA_PAYMENT_QUOTATION_DEBT`
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_MARINA_PAYMENT_QUOTATION_DEBT`
 (
     _marina_payment_quotation_debt_id INT,
 	_marina_quotation_id INT,

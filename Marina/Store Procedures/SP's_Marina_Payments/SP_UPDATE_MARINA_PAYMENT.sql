@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_UPDATE_MARINA_PAYMENT`
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_MARINA_PAYMENT`
 (
     _marina_payment_id INT,
 	_payment_type_id INT,

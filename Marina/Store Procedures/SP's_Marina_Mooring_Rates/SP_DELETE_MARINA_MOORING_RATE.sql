@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_DELETE_MARINA_MOORING_RATE` ( _marina_mooring_rate_id INT )
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_MARINA_MOORING_RATE` ( _marina_mooring_rate_id INT )
 
 BEGIN
 

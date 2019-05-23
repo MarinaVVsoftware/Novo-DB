@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_DELETE_MARINA_QUOTATION_DEBT` ( _marina_quotation_debt_id INT )
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_MARINA_QUOTATION_DEBT` ( _marina_quotation_debt_id INT )
 
 BEGIN
 

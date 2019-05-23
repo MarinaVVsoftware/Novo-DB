@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_UPDATE_MARINA_QUOTATION`
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_MARINA_QUOTATION`
 (
 	_marina_quotation_id INT,
     _boat_id INT,

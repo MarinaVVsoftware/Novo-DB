@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_UPDATE_MARINA_MORATORIUM_CHARGE`
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_MARINA_MORATORIUM_CHARGE`
 (
     _marina_moratorium_charge_id INT,
     _marina_quotation_id INT,

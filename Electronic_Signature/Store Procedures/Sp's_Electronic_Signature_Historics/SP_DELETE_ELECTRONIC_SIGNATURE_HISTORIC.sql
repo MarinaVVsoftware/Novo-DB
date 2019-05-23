@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_DELETE_ELECTRONIC_SIGNATURE_HISTORIC` ( _electronic_signature_historic_id INT )
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_ELECTRONIC_SIGNATURE_HISTORIC` ( _electronic_signature_historic_id INT )
 
 BEGIN
 

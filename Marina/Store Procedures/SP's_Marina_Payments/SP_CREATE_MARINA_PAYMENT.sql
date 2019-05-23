@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_CREATE_MARINA_PAYMENT`
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_MARINA_PAYMENT`
 (
     _payment_type_id INT,
     _client_id INT,
