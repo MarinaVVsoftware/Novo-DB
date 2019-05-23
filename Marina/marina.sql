@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS Marina_Quotations (
     boat_id INT NOT NULL,
     marina_quotation_status_id INT NOT NULL,
     marina_mooring_rate_id INT NOT NULL,
+    marina_electricity_sales_id INT NOT NULL,
     arrival_date DATETIME,
     departure_date DATETIME,
     arrival_status BOOLEAN, 
@@ -29,6 +30,16 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Status (
     status VARCHAR(50),
     
     PRIMARY KEY(marina_quotation_status_id)
+);
+
+/* CREATE TABLE Marina_Electricity_Sales */
+CREATE TABLE IF NOT EXISTS Marina_Electricity_Sales (
+    marina_electricity_sales_id INT NOT NULL AUTO_INCREMENT,
+    total DECIMAL(12,4),
+    start_date DATETIME,
+    end_date DATETIME,
+
+    PRIMARY KEY(marina_electricity_sales_id)
 );
 
 /* CREATE TABLE Marina_Mooring_Rates */
@@ -179,6 +190,7 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Debts (
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(boat_id) REFERENCES Boats(boat_id);
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_quotation_status_id) REFERENCES Marina_Quotation_Status(marina_quotation_status_id);
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_mooring_rate_id) REFERENCES Marina_Mooring_Rates(marina_mooring_rate_id);
+ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_electricity_sales_id) REFERENCES Marina_Electricity_Sales(marina_electricity_sales_id);
 
 ALTER TABLE Marina_Mooring_Rates ADD FOREIGN KEY(marina_mooring_rate_type_id) REFERENCES Marina_Mooring_Rates_Types(marina_mooring_rate_type_id);
 
