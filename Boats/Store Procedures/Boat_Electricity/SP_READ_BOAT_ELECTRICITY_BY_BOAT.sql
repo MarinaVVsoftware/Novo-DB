@@ -7,7 +7,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM Boats WHERE boat_id = _boat_id AND boats.logical_deleted = 0) THEN
          /* Arroja un error customizado */
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = "Boat does exist. Can't bring back electricity with no boat.";
+        SET MESSAGE_TEXT = 'Boat does exist. Can\'t bring back electricity with no boat.';
     END IF;
     
     /* obtiene todas las relaciones de un barco */
@@ -25,10 +25,10 @@ BEGIN
     FROM boat_electricity AS _boat_electricity
     LEFT OUTER JOIN cable_types AS _cable_types
     ON (_cable_types.cable_type_id = _boat_electricity.cable_type_id 
-        AND _boat_electricity.logical_deleted != 1)
+        AND _boat_electricity.logical_deleted = 0)
     LEFT OUTER JOIN socket_types AS _socket_types
     ON (_socket_types.socket_type_id = _boat_electricity.cable_type_id 
-        AND _boat_electricity.logical_deleted != 1)
+        AND _boat_electricity.logical_deleted = 0)
     WHERE boat_id = _boat_id
     AND _boat_electricity.logical_deleted = 0;
 END
