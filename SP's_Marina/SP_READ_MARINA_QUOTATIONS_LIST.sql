@@ -22,5 +22,5 @@ BEGIN
     FROM marina_quotations mq
     INNER JOIN boats bt ON mq.boat_id = bt.boat_id
     INNER JOIN clients ct on bt.client_id = ct.client_id
-    WHERE mq.logical_deleted = 0;
+    WHERE mq.logical_deleted = 0;   
 END
