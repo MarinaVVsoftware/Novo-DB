@@ -29,4 +29,5 @@ CREATE TABLE IF NOT EXISTS Electronic_Signature_Historic_Types (
     PRIMARY KEY(electronic_signature_historic_type_id)
 );
 
-ALTER TABLE Electronic_Signature_Historics ADD FOREIGN KEY(electronic_signature_historic_type_id) REFERENCES Electronic_Signature_Historic_Types(electronic_signature_historic_type_id);
+/* FOREIGN KEY */
+/*ALTER TABLE Electronic_Signature_Historics ADD FOREIGN KEY(electronic_signature_historic_type_id) REFERENCES Electronic_Signature_Historic_Types(electronic_signature_historic_type_id);*/

@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_DELETE_MARINA_PAYMENT` ( _marina_payment_quotation_debt_id INT )
+CREATE PROCEDURE `SP_DELETE_MARINA_PAYMENT_QUOTATION_DEBT` ( _marina_payment_quotation_debt_id INT )
 
 BEGIN
 

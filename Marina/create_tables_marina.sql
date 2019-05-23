@@ -187,7 +187,8 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Debts (
 );
 
 
-ALTER TABLE Marina_Quotations ADD FOREIGN KEY(boat_id) REFERENCES Boats(boat_id);
+/* FOREIGN KEY */
+/*ALTER TABLE Marina_Quotations ADD FOREIGN KEY(boat_id) REFERENCES Boats(boat_id);
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_quotation_status_id) REFERENCES Marina_Quotation_Status(marina_quotation_status_id);
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_mooring_rate_id) REFERENCES Marina_Mooring_Rates(marina_mooring_rate_id);
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_electricity_sales_id) REFERENCES Marina_Electricity_Sales(marina_electricity_sales_id);
@@ -215,4 +216,4 @@ ALTER TABLE Marina_Payment_Moratorium_Charge ADD FOREIGN KEY(client_id) REFERENC
 
 ALTER TABLE Marina_Moratorium_Charge ADD FOREIGN KEY(marina_quotation_id) REFERENCES Marina_Quotation(marina_quotation_id);
 
-ALTER TABLE Marina_Quotation_Debts ADD FOREIGN KEY(marina_quotation_id) REFERENCES Marina_Quotation(marina_quotation_id);
+ALTER TABLE Marina_Quotation_Debts ADD FOREIGN KEY(marina_quotation_id) REFERENCES Marina_Quotation(marina_quotation_id);*/
