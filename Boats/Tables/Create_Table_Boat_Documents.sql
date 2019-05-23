@@ -15,8 +15,8 @@ PK = document_id
 CREATE TABLE IF NOT EXISTS boat_documents(
     boat_document_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
-    boat_document_type_id INT NOT NULL,
-    url VARCHAR(250) NOT NULL,
+    boat_document_type_id INT,
+    url VARCHAR(250),
     last_update_date DATETIME,
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,

@@ -30,24 +30,24 @@ ADD CONSTRAINT FK_documents_boat_id
 FOREIGN KEY (boat_id) REFERENCES boats(boat_id);
 
 /* Boat_Electricity -> Boats */
-ALTER TABLE boat_Electricity
+ALTER TABLE boat_electricity
 ADD CONSTRAINT FK_boat_electricity_boat_id
 FOREIGN KEY (boat_id) REFERENCES boats(boat_id);
 
 /* Boat_Electricity -> Cable_Types */
-ALTER TABLE boat_Electricity
+ALTER TABLE boat_electricity
 ADD CONSTRAINT FK_boat_electricity_cable_type_id
-FOREIGN KEY (cable_type_id) REFERENCES cable_Types(cable_type_id);
+FOREIGN KEY (cable_type_id) REFERENCES cable_types(cable_type_id);
 
 /* Boat_Electricity -> Socket_Types */
-ALTER TABLE boat_Electricity
+ALTER TABLE boat_electricity
 ADD CONSTRAINT FK_boat_electricity_socket_type_id
-FOREIGN KEY (socket_type_id) REFERENCES socket_Types(socket_type_id);
+FOREIGN KEY (socket_type_id) REFERENCES socket_types(socket_type_id);
 
 /* Slips -> Slip_Types */
 ALTER TABLE slips
 ADD CONSTRAINT FK_slips_slip_type_id
-FOREIGN KEY (slip_type_id) REFERENCES slip_Types(slip_type_id);
+FOREIGN KEY (slip_type_id) REFERENCES slip_types(slip_type_id);
 
 /* Slips_Occupation -> Boats */
 ALTER TABLE slips_occupation
