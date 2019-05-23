@@ -25,6 +25,6 @@ BEGIN
         SELECT boat_id 
         FROM boats 
         WHERE boats.client_id = _client_id 
-        AND boats.logical_deleted = 0
+        AND _boats.logical_deleted = 0
     );
 END
