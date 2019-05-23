@@ -36,9 +36,9 @@ BEGIN
         _responsible.aceptation_permission AS responsible_aceptation_permission
     FROM Boats AS _boats
     LEFT OUTER JOIN Captains AS _captains
-    ON (_captains.boat_id = _boats.boat_id)
+    ON (_captains.boat_id = _boats.boat_id AND _captains.logical_deleted = 0)
     LEFT OUTER JOIN Responsible AS _responsible
-    ON (_responsible.boat_id = _boats.boat_id) 
+    ON (_responsible.boat_id = _boats.boat_id  AND _responsible.logical_deleted = 0) 
     WHERE (_boats.client_id = _client_id)
     AND (_boats.logical_deleted = 0);
 END

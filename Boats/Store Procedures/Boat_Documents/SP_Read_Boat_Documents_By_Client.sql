@@ -19,8 +19,12 @@ BEGIN
         _boat_documents.last_update_date AS last_update_date
     FROM boat_documents AS _boat_documents
     LEFT OUTER JOIN boat_document_types AS _boat_document_types
-    ON _boat_document_types.boat_document_type_id = _boat_documents.boat_document_type_id
+    ON (_boat_document_types.boat_document_type_id = _boat_documents.boat_document_type_id
+    AND _boat_documents.logical_deleted = 0)
     WHERE _boat_documents.boat_id IN (
-        SELECT boat_id FROM boats WHERE boats.client_id = _client_id
+        SELECT boat_id 
+        FROM boats 
+        WHERE boats.client_id = _client_id 
+        AND _boats.logical_deleted = 0
     );
 END

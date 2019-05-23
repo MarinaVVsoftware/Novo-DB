@@ -41,19 +41,8 @@ BEGIN
         /* retorna el id del row insertado */
         SELECT LAST_INSERT_ID();
     ELSE
-        SELECT boat_id INTO @boat FROM boats WHERE name = _name;
-        /* De lo contrario existe, y lo sobreescribe */
-        UPDATE boats SET
-            client_id = _client_id,
-            name = _name,
-            model = _model,
-            loa = _loa,
-            draft = _draft,
-            beam = _beam
-        WHERE 
-            boat_id = @boat;
-
-        /* retorna el id del row modificado */
-        SELECT boat_id FROM boats WHERE name = _name;
+       /* Arroja un error customizado */
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Boat does exist. Can\'t override boats.';
     END IF;
 END
