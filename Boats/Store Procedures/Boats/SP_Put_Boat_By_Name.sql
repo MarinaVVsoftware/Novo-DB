@@ -16,7 +16,8 @@ BEGIN
         SET MESSAGE_TEXT = "Client was not found. Can\'t read boats without a client_id.";
     END IF;
 
-    IF NOT EXISTS (SELECT 1 FROM Boats WHERE name = _name AND boats.logical_deleted = 0) 
+    /* No se valida por "logical_deleted" porque nunca se puede duplicar un barco */
+    IF NOT EXISTS (SELECT 1 FROM Boats WHERE name = _name) 
     THEN
         /* Crea el barco dado que no existe */
         INSERT INTO boats(
