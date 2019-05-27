@@ -1,5 +1,5 @@
-/* SP SP_DELETE_ENGINE: Elimina un motor. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_ENGINE`(_engine_id INT)
+/* SP SP_DELETE_ENGINE_BY_ID: Elimina un motor. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_ENGINE_BY_ID`(_engine_id INT)
 BEGIN
     UPDATE engines SET
         logical_deleted = 1,
