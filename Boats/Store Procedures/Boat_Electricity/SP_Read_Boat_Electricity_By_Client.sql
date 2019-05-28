@@ -26,7 +26,7 @@ BEGIN
     LEFT OUTER JOIN cable_types AS _cable_types
     ON (_cable_types.cable_type_id = _boat_electricity.cable_type_id)
     LEFT OUTER JOIN socket_types AS _socket_types
-    ON (_socket_types.socket_type_id = _boat_electricity.cable_type_id)
+    ON (_socket_types.socket_type_id = _boat_electricity.socket_type_id)
     WHERE boat_id IN (
         SELECT boat_id FROM boats WHERE client_id = _client_id
     )
