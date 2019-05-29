@@ -16,3 +16,8 @@ DROP TABLE IF EXISTS Payment_Methods;
 DROP TABLE IF EXISTS Marina_Payment_Moratorium_Charge;
 DROP TABLE IF EXISTS Marina_Moratorium_Charge;
 DROP TABLE IF EXISTS Marina_Quotation_Debts;
+
+/* slip_types depende de slips,y slip_occupation depende de slips */
+DROP TABLE IF EXISTS slips_occupation;
+DROP TABLE IF EXISTS slips;
+DROP TABLE IF EXISTS slip_types;

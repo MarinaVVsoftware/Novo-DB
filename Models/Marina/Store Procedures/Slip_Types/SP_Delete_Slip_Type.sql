@@ -4,6 +4,5 @@ BEGIN
      UPDATE slip_types SET
         logical_deleted = 1,
         logical_deleted_date = NOW()
-    WHERE 
-        slip_type_id = _slip_type_id;
+    WHERE slip_type_id = _slip_type_id;
 END

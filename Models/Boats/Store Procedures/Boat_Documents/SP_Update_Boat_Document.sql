@@ -11,6 +11,5 @@ BEGIN
         boat_document_type_id = _boat_document_type_id,
         url = _url,
         last_update_date = NOW()
-    WHERE 
-        boat_document_id = _boat_document_id;
+    WHERE boat_document_id = _boat_document_id;
 END

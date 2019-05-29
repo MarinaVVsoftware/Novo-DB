@@ -5,5 +5,6 @@ BEGIN
         boat_document_type_id,
         boat_document_type,
         required
-    FROM boat_document_types WHERE logical_deleted = 0;
+    FROM boat_document_types 
+    WHERE logical_deleted = 0;
 END

@@ -4,6 +4,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_BOAT_DOCUMENT_TYPE`(
     _required BOOLEAN
 )
 BEGIN
-    INSERT INTO boat_document_types(boat_document_type, required)
-    VALUES(_boat_document_type, _required);
+    INSERT INTO boat_document_types (
+        boat_document_type, 
+        required
+    )
+    VALUES (
+        _boat_document_type, 
+        _required
+    );
 END

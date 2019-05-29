@@ -16,6 +16,5 @@ BEGIN
         email = _email,
         payment_permission = _payment_permission,
         aceptation_permission = _aceptation_permission
-    WHERE 
-        responsable_id = _responsable_id;
+    WHERE responsable_id = _responsable_id;
 END

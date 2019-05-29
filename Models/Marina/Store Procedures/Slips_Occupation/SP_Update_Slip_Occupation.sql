@@ -14,6 +14,5 @@ BEGIN
         start_date = _start_date,
         end_date = _end_date,
         creation_responsable = _creation_responsable
-    WHERE 
-        slip_occupation_id = _slip_occupation_id;
+    WHERE slip_occupation_id = _slip_occupation_id;
 END

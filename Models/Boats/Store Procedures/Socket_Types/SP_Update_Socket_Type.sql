@@ -13,7 +13,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Socket_Type doesn't exist. Can't update.";
+        SET MESSAGE_TEXT = "Socket type doesn't exist. Can't update.";
     ELSE
         UPDATE socket_types SET
             socket_type = _socket_type,

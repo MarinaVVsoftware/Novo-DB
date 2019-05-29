@@ -13,6 +13,5 @@ BEGIN
         voltage = _voltage,
         description = _description,
         price = _price
-    WHERE 
-        cable_type_id = _cable_type_id;
+    WHERE cable_type_id = _cable_type_id;
 END

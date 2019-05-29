@@ -13,7 +13,7 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM Clients WHERE client_id = _client_id) THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = "Client was not found. Can\'t read boats without a client_id.";
+        SET MESSAGE_TEXT = "Client was not found. Can\'t update boats without a client_id.";
     END IF;
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
@@ -25,7 +25,7 @@ BEGIN
 
     SELECT boat_id INTO @boat FROM boats WHERE name = _boat_name;
 
-     /* Verifica si el bote tiene un engine con ese id. de lo contrario tira una excepción */
+    /* Verifica si el bote tiene un engine con ese id. de lo contrario tira una excepción */
     IF NOT EXISTS (
         SELECT 1 FROM boats 
         WHERE client_id = _client_id 
@@ -33,7 +33,7 @@ BEGIN
     ) 
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
+        SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = 'Doesn\'t exist that boat related with that client.';
     ELSE
         UPDATE boats SET

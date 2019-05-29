@@ -4,14 +4,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_ENGINES_BY_BOAT`(
 )
 BEGIN
     /* verifica que exista el bote. de lo contrario tira una excepción. */
-    IF NOT EXISTS (SELECT 1 FROM Boats WHERE name = _boat_name) 
+    IF NOT EXISTS (
+        SELECT 1 FROM Boats 
+        WHERE name = _boat_name
+    ) 
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Boat doesn\'t exist.';
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Boat doesn't exist.";
     ELSE
         /* Guarda el id del bote en una variable */
-        SELECT boat_id INTO @boat FROM boats WHERE name = _boat_name;
+        SELECT boat_id INTO @boat 
+        FROM boats 
+        WHERE name = _boat_name;
 
         /* obtiene todos los engines de un bote. */
         SELECT 

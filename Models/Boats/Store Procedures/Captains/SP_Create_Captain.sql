@@ -8,6 +8,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_CAPTAIN`(
     _aceptation_permission BOOLEAN
 )
 BEGIN
-    INSERT INTO captains(boat_id, name, phone, email, payment_permission, aceptation_permission)
-    VALUES(_boat_id, _name, _phone, _email, _payment_permission, _aceptation_permission);
+    INSERT INTO captains (
+        boat_id, 
+        name, 
+        phone, 
+        email, 
+        payment_permission, 
+        aceptation_permission
+    )
+    VALUES (
+        _boat_id, 
+        _name, _phone, 
+        _email, 
+        _payment_permission, 
+        _aceptation_permission
+    );
 END

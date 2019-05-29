@@ -9,12 +9,11 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Socket_Type doesn't exist. Can't delete.";
+        SET MESSAGE_TEXT = "Socket type doesn't exist. Can't delete.";
     ELSE
 
     UPDATE socket_types SET
         logical_deleted = 1,
         logical_deleted_date = NOW()
-    WHERE 
-        socket_type_id = _socket_type_id;
+    WHERE socket_type_id = _socket_type_id;
 END

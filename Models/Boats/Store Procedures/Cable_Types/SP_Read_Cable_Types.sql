@@ -7,5 +7,6 @@ BEGIN
         voltage,
         description,
         price
-    FROM cable_types WHERE logical_deleted = 0;
+    FROM cable_types 
+    WHERE logical_deleted = 0;
 END
