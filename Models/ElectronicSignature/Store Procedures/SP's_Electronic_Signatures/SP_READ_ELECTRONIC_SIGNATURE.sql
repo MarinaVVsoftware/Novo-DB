@@ -1,0 +1,7 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_ELECTRONIC_SIGNATURES`()
+
+BEGIN
+
+SELECT * FROM Electonic_Signatures;
+
+END

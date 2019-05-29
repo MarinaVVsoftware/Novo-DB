@@ -1,0 +1,7 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_PAYMENT_METHOD`()
+
+BEGIN
+
+SELECT * FROM Payment_Methods;
+
+END

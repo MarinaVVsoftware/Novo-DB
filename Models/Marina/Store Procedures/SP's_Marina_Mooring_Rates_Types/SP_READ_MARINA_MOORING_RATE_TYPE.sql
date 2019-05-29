@@ -1,0 +1,7 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_MOORING_RATE_TYPE`()
+
+BEGIN
+
+SELECT * FROM Marina_Mooring_Rates_Types;
+
+END

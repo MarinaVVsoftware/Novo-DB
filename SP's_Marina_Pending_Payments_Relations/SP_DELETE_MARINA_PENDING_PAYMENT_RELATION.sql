@@ -1,7 +1,0 @@
-CREATE PROCEDURE `SP_DELETE_MARINA_PENDING_PAYMENT_RELATION` ( _marina_pending_payment_relation_id INT )
-
-BEGIN
-
-DELETE FROM Marina_Pending_Payments_Relations WHERE marina_pending_payment_relation_id = _marina_pending_payment_relation_id;
-
-END

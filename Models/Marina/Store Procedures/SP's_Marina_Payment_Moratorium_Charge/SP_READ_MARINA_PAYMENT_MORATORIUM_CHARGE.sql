@@ -1,0 +1,7 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_PAYMENT_MORATORIUM_CHARGE`()
+
+BEGIN
+
+SELECT * FROM Marina_Payment_Moratorium_Charge;
+
+END

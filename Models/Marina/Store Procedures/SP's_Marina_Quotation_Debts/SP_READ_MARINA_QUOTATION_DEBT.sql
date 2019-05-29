@@ -1,0 +1,7 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_QUOTATION_DEBT`()
+
+BEGIN
+
+SELECT * FROM Marina_Quotation_Debts;
+
+END
