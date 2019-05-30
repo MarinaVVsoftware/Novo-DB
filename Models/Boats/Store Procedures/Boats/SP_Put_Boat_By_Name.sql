@@ -17,10 +17,13 @@ BEGIN
     END IF;
 
     /* No se valida por "logical_deleted" porque nunca se puede duplicar un barco */
-    IF NOT EXISTS (SELECT 1 FROM Boats WHERE name = _name) 
+    IF NOT EXISTS (
+        SELECT 1 FROM Boats 
+        WHERE name = _name
+    ) 
     THEN
         /* Crea el barco dado que no existe */
-        INSERT INTO boats(
+        INSERT INTO boats (
             client_id,
             name,
             model,
@@ -29,7 +32,7 @@ BEGIN
             beam,
             creation_date
         )
-        VALUES(
+        VALUES (
             _client_id,
             _name,
             _model,
@@ -43,7 +46,7 @@ BEGIN
         SELECT LAST_INSERT_ID();
     ELSE
        /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Boat does exist. Can\'t override boats.';
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Boat does exist. Can't override boats.";
     END IF;
 END

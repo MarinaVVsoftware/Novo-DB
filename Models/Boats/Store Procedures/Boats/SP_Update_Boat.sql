@@ -10,20 +10,31 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_BOAT`(
 )
 BEGIN
     /* verifica que exista el cliente. de lo contrario tira una excepción. */
-    IF NOT EXISTS (SELECT 1 FROM Clients WHERE client_id = _client_id) THEN
+    IF NOT EXISTS (
+        SELECT 1 FROM Clients 
+        WHERE client_id = _client_id
+    )
+    THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
+        SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Client was not found. Can\'t update boats without a client_id.";
     END IF;
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
-    IF NOT EXISTS (SELECT 1 FROM Boats WHERE name = _boat_name) THEN
+    IF NOT EXISTS (
+        SELECT 1 FROM Boats 
+        WHERE name = _boat_name
+    )
+    THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Boat doesn\'t exist.';
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Boat doesn't exist";
     END IF;
 
-    SELECT boat_id INTO @boat FROM boats WHERE name = _boat_name;
+    /* Guarda el id del bote en una variable */ 
+    SELECT boat_id INTO @boat 
+    FROM boats 
+    WHERE name = _boat_name;
 
     /* Verifica si el bote tiene un engine con ese id. de lo contrario tira una excepción */
     IF NOT EXISTS (
@@ -34,7 +45,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = 'Doesn\'t exist that boat related with that client.';
+        SET MESSAGE_TEXT = "Doesn't exist that boat related with that client.";
     ELSE
         UPDATE boats SET
             client_id = _client_id,
@@ -43,7 +54,6 @@ BEGIN
             loa = _loa,
             draft = _draft,
             beam = _beam
-        WHERE 
-            boat_id = @boat;
+        WHERE boat_id = @boat;
     END IF;
 END

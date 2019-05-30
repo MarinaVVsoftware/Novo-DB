@@ -64,7 +64,7 @@ BEGIN
         AND boat_id = @boat ) 
     THEN
          /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
+        SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Doesn't exist that boat electricity related with that boat.";
     ELSE
         UPDATE boat_electricity SET

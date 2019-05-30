@@ -38,12 +38,12 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM engines 
         WHERE engine_id = _engine_id 
-        AND boat_id = @boat ;
+        AND boat_id = @boat
     ) 
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Doesn't exist that engine related with that boat."";
+        SET MESSAGE_TEXT = "Doesn't exist that engine related with that boat.";
     ELSE
         UPDATE engines SET
             model = _model,

@@ -15,7 +15,10 @@ BEGIN
         SET MESSAGE_TEXT = "Boat does exist. Can't bring back captain with no boat.";
     END IF;
 
-    SELECT boat_id INTO @boat FROM boats WHERE name = _boat_name;
+    /* Guarda el id del bote en una variable */
+    SELECT boat_id INTO @boat 
+    FROM boats 
+    WHERE name = _boat_name;
 
     /* verifica que exista el capitan. si no existe truena. */
     IF NOT EXISTS (

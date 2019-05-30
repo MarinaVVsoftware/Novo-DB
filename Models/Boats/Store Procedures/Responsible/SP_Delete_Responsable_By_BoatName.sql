@@ -11,7 +11,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
+        SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Boat does exist. Can't bring back responsable with no boat.";
     END IF;
 
@@ -28,7 +28,7 @@ BEGIN
     ) 
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
+        SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Responsable doesn't exist. Can't delete responsable.";
     ELSE
         /* obtiene el id del responsable para modificarlo */

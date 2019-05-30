@@ -10,7 +10,7 @@ BEGIN
     ) 
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
+        SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Client was not found. Can't read boats without a client id.";
     END IF;
     

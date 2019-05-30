@@ -6,6 +6,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_CABLE_TYPE`(
     _price DECIMAL(12,4)
 )
 BEGIN
-    INSERT INTO cable_types(cable_type, voltage, description, price)
-    VALUES(_cable_type, _voltage, _description, _price);
+    INSERT INTO cable_types (
+        cable_type, 
+        voltage, 
+        description, price
+    )
+    VALUES (
+        _cable_type, 
+        _voltage, 
+        _description, _price
+    );
 END

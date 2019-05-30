@@ -8,7 +8,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_BOAT`(
     _beam DECIMAL(6,2)
 )
 BEGIN
-    INSERT INTO boats(
+    INSERT INTO boats (
         client_id,
         name,
         model,
@@ -17,7 +17,7 @@ BEGIN
         beam,
         creation_date
     )
-    VALUES(
+    VALUES (
         _client_id,
         _name,
         _model,
