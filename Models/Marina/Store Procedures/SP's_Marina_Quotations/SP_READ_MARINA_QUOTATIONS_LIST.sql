@@ -1,4 +1,6 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_QUOTATIONS_LIST`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_QUOTATIONS_LIST`(
+    _filterBy VARCHAR(30)
+)
 
 BEGIN
         SELECT 
@@ -7,21 +9,26 @@ BEGIN
         mq.creation_date,
         mq.creation_responsable,
         bt.name AS boat_name,
-        bt.boat_id,
+        mq.boat_id,
         ct.name AS client_name,
         ct.client_id,
         mq.arrival_date,
         mq.departure_date,
         mq.days_stay,
-        bt.loa,
+        mq.loa,
         bt.draft,
         bt.beam,
-        mq.discount_stay,
+        mq.discount_stay_percentage,
         mq.tax,
+        mq.subtotal,
         mq.total,
-        mq.subtotal
+        mq.monthly_quotation,
+        mq.annual_quotation,
+        mq.semiannual_quotation,
+        mq.creation_responsable,
+        mq.creation_date
     FROM marina_quotations mq
     INNER JOIN boats bt ON mq.boat_id = bt.boat_id
     INNER JOIN clients ct on bt.client_id = ct.client_id
-    WHERE mq.logical_deleted = 0 AND find_in_set(mq.marina_quotation_status_id, _filterBy) > 0;
+    WHERE FIND_IN_SET(mq.marina_quotation_status_id, _filterBy) > 0;
 END

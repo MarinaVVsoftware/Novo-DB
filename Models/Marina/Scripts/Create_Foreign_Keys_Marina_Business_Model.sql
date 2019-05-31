@@ -8,7 +8,6 @@ FK_[nombre de la tabla que tiene dependencia de]_[nombre del PK de la tabla padr
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(boat_id) REFERENCES Boats(boat_id);
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_quotation_status_id) REFERENCES Marina_Quotation_Status(marina_quotation_status_id);
 ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_mooring_rate_id) REFERENCES Marina_Mooring_Rates(marina_mooring_rate_id);
-ALTER TABLE Marina_Quotations ADD FOREIGN KEY(marina_electricity_sales_id) REFERENCES Marina_Electricity_Sales(marina_electricity_sales_id);
 
 ALTER TABLE Marina_Mooring_Rates ADD FOREIGN KEY(marina_mooring_rate_type_id) REFERENCES Marina_Mooring_Rates_Types(marina_mooring_rate_type_id);
 
