@@ -1,5 +1,6 @@
-/* SP SP_UPDATE_CAPTAIN_BY_BOAT: Actualiza el capitan de un bote. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_CAPTAIN_BY_BOAT`(
+/* SP SP_PUT_CAPTAIN_BY_BOAT: Actualiza el capitan de un bote. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_PUT_CAPTAIN_BY_BOAT`(
+    _client_id INT,
     _boat_name VARCHAR(100),
     _name VARCHAR(100),
     _phone VARCHAR(15),
@@ -8,6 +9,18 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_CAPTAIN_BY_BOAT`(
     _aceptation_permission BOOLEAN
 )
 BEGIN
+
+    /* verifica que exista el cliente. de lo contrario tira una excepción. */
+    IF NOT EXISTS (
+        SELECT 1 FROM clients 
+        WHERE client_id = _client_id
+    )
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Client was not found. Can't put captain without a client id valid.";
+    END IF;
+
     /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
         SELECT 1 FROM boats 
@@ -17,7 +30,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Boat does exist. Can't bring back captain with no boat.";
+        SET MESSAGE_TEXT = "Boat does exist. Can't put captain with no boat.";
     END IF;
     
     /* Guarda el id del bote en una variable */
@@ -25,7 +38,20 @@ BEGIN
     FROM boats 
     WHERE name = _boat_name;
 
-    /* verifica que exista el capitan. si no existe, lo crea. */
+    /* Verifica si el cliente tiene un bote con ese id. de lo contrario tira una excepción */
+    IF NOT EXISTS (
+        SELECT 1 FROM boats 
+        WHERE client_id = _client_id 
+        AND boat_id = @boat
+    ) 
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Doesn't exist that boat related with that client.";
+    END IF;
+
+    /* verifica que exista el capitán. si no existe, lo crea. si existe
+    realiza la actualización del capitán. */
     IF NOT EXISTS (
         SELECT 1 FROM captains 
         WHERE boat_id = @boat 

@@ -17,7 +17,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client was not found. Can\'t update boats without a client_id.";
+        SET MESSAGE_TEXT = "Client was not found. Can't update boats without a client id.";
     END IF;
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */

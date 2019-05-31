@@ -12,7 +12,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Boat was not found. Can't update boat electricity without a boat name valid.";
+        SET MESSAGE_TEXT = "Boat was not found. Can't delete boat electricity without a boat name valid.";
     END IF;
 
     /* verifica que exista la relación eléctrica. de lo contrario tira una excepción. */
@@ -23,7 +23,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Boat electricity was not found. Can't update boat electricity.";
+        SET MESSAGE_TEXT = "Boat electricity was not found. Can't delete boat electricity.";
     END IF;
 
     /* Guarda el id del bote en una variable */
