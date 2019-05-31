@@ -3,6 +3,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE  `SP_CREATE_MARINA_QUOTATION`
     _boat_id INT,
     _marina_quotation_status_id INT,
     _marina_mooring_rate_id INT,
+    _marina_electricity_sales_id INT,
     _arrival_date DATETIME,
     _departure_date DATETIME,
     _arrival_status BOOLEAN,
@@ -21,6 +22,7 @@ INSERT INTO Marina_Quotations
     boat_id, 
     marina_quotation_status_id, 
     marina_mooring_rate_id,
+    marina_electricity_sales_id,
     arrival_date,
     departure_date,
     arrival_status,
@@ -30,13 +32,14 @@ INSERT INTO Marina_Quotations
     total,
     subtotal,
     creation_responsable,
-    creation_date,
+    creation_date
 )
 VALUES
 (
     _boat_id,
     _marina_quotation_status_id,
     _marina_mooring_rate_id,
+     _marina_electricity_sales_id,
     _arrival_date,
     _departure_date,
     _arrival_status,
