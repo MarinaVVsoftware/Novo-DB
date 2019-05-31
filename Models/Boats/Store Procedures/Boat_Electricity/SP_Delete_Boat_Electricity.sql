@@ -5,34 +5,46 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_BOAT_ELECTRICITY`(
 )
 BEGIN
     /* verifica que exista el bote. de lo contrario tira una excepción. */
-    IF NOT EXISTS (SELECT 1 FROM Boats WHERE name = _boat_name) THEN
+    IF NOT EXISTS (
+        SELECT 1 FROM Boats 
+        WHERE name = _boat_name
+    ) 
+    THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = "Boat was not found. Can\'t update BoatElectricity without a boat_name valid.";
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Boat was not found. Can't delete boat electricity without a boat name valid.";
     END IF;
 
     /* verifica que exista la relación eléctrica. de lo contrario tira una excepción. */
-      IF NOT EXISTS (SELECT 1 FROM boat_electricity WHERE boat_electricity_id = _boat_electricity_id) THEN
+    IF NOT EXISTS (
+        SELECT 1 FROM boat_electricity 
+        WHERE boat_electricity_id = _boat_electricity_id
+    )
+    THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = "BoatElectricity was not found. Can\'t update BoatElectricity.";
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Boat electricity was not found. Can't delete boat electricity.";
     END IF;
 
-    SELECT boat_id INTO @boat FROM boats WHERE name = _boat_name;
+    /* Guarda el id del bote en una variable */
+    SELECT boat_id INTO @boat 
+    FROM boats 
+    WHERE name = _boat_name;
 
      /* Verifica si el bote tiene una relación eléctrica con ese id. de lo contrario tira una excepción */
     IF NOT EXISTS (
         SELECT 1 FROM boat_electricity 
         WHERE boat_electricity_id = _boat_electricity_id 
-        AND boat_id = @boat ) 
+        AND boat_id = @boat 
+    ) 
     THEN
          /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = "Doesn't exist that BoatElectricity related with that boat.";
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Doesn't exist that boat electricity related with that boat.";
     ELSE
         UPDATE boat_electricity SET
-        logical_deleted = 1,
-        logical_deleted_date = NOW()
+            logical_deleted = 1,
+            logical_deleted_date = NOW()
         WHERE boat_electricity_id = _boat_electricity_id;
     END IF;
 END

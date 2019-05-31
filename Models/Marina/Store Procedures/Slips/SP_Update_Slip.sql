@@ -6,6 +6,5 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_SLIP`(
 BEGIN
     UPDATE slips SET
         slip_type_id = _slip_type_id
-    WHERE 
-        slip_id = _slip_id;
+    WHERE slip_id = _slip_id;
 END

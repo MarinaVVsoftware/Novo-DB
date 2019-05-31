@@ -5,5 +5,6 @@ BEGIN
         socket_type_id,
         socket_type,
         description
-    FROM socket_types WHERE logical_deleted = 0;
+    FROM socket_types 
+    WHERE logical_deleted = 0;
 END

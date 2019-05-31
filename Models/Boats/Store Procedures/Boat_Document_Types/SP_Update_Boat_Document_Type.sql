@@ -8,6 +8,5 @@ BEGIN
     UPDATE boat_document_types SET
         boat_document_type = _boat_document_type,
         required = _required
-    WHERE 
-        boat_document_type_id = _boat_document_type_id;
+    WHERE boat_document_type_id = _boat_document_type_id;
 END

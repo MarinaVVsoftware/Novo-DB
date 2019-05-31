@@ -5,6 +5,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_BOAT_ELECTRICITY`(
     _socket_type_id INT
 )
 BEGIN
-    INSERT INTO boat_electricity(boat_id, cable_type_id, socket_type_id)
-    VALUES(_boat_id, _cable_type_id, _socket_type_id);
+    INSERT INTO boat_electricity (
+        boat_id, 
+        cable_type_id, 
+        socket_type_id
+    )
+    VALUES (
+        _boat_id, 
+        _cable_type_id, 
+        _socket_type_id
+    );
 END

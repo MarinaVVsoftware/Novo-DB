@@ -4,6 +4,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_SOCKET_TYPE`(
     _description VARCHAR(200)
 )
 BEGIN
-    INSERT INTO socket_types(socket_type, description)
-    VALUES(_socket_type, _description);
+    INSERT INTO socket_types (
+        socket_type, 
+        description
+    )
+    VALUES (
+        _socket_type, 
+        _description
+    );
 END

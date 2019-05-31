@@ -6,15 +6,20 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_PUT_BOAT_DOCUMENT`(
 )
 BEGIN
     /* verifica que exista el bote. de lo contrario tira una excepción. */
-    IF NOT EXISTS (SELECT 1 FROM Boats WHERE name = _boat_name) 
+    IF NOT EXISTS (
+        SELECT 1 FROM Boats 
+        WHERE name = _boat_name
+    ) 
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Boat doesn\'t exist.';
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Boat doesn't exist.";
     END IF;
 
     /* Guarda el id del bote en una variable */
-    SELECT boat_id INTO @boat FROM boats WHERE name = _boat_name;
+    SELECT boat_id INTO @boat 
+    FROM boats 
+    WHERE name = _boat_name;
 
     /* Si no existe un row con id de bote y id de 
     tipo es porque no existe, por lo que debe crearlo */
@@ -25,8 +30,15 @@ BEGIN
     ) 
     THEN
         /* Crea el documento dado que no existe */
-        INSERT INTO boat_documents(boat_id, boat_document_type_id, url)
-        VALUES(@boat, _boat_document_type_id, _url);
+        INSERT INTO boat_documents (
+            boat_id, 
+            boat_document_type_id, url
+        )
+        VALUES (
+            @boat, 
+            _boat_document_type_id, 
+            _url
+        );
 
         /* retorna el id del row insertado */
         SELECT LAST_INSERT_ID();

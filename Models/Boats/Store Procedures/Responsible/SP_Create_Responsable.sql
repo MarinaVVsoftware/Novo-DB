@@ -1,5 +1,5 @@
-/* SP SP_CREATE_CAPTAIN: Crea un capitán. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_CAPTAIN`(
+/* SP SP_CREATE_RESPONSABLE: Crea un responsable de barco. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_RESPONSABLE`(
     _boat_id INT,
     _name varchar(100),
     _phone VARCHAR(15),
@@ -8,7 +8,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_CAPTAIN`(
     _aceptation_permission BOOLEAN
 )
 BEGIN
-    INSERT INTO captains (
+    INSERT INTO responsible (
         boat_id, 
         name, 
         phone, 
@@ -18,7 +18,8 @@ BEGIN
     )
     VALUES (
         _boat_id, 
-        _name, _phone, 
+        _name, 
+        _phone, 
         _email, 
         _payment_permission, 
         _aceptation_permission

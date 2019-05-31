@@ -33,3 +33,18 @@ ALTER TABLE Marina_Payment_Moratorium_Charge ADD FOREIGN KEY(client_id) REFERENC
 ALTER TABLE Marina_Moratorium_Charge ADD FOREIGN KEY(marina_quotation_id) REFERENCES Marina_Quotation(marina_quotation_id);
 
 ALTER TABLE Marina_Quotation_Debts ADD FOREIGN KEY(marina_quotation_id) REFERENCES Marina_Quotation(marina_quotation_id);
+
+/* Slips -> Slip_Types */
+ALTER TABLE slips
+ADD CONSTRAINT FK_slips_slip_type_id
+FOREIGN KEY (slip_type_id) REFERENCES slip_types(slip_type_id);
+
+/* Slips_Occupation -> Boats */
+ALTER TABLE slips_occupation
+ADD CONSTRAINT FK_slips_occupation_boat_id
+FOREIGN KEY (boat_id) REFERENCES boats(boat_id);
+
+/* Slips_Occupation -> Slips */
+ALTER TABLE slips_occupation
+ADD CONSTRAINT FK_slips_occupation_slip_id
+FOREIGN KEY (slip_id) REFERENCES slips(slip_id);

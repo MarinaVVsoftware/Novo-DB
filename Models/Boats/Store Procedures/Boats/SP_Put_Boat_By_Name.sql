@@ -12,15 +12,18 @@ BEGIN
     /* verifica que exista el cliente. de lo contrario tira una excepción. */
     IF NOT EXISTS (SELECT 1 FROM Clients WHERE client_id = _client_id) THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = "Client was not found. Can\'t read boats without a client_id.";
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Client was not found. Can't create a boat without a client id.";
     END IF;
 
     /* No se valida por "logical_deleted" porque nunca se puede duplicar un barco */
-    IF NOT EXISTS (SELECT 1 FROM Boats WHERE name = _name) 
+    IF NOT EXISTS (
+        SELECT 1 FROM Boats 
+        WHERE name = _name
+    ) 
     THEN
         /* Crea el barco dado que no existe */
-        INSERT INTO boats(
+        INSERT INTO boats (
             client_id,
             name,
             model,
@@ -29,7 +32,7 @@ BEGIN
             beam,
             creation_date
         )
-        VALUES(
+        VALUES (
             _client_id,
             _name,
             _model,
@@ -43,7 +46,7 @@ BEGIN
         SELECT LAST_INSERT_ID();
     ELSE
        /* Arroja un error customizado */
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Boat does exist. Can\'t override boats.';
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Boat does exist. Can't override boats.";
     END IF;
 END

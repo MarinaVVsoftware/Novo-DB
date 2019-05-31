@@ -4,6 +4,5 @@ BEGIN
     UPDATE responsible SET
         logical_deleted = 1,
         logical_deleted_date = NOW()
-    WHERE 
-        boat_id = _boat_id;
+    WHERE boat_id = _boat_id;
 END
