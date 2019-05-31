@@ -35,10 +35,10 @@ CREATE TABLE IF NOT EXISTS Marina_Quotation_Status (
     PRIMARY KEY(marina_quotation_status_id)
 );
 
-/* CREATE TABLE Marina_Mooring_Rates */
-CREATE TABLE IF NOT EXISTS Marina_Mooring_Rates (
-    marina_mooring_rate_id INT NOT NULL AUTO_INCREMENT,
-    marina_mooring_rate_type_id INT NOT NULL,
+/* CREATE TABLE Marina_Mooring_Tariff */
+CREATE TABLE IF NOT EXISTS Marina_Mooring_Tariff (
+    marina_mooring_tariff_id INT NOT NULL AUTO_INCREMENT,
+    marina_mooring_tariff_type_id INT NOT NULL,
     name VARCHAR(100),
     description VARCHAR(300),
     ft_min SMALLINT,
@@ -50,15 +50,15 @@ CREATE TABLE IF NOT EXISTS Marina_Mooring_Rates (
     logical_deleted BOOLEAN DEFAULT 0,
     logical_deleted_date DATETIME,
     
-    PRIMARY KEY(marina_mooring_rate_id)
+    PRIMARY KEY(marina_mooring_tariff_id)
 );
 
 /* CREATE TABLE Marina_Mooring_Rates_Types */
-CREATE TABLE IF NOT EXISTS Marina_Mooring_Rates_Types (
-    marina_mooring_rate_type_id INT NOT NULL AUTO_INCREMENT, 
+CREATE TABLE IF NOT EXISTS Marina_Mooring_Tariff_Types (
+    marina_mooring_tariff_type_id INT NOT NULL AUTO_INCREMENT, 
     type VARCHAR(100),
 
-    PRIMARY KEY(marina_mooring_rate_type_id)
+    PRIMARY KEY(marina_mooring_tariff_type_id)
 );
 
 /* CREATE TABLE Marina_Quotation_Services */
@@ -137,7 +137,6 @@ CREATE TABLE IF NOT EXISTS Payment_Methods (
     PRIMARY KEY(payment_method_id)
 );
 
-/* COMPONER LOS STORES */
 /* CREATE TABLE Marina_Pending_Payments_Relations */
 CREATE TABLE IF NOT EXISTS Marina_Payment_Moratorium_Charge (
     marina_payment_moratorium_charge_id INT NOT NULL AUTO_INCREMENT,
