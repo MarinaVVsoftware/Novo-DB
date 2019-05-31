@@ -27,6 +27,18 @@ BEGIN
         SET MESSAGE_TEXT = "Boat does exist. Can't delete captain with no boat.";
     END IF;
 
+    /* Verifica si el cliente tiene un bote con ese id. de lo contrario tira una excepción */
+    IF NOT EXISTS (
+        SELECT 1 FROM boats 
+        WHERE client_id = _client_id 
+        AND boat_id = @boat
+    ) 
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Doesn't exist that boat related with that client.";
+    END IF;
+
     /* Guarda el id del bote en una variable */
     SELECT boat_id INTO @boat 
     FROM boats 
@@ -42,18 +54,6 @@ BEGIN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Captain doesn't exist. Can't delete captain.";
-    END IF;
-
-    /* Verifica si el cliente tiene un bote con ese id. de lo contrario tira una excepción */
-    IF NOT EXISTS (
-        SELECT 1 FROM boats 
-        WHERE client_id = _client_id 
-        AND boat_id = @boat
-    ) 
-    THEN
-        /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Doesn't exist that boat related with that client.";
     ELSE
         /* obtiene el id del capitan para modificarlo */
         SELECT captain_id INTO @captain 
