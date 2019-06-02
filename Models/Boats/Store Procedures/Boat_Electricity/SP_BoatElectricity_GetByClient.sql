@@ -1,5 +1,5 @@
-/* SP SP_READ_BOAT_ELECTRICITY_BY_CLIENT: Trae todas las relaciones eléctricas de unclient. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_BOAT_ELECTRICITY_BY_CLIENT`(
+/* SP SP_BoatElectricity_GetByClient: Trae todas las relaciones eléctricas de unclient. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BoatElectricity_GetByClient`(
     _client_id INT
 )
 BEGIN
@@ -7,6 +7,7 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM Clients 
         WHERE client_id = _client_id
+        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */

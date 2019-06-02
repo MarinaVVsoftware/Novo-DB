@@ -1,5 +1,5 @@
-/* SP SP_READ_BOAT_DOCUMENTS_BY_CLIENT: Trae todos documentos de los barcos de un cliente. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_BOAT_DOCUMENTS_BY_CLIENT`(
+/* SP SP_BoatDocuments_GetByClient: Trae todos documentos de los barcos de un cliente. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BoatDocuments_GetByClient`(
     _client_id INT
 )
 BEGIN
@@ -7,6 +7,7 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM Clients 
         WHERE client_id = _client_id
+        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
