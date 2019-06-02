@@ -32,10 +32,5 @@ BEGIN
             logical_deleted = 1,
             logical_deleted_date = NOW()
         WHERE boat_id = @boat;
-            
-        /* retorna el id del row modificado */
-        SELECT boat_id 
-        FROM boats 
-        WHERE name = _name;
     END IF;
 END

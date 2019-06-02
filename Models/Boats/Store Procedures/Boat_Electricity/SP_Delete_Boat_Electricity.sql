@@ -31,14 +31,14 @@ BEGIN
     FROM boats 
     WHERE name = _boat_name;
 
-     /* Verifica si el bote tiene una relación eléctrica con ese id. de lo contrario tira una excepción */
+    /* Verifica si el bote tiene una relación eléctrica con ese id. de lo contrario tira una excepción */
     IF NOT EXISTS (
         SELECT 1 FROM boat_electricity 
         WHERE boat_electricity_id = _boat_electricity_id 
         AND boat_id = @boat 
     ) 
     THEN
-         /* Arroja un error customizado */
+        /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Doesn't exist that boat electricity related with that boat.";
     ELSE
