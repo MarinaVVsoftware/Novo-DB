@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Marina_Quotations (
     boat_id INT NOT NULL,
     marina_quotation_status_id INT NOT NULL,
     marina_mooring_tariff_id INT NOT NULL,
-    marina_quotation_electricity_id INT NOT NULL, 
+    marina_quotation_electricity_id INT, 
     arrival_date DATETIME,
     departure_date DATETIME,
     arrival_status BOOLEAN,

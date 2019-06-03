@@ -1,8 +1,10 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_QUOTATION`(
     _quotation_id INT
 )
-
 BEGIN
+	SET @quotation_period := 'Cotización Mensual';
+    SELECT IF(semiannual_quotation = 1, @quotation_period := 'Cotización Semestral', @quotation_period) FROM marina_quotations WHERE marina_quotation_id = _quotation_id;
+    SELECT IF(annual_quotation = 1, @quotation_period := 'Cotización Anual', @quotation_period) FROM marina_quotations WHERE marina_quotation_id = _quotation_id;
     
     SELECT
         mq.marina_quotation_id,
@@ -10,32 +12,22 @@ BEGIN
         mq.marina_quotation_status_id,
         mq.marina_quotation_electricity_id,
         bt.name AS boat_name,
-        bt.model as boat_model,
-        bt.draft as boat_draft,
-        bt.beam as boat_draft,
         mq.loa as boat_loa,
         ct.name AS client_name,
         ct.email AS client_email,
         ct.phone AS client_phone,
-        ct.address AS client_address,
         mq.arrival_date,
         mq.departure_date,
-        mq.arrival_status,
         mq.mooring_tariff,
         mq.days_stay,
         mq.discount_stay_percentage,
-        mq.currency_amount,
-        mq.tax,
         mq.subtotal,
         mq.total,
-        mq.monthly_quotation,
-        mq.annual_quotation,
-        mq.semiannual_quotation,
+        @quotation_period AS quotation_period,
         mq.creation_responsable,
         mq.creation_date,
         mqs.status,
         mmt.name AS marina_mooring_name,
-        mmt.description AS marina_mooring_description,
         mmt.ft_min AS marina_ft_min,
         mmt.ft_max AS marina_ft_max
     FROM marina_quotations mq
