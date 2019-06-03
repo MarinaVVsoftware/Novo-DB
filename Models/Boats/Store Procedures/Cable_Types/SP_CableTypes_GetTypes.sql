@@ -1,5 +1,5 @@
-/* SP SP_READ_CABLE_TYPES: Trae los tipos de cables. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_CABLE_TYPES`()
+/* SP SP_CableTypes_GetTypes: Trae los tipos de cables. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CableTypes_GetTypes`()
 BEGIN
     SELECT
         cable_type_id,

@@ -1,37 +1,40 @@
-/* SP SP_DELETE_CAPTAIN_BY_BOATNAME: Elimina un capitán */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_CAPTAIN_BY_BOATNAME`(
+/* SP SP_Engines_DeleteByBoat: Elimina un motor. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Engines_DeleteByBoat`(
     _client_id INT,
     _boat_name VARCHAR(100)
 )
 BEGIN
+
     /* verifica que exista el cliente. de lo contrario tira una excepción. */
     IF NOT EXISTS (
         SELECT 1 FROM clients 
         WHERE client_id = _client_id
+        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client was not found. Can't delete captain without a client id valid.";
+        SET MESSAGE_TEXT = "Client was not found. Can't delete engine without a client id.";
     END IF;
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM boats 
+        SELECT 1 FROM Boats 
         WHERE name = _boat_name
-         AND logical_deleted = 0
+        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Boat does exist. Can't delete captain with no boat.";
+        SET MESSAGE_TEXT = "Boat was not found. Can't delete engine without a boat name valid.";
     END IF;
 
     /* Verifica si el cliente tiene un bote con ese id. de lo contrario tira una excepción */
     IF NOT EXISTS (
         SELECT 1 FROM boats 
         WHERE client_id = _client_id 
-        AND boat_id = @boat
+        AND name = _boat_name
+        AND logical_deleted = 0
     ) 
     THEN
         /* Arroja un error customizado */
@@ -42,29 +45,25 @@ BEGIN
     /* Guarda el id del bote en una variable */
     SELECT boat_id INTO @boat 
     FROM boats 
-    WHERE name = _boat_name;
+    WHERE name = _boat_name
+    AND logical_deleted = 0;
 
-    /* verifica que exista el capitan. si no existe truena. */
+    /* Verifica si el bote tiene un engine con ese id. de lo contrario tira una excepción */
     IF NOT EXISTS (
-        SELECT 1 FROM captains 
-        WHERE boat_id = @boat 
+        SELECT 1 FROM engines 
+        WHERE engine_id = _engine_id 
+        AND boat_id = @boat
         AND logical_deleted = 0
-    )
+    ) 
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Captain doesn't exist. Can't delete captain.";
-    ELSE
-        /* obtiene el id del capitan para modificarlo */
-        SELECT captain_id INTO @captain 
-        FROM captains 
-        WHERE boat_id = @boat 
-        AND logical_deleted = 0;
-
-        /* Actualiza la row del capitán */
-        UPDATE captains SET
-            logical_deleted = 1,
-            logical_deleted_date = NOW()
-        WHERE captain_id = @captain;
+        SET MESSAGE_TEXT = "Doesn't exist that engine related with that boat.";
     END IF;
+    
+    UPDATE engines SET
+        logical_deleted = 1,
+        logical_deleted_date = NOW()
+    WHERE boat_id = @boat
+    AND logical_deleted = 0;
 END

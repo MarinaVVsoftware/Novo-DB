@@ -1,5 +1,5 @@
-/* SP SP_READ_CAPTAINS: Trae el capitan de un bote. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_CAPTAIN`(
+/* SP SP_Captains_GetByBoat: Trae el capitan de un bote. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Captains_GetByBoat`(
     _client_id INT,
     _boat_name VARCHAR(100)
 )
@@ -8,6 +8,7 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM clients 
         WHERE client_id = _client_id
+        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
@@ -17,9 +18,9 @@ BEGIN
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM Boats 
+        SELECT 1 FROM boats 
         WHERE name = _boat_name 
-        AND boats.logical_deleted = 0
+        AND logical_deleted = 0
     ) 
     THEN
          /* Arroja un error customizado */
@@ -27,25 +28,35 @@ BEGIN
         SET MESSAGE_TEXT = "Boat does exist. Can't read captain with no boat.";
     END IF;
     
-    /* Guarda el id del bote en una variable */
-    SELECT boat_id INTO @boat 
-    FROM boats 
-    WHERE name = _boat_name;
-    
     /* Verifica si el cliente tiene un bote con ese id. de lo contrario tira una excepción */
     IF NOT EXISTS (
         SELECT 1 FROM boats 
         WHERE client_id = _client_id 
-        AND boat_id = @boat
+        AND name = _boat_name
+        AND logical_deleted = 0
     ) 
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Doesn't exist that boat related with that client.";
-    ELSE
-        /* Realiza el select del capitán */
-        SELECT * FROM captains 
-        WHERE boat_id = @boat 
-        AND logical_deleted = 0;
     END IF;
+
+    /* Guarda el id del bote en una variable */
+    SELECT boat_id INTO @boat 
+    FROM boats 
+    WHERE name = _boat_name
+    AND logical_deleted = 0;
+
+    /* Realiza el select del capitán */
+    SELECT
+        captain_id,
+        boat_id,
+        name,
+        phone,
+        email,
+        payment_permission,
+        aceptation_permission
+    FROM captains 
+    WHERE boat_id = @boat 
+    AND logical_deleted = 0;
 END

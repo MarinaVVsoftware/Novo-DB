@@ -1,5 +1,5 @@
-/* SP SP_PUT_CAPTAIN_BY_BOAT: Actualiza el capitan de un bote. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_PUT_CAPTAIN_BY_BOAT`(
+/* SP SP_Captains_PutByBoat: Actualiza el capitan de un bote. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Captains_PutByBoat`(
     _client_id INT,
     _boat_name VARCHAR(100),
     _name VARCHAR(100),
@@ -14,6 +14,7 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM clients 
         WHERE client_id = _client_id
+        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
@@ -32,23 +33,25 @@ BEGIN
         SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Boat does exist. Can't put captain with no boat.";
     END IF;
-    
-    /* Guarda el id del bote en una variable */
-    SELECT boat_id INTO @boat 
-    FROM boats 
-    WHERE name = _boat_name;
 
     /* Verifica si el cliente tiene un bote con ese id. de lo contrario tira una excepción */
     IF NOT EXISTS (
         SELECT 1 FROM boats 
         WHERE client_id = _client_id 
-        AND boat_id = @boat
+        AND name = _boat_name
+        AND logical_deleted = 0
     ) 
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Doesn't exist that boat related with that client.";
     END IF;
+
+    /* Guarda el id del bote en una variable */
+    SELECT boat_id INTO @boat 
+    FROM boats 
+    WHERE name = _boat_name
+    AND logical_deleted = 0;
 
     /* verifica que exista el capitán. si no existe, lo crea. si existe
     realiza la actualización del capitán. */
@@ -88,6 +91,7 @@ BEGIN
             email = _email,
             payment_permission = _payment_permission,
             aceptation_permission = _aceptation_permission
-        WHERE captain_id = @captain;
+        WHERE captain_id = @captain
+        AND logical_deleted = 0;
     END IF;
 END

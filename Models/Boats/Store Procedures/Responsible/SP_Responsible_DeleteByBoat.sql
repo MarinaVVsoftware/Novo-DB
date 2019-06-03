@@ -1,10 +1,10 @@
-/* SP SP_Boats_DeleteBoat: Elimina un barco */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Boats_DeleteBoat`(
-    _client_id INT, 
-    _boat_name varchar(100)
+/* SP SP_Responsible_DeleteByBoat: Elimina un responsable */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Responsible_DeleteByBoat`(
+    _client_id INT,
+    _boat_name VARCHAR(100)
 )
+    
 BEGIN
-
     /* verifica que exista el cliente. de lo contrario tira una excepción. */
     IF NOT EXISTS (
         SELECT 1 FROM clients 
@@ -14,19 +14,19 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client was not found. Can't delete boat without a client id valid.";
+        SET MESSAGE_TEXT = "Client was not found. Can't delete responsable without a client id valid.";
     END IF;
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM Boats 
-        WHERE name = _boat_name
+        SELECT 1 FROM boats 
+        WHERE name = _boat_name 
         AND logical_deleted = 0
-    ) 
+    )
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Boat was not found. Can't delete boat without a boat name valid.";
+        SET MESSAGE_TEXT = "Boat does exist. Can't delete responsable with no boat.";
     END IF;
 
     /* Verifica si el cliente tiene un bote con ese id. de lo contrario tira una excepción */
@@ -47,11 +47,28 @@ BEGIN
     FROM boats 
     WHERE name = _boat_name
     AND logical_deleted = 0;
-    
-    /* Actualiza la row del bote */
-    UPDATE boats SET
+
+    /* verifica que exista el responsable. si no existe truena. */
+    IF NOT EXISTS (
+        SELECT 1 FROM responsible 
+        WHERE boat_id = @boat 
+        AND logical_deleted = 0
+    ) 
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Responsable doesn't exist. Can't delete responsable.";
+    END IF;
+
+    /* obtiene el id del responsable para modificarlo */
+    SELECT responsable_id INTO @responsable 
+    FROM responsible 
+    WHERE boat_id = @boat 
+    AND logical_deleted = 0;
+
+    UPDATE responsible SET
         logical_deleted = 1,
         logical_deleted_date = NOW()
-    WHERE boat_id = @boat
+    WHERE responsable_id = @responsable
     AND logical_deleted = 0;
 END

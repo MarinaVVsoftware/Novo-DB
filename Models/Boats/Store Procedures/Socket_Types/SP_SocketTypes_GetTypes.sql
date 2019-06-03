@@ -1,5 +1,5 @@
-/* SP SP_READ_SOCKET_TYPES: Trae los tipos de sockets. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_SOCKET_TYPES`()
+/* SP SP_SocketTypes_GetTypes: Trae los tipos de sockets. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_SocketTypes_GetTypes`()
 BEGIN
     SELECT
         socket_type_id,
