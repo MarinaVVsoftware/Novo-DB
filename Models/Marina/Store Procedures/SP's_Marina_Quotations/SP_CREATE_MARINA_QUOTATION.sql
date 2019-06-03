@@ -30,57 +30,70 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_MARINA_QUOTATION`(
 BEGIN
 
     SET @electricity_id = null;
+	IF(
+		_electricity_tariff IS NULL OR 
+		_total_electricity_days IS NULL OR
+        _discount_electricity_percentage IS NULL OR
+        _currency_electricity_amount IS NULL OR
+        _electricity_tax IS NULL OR
+        _electricity_subtotal IS NULL OR
+        _electricity_total IS NULL
+	) THEN
+		SET @electricity_id = null;
+    ELSE
+		CALL SP_CREATE_MARINA_QUOTATION_ELECTRICITY(
+			_electricity_tariff,
+			_total_electricity_days,
+			_discount_electricity_percentage,
+			_currency_electricity_amount,
+			_electricity_tax,
+			_electricity_subtotal,
+			_electricity_total,
+			@electricity_id
+		);
+    END IF;
+    
+    
 
-    CALL SP_CREATE_MARINA_QUOTATION_ELECTRICITY(
-        _electricity_tariff,
-		_total_electricity_days,
-		_discount_electricity_percentage,
-		_currency_electricity_amount,
-		_electricity_tax,
-		_electricity_subtotal,
-		_electricity_total,
-        @electricity_id
+
+    INSERT INTO marina_quotations (
+        boat_id,
+        marina_quotation_status_id,
+        marina_mooring_tariff_id,
+        marina_quotation_electricity_id,
+        arrival_date,
+        departure_date,
+        arrival_status,
+        mooring_tariff,
+        loa,
+        days_stay,
+        discount_stay_percentage,
+        currency_amount,
+        tax,
+        subtotal,
+        total,
+        monthly_quotation,
+        semiannual_quotation,
+        annual_quotation
+    ) values (
+        _boat_id,
+        _marina_quotation_status_id,
+        _marina_mooring_tariff_id,
+        @electricity_id,
+        _arrival_date,
+        _departure_date,
+        _arrival_status,
+        _mooring_tariff,
+        _loa,
+        _days_stay,
+        _discount_stay_percentage,
+        _currency_amount,
+        _tax,
+        _subtotal,
+        _total,
+        _monthly_quotation,
+        _semiannual_quotation,
+        _annual_quotation
     );
-
-
-INSERT INTO marina_quotations (
-	boat_id,
-    marina_quotation_status_id,
-    marina_mooring_tariff_id,
-    marina_quotation_electricity_id,
-    arrival_date,
-    departure_date,
-    arrival_status,
-    mooring_tariff,
-    loa,
-    days_stay,
-    discount_stay_percentage,
-    currency_amount,
-    tax,
-    subtotal,
-    total,
-    monthly_quotation,
-    semiannual_quotation,
-    annual_quotation
-) values (
-	_boat_id,
-    _marina_quotation_status_id,
-    _marina_mooring_tariff_id,
-    @electricity_id,
-    _arrival_date,
-    _departure_date,
-    _arrival_status,
-    _mooring_tariff,
-    _loa,
-    _days_stay,
-    _discount_stay_percentage,
-    _currency_amount,
-    _tax,
-    _subtotal,
-    _total,
-    _monthly_quotation,
-    _semiannual_quotation,
-    _annual_quotation
-);
 
 END

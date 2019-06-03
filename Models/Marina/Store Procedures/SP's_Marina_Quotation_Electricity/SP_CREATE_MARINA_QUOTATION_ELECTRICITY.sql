@@ -28,5 +28,5 @@ BEGIN
 	);
     
    SELECT LAST_INSERT_ID() INTO _result;
-   SELECT _result;
+   /*SELECT _result;*/
 END
