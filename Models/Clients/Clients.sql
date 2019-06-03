@@ -16,7 +16,7 @@ address VARCHAR
 (100),
 creation_date DATETIME,
 electronic_wallet_id INT
-);
+, Logical_Delete INT );
 
 /*CREACION TABLE BANK ACCOUNT*/
 CREATE TABLE
@@ -32,7 +32,7 @@ account_number VARCHAR
 (50),
 clabe VARCHAR
 (50)
-);
+, Logical_Delete INT );
 
 /*CREACION TABLA SOCIAL REASON*/
 CREATE TABLE
@@ -50,7 +50,7 @@ CFDI VARCHAR
 (50),
 address VARCHAR
 (50)
-);
+, Logical_Delete INT );
 
 /*CREACION TABLA MARINA DEBTS*/
 CREATE TABLE
@@ -61,7 +61,7 @@ client_id INT,
 folio INT,
 amount DOUBLE,
 creation_date DATETIME
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA MARINA PENDING PAYMENTS*/
 CREATE TABLE
@@ -72,7 +72,7 @@ client_id INT,
 folio INT,
 amount DOUBLE,
 creation_date DATETIME
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA MARINA PENDINGS RELATIONS*/
 CREATE TABLE
@@ -82,7 +82,7 @@ marina_peding_relation_id INT  AUTO_INCREMENT PRIMARY KEY,
 marina_payment_id INT,
 marina_debt_id INT,
 marina_pending_payment_id INT
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA MARINA PAYMENTS*/
 CREATE TABLE
@@ -98,7 +98,7 @@ currency_date DATETIME,
 payment_received DOUBLE,
 converted_amount DOUBLE,
 creation_date DATETIME
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA PYMENT_TYPE*/
 CREATE TABLE
@@ -107,7 +107,7 @@ IF NOT EXISTS Payment_Types
 payment_type_id INT AUTO_INCREMENT PRIMARY KEY,
 payment_type VARCHAR
 (50)
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA MARINA PAYMENT RELATION*/
 CREATE TABLE
@@ -117,7 +117,7 @@ marina_payment_relation_id INT PRIMARY KEY AUTO_INCREMENT,
 marina_quatation_id INT,
 marina_payment_id INT,
 marina_quotation_services_id INT
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA ELECTRIC WALLET*/
 CREATE TABLE
@@ -125,7 +125,7 @@ IF NOT EXISTS Electronic_Wallet
 (
 electronic_wallet_id INT AUTO_INCREMENT PRIMARY KEY,
 marina_amount DOUBLE
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA ELECTRONIC_WALLET_HISTORIC*/
 CREATE TABLE
@@ -140,7 +140,7 @@ description VARCHAR
 (55),
 previous_amount DOUBLE,
 new_amount DOUBLE
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA CLIENT*/
 CREATE TABLE
@@ -159,7 +159,7 @@ address VARCHAR
 (100),
 creation_date DATE,
 electronic_wallet_id INT
-);
+, Logical_Delete INT );
 
 /*CREACION TABLE BANK ACCOUNT*/
 CREATE TABLE
@@ -175,7 +175,7 @@ account_number VARCHAR
 (50),
 clabe VARCHAR
 (50)
-);
+, Logical_Delete INT );
 
 /*CREACION TABLA SOCIAL REASON*/
 CREATE TABLE
@@ -193,7 +193,7 @@ CFDI VARCHAR
 (50),
 address VARCHAR
 (50)
-);
+, Logical_Delete INT );
 
 /*CREACION TABLA MARINA DEBTS*/
 CREATE TABLE
@@ -204,7 +204,7 @@ client_id INT,
 folio INT,
 amount DOUBLE,
 creation_date DATETIME
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA MARINA PENDING PAYMENTS*/
 CREATE TABLE
@@ -215,7 +215,7 @@ client_id INT,
 folio INT,
 amount DOUBLE,
 creation_date DATETIME
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA MARINA PENDINGS RELATIONS*/
 CREATE TABLE
@@ -225,7 +225,7 @@ marina_peding_relation_id INT  AUTO_INCREMENT PRIMARY KEY,
 marina_payment_id INT,
 marina_debt_id INT,
 marina_pending_payment_id INT
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA MARINA PAYMENTS*/
 CREATE TABLE
@@ -241,7 +241,7 @@ currency_date DATETIME,
 payment_received DOUBLE,
 converted_amount DOUBLE,
 creation_date DATETIME
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA PYMENT_TYPE*/
 CREATE TABLE
@@ -250,7 +250,7 @@ IF NOT EXISTS Payment_Types
 payment_type_id INT AUTO_INCREMENT PRIMARY KEY,
 payment_type VARCHAR
 (50)
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA MARINA PAYMENT RELATION*/
 CREATE TABLE
@@ -260,7 +260,7 @@ marina_payment_relation_id INT PRIMARY KEY AUTO_INCREMENT,
 marina_quatation_id INT,
 marina_payment_id INT,
 marina_quotation_services_id INT
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA ELECTRIC WALLET*/
 CREATE TABLE
@@ -268,7 +268,7 @@ IF NOT EXISTS Electronic_Wallet
 (
 electronic_wallet_id INT AUTO_INCREMENT PRIMARY KEY,
 marina_amount DOUBLE
-);
+, Logical_Delete INT );
 
 /*CREACION DE TABLA ELECTRONIC_WALLET_HISTORIC*/
 CREATE TABLE
@@ -283,5 +283,5 @@ description VARCHAR
 (55),
 previous_amount DOUBLE,
 new_amount DOUBLE
-);
+, Logical_Delete INT );
 

@@ -6,5 +6,5 @@ CREATE DEFINER
 BEGIN
     SELECT *
     FROM clients
-    WHERE status_id = 1;
+    WHERE Logical_Delete = 0;
 END
