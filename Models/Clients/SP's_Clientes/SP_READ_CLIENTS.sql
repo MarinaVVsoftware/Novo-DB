@@ -5,6 +5,5 @@ CREATE DEFINER
 )
 BEGIN
     SELECT *
-    FROM clients
-    WHERE status_id = 1;
+    FROM clients;
 END

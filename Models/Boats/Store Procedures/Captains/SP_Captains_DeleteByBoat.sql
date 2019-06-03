@@ -8,7 +8,6 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM clients 
         WHERE client_id = _client_id
-        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
@@ -20,7 +19,6 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM boats 
         WHERE name = _boat_name
-        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
@@ -33,7 +31,6 @@ BEGIN
         SELECT 1 FROM boats 
         WHERE client_id = _client_id 
         AND name = _boat_name
-        AND logical_deleted = 0
     ) 
     THEN
         /* Arroja un error customizado */
@@ -44,20 +41,7 @@ BEGIN
     /* Guarda el id del bote en una variable */
     SELECT boat_id INTO @boat 
     FROM boats 
-    WHERE name = _boat_name
-    AND logical_deleted = 0;
-
-    /* verifica que exista el capitan. si no existe truena. */
-    IF NOT EXISTS (
-        SELECT 1 FROM captains 
-        WHERE boat_id = @boat 
-        AND logical_deleted = 0
-    )
-    THEN
-        /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Captain doesn't exist. Can't delete captain.";
-    END IF;
+    WHERE name = _boat_name;
     
     /* obtiene el id del capitan para modificarlo */
     SELECT captain_id INTO @captain 

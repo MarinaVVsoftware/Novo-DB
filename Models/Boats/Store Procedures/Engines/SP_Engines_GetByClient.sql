@@ -5,7 +5,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Engines_GetByClient`(
 BEGIN
     /* verifica que exista el cliente. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM Clients 
+        SELECT 1 FROM clients 
         WHERE client_id = _client_id
         AND logical_deleted = 0
     ) 
@@ -28,5 +28,5 @@ BEGIN
         FROM boats 
         WHERE client_id = _client_id
     )
-    AND engines.logical_deleted = 0;
+    AND logical_deleted = 0;
 END

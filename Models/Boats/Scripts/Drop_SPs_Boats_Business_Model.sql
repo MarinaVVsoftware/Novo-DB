@@ -1,5 +1,6 @@
 /* tabla boat_document_types */
 DROP PROCEDURE IF EXISTS SP_BoatDocumentTypes_GetTypes;
+DROP PROCEDURE IF EXISTS SP_BoatDocumentTypes_PostDocumentType;
 
 /* tabla boat_documents */
 DROP PROCEDURE IF EXISTS SP_BoatDocuments_DeleteByBoat;
@@ -23,6 +24,7 @@ DROP PROCEDURE IF EXISTS SP_Boats_PutBoat;
 
 /* tabla cable_types */
 DROP PROCEDURE IF EXISTS SP_CableTypes_GetTypes;
+DROP PROCEDURE IF EXISTS SP_CableTypes_PostCableType;
 
 /* tabla captains */
 DROP PROCEDURE IF EXISTS SP_Captains_DeleteByBoat;
@@ -44,6 +46,7 @@ DROP PROCEDURE IF EXISTS SP_Responsible_PutByBoat;
 
 /* tabla socket_types */
 DROP PROCEDURE IF EXISTS SP_SocketTypes_GetTypes;
+DROP PROCEDURE IF EXISTS SP_SocketTypes_PostSocketType;
 
 
 

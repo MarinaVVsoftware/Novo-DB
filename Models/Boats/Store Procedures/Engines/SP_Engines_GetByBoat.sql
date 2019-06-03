@@ -19,7 +19,7 @@ BEGIN
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM Boats
+        SELECT 1 FROM boats
         WHERE name = _boat_name
         AND logical_deleted = 0
     )
@@ -55,6 +55,6 @@ BEGIN
         model,
         brand
     FROM engines 
-    WHERE engines.boat_id = @boat
-    AND engines.logical_deleted = 0;
+    WHERE boat_id = @boat
+    AND logical_deleted = 0;
 END

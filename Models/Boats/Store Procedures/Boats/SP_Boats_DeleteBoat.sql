@@ -9,7 +9,6 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM clients 
         WHERE client_id = _client_id
-        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
@@ -19,7 +18,7 @@ BEGIN
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM Boats 
+        SELECT 1 FROM boats 
         WHERE name = _boat_name
         AND logical_deleted = 0
     ) 

@@ -20,7 +20,7 @@ BEGIN
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM Boats 
+        SELECT 1 FROM boats 
         WHERE name = _boat_name
         AND logical_deleted = 0
     ) 

@@ -9,7 +9,6 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM clients 
         WHERE client_id = _client_id
-        AND logical_deleted = 0
     )
     THEN
         /* Arroja un error customizado */
@@ -19,9 +18,8 @@ BEGIN
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM Boats 
+        SELECT 1 FROM boats 
         WHERE name = _boat_name
-        AND logical_deleted = 0
     ) 
     THEN
         /* Arroja un error customizado */
@@ -34,7 +32,6 @@ BEGIN
         SELECT 1 FROM boats 
         WHERE client_id = _client_id 
         AND name = _boat_name
-        AND logical_deleted = 0
     ) 
     THEN
         /* Arroja un error customizado */
@@ -45,8 +42,7 @@ BEGIN
     /* Guarda el id del bote en una variable */
     SELECT boat_id INTO @boat 
     FROM boats 
-    WHERE name = _boat_name
-    AND logical_deleted = 0;
+    WHERE name = _boat_name;
 
     UPDATE boat_electricity SET
         logical_deleted = 1,

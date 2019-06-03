@@ -1,5 +1,5 @@
-/* SP SP_CREATE_SLIP_TYPE: Crea un tipo de slip. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_SLIP_TYPE`(
+/* SP SP_SlipTypes_PostSlipType: Crea un tipo de slip. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_SlipTypes_PostSlipType`(
     _slip_type VARCHAR(100),
     _slip_min_ft INTEGER,
     _slip_max_ft INTEGER

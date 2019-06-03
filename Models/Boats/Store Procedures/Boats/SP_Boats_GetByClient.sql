@@ -39,10 +39,10 @@ BEGIN
         _responsible.email AS responsible_email,
         _responsible.payment_permission AS responsible_payment_permission,
         _responsible.aceptation_permission AS responsible_aceptation_permission
-    FROM Boats AS _boats
-    LEFT OUTER JOIN Captains AS _captains
+    FROM boats AS _boats
+    LEFT OUTER JOIN captains AS _captains
     ON (_captains.boat_id = _boats.boat_id AND _captains.logical_deleted = 0)
-    LEFT OUTER JOIN Responsible AS _responsible
+    LEFT OUTER JOIN responsible AS _responsible
     ON (_responsible.boat_id = _boats.boat_id  AND _responsible.logical_deleted = 0) 
     WHERE (_boats.client_id = _client_id)
     AND (_boats.logical_deleted = 0);

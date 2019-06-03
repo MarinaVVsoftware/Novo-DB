@@ -21,7 +21,7 @@ BEGIN
         SET MESSAGE_TEXT = "Client was not found. Can't update boat without a client id.";
     END IF;
 
-    //* verifica que exista el bote. de lo contrario tira una excepción. */
+    /* verifica que exista el bote. de lo contrario tira una excepción. */
     IF NOT EXISTS (
         SELECT 1 FROM boats 
         WHERE name = _boat_name
