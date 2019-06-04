@@ -8,17 +8,21 @@ title                           -> Título del evento
 description                     -> Texto adicional del evento
 creation_responsible            -> Responsable del evento en el timeline
 creation_date                   -> Fecha de la creación del row
+logic_deleted                   -> Borrado lógico
+logic_deleted_date              -> Fecha de borrado lógico
 
 PK = marina_quotation_electricity_id 
 */
-CREATE TABLE IF NOT EXISTS marina_quotation_timeline_types(
-    marina_quotation_timeline_type_id INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS marina_quotation_timeline(
+    marina_quotation_timeline_id INT NOT NULL AUTO_INCREMENT,
     marina_quotation_id INT NOT NULL,
-    marina_quotation_timeline_id INT NOT NULL,
+    marina_quotation_timeline_type_id INT NOT NULL,
     title VARCHAR(200) NOT NULL,
     description VARCHAR(300) DEFAULT NULL,
     creation_responsible VARCHAR(200) NOT NULL,
     creation_date DATETIME DEFAULT NOW(),
+    logical_deleted BOOLEAN NOT NULL DEFAULT 0,
+    logical_deleted_date DATETIME DEFAULT NULL, 
 
-    PRIMARY KEY (marina_quotation_timeline_type_id)
+    PRIMARY KEY (marina_quotation_timeline_id)
 );
