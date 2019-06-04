@@ -30,6 +30,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_MARINA_QUOTATION`(
 BEGIN
 
     SET @electricity_id = null;
+    SET @last_quotation_id = null;
 	IF(
 		_electricity_tariff IS NULL OR 
 		_total_electricity_days IS NULL OR
@@ -53,47 +54,52 @@ BEGIN
 		);
     END IF;
     
-    
+	INSERT INTO marina_quotations (
+		boat_id,
+		marina_quotation_status_id,
+		marina_mooring_tariff_id,
+		marina_quotation_electricity_id,
+		arrival_date,
+		departure_date,
+		arrival_status,
+		mooring_tariff,
+		loa,
+		days_stay,
+		discount_stay_percentage,
+		currency_amount,
+		tax,
+		subtotal,
+		total,
+		monthly_quotation,
+		semiannual_quotation,
+		annual_quotation
+	) values (
+		_boat_id,
+		_marina_quotation_status_id,
+		_marina_mooring_tariff_id,
+		@electricity_id,
+		_arrival_date,
+		_departure_date,
+		_arrival_status,
+		_mooring_tariff,
+		_loa,
+		_days_stay,
+		_discount_stay_percentage,
+		_currency_amount,
+		_tax,
+		_subtotal,
+		_total,
+		_monthly_quotation,
+		_semiannual_quotation,
+		_annual_quotation
+	);
 
-
-    INSERT INTO marina_quotations (
-        boat_id,
-        marina_quotation_status_id,
-        marina_mooring_tariff_id,
-        marina_quotation_electricity_id,
-        arrival_date,
-        departure_date,
-        arrival_status,
-        mooring_tariff,
-        loa,
-        days_stay,
-        discount_stay_percentage,
-        currency_amount,
-        tax,
-        subtotal,
-        total,
-        monthly_quotation,
-        semiannual_quotation,
-        annual_quotation
-    ) values (
-        _boat_id,
-        _marina_quotation_status_id,
-        _marina_mooring_tariff_id,
-        @electricity_id,
-        _arrival_date,
-        _departure_date,
-        _arrival_status,
-        _mooring_tariff,
-        _loa,
-        _days_stay,
-        _discount_stay_percentage,
-        _currency_amount,
-        _tax,
-        _subtotal,
-        _total,
-        _monthly_quotation,
-        _semiannual_quotation,
-        _annual_quotation
-    );
-
+	SELECT LAST_INSERT_ID() INTO @last_quotation_id;
+	CALL SP_MarinaQuotationTimeline_PostTimeline(
+		@last_quotation_id, 
+		1, 
+		CONCAT('Creacion de la cotización #', @last_quotation_id), 
+		'Creación de la cotización en estado de borrador.', 
+		 _creation_responsable
+	);
 END
