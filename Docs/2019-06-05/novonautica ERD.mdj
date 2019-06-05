@@ -17368,7 +17368,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFrKIS+5QOtEyE="
 							},
-							"name": "email_templates_id",
+							"name": "email_template_id",
 							"type": "INT",
 							"length": 0,
 							"primaryKey": true
