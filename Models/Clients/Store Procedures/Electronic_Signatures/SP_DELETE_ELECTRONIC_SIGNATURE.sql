@@ -2,6 +2,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DELETE_ELECTRONIC_SIGNATURES` ( 
 
 BEGIN
 
-DELETE FROM Electonic_Signatures WHERE electronic_signature_id = _electronic_signature_id;
+DELETE FROM electonic_signatures WHERE electronic_signature_id = _electronic_signature_id;
 
 END

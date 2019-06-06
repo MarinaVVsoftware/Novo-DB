@@ -10,7 +10,6 @@ BEGIN
     IF NOT EXISTS (
         SELECT 1 FROM marina_quotations 
         WHERE marina_quotation_id = _marina_quotation_id 
-        AND logical_deleted = 0
     ) 
     THEN
         /* Arroja un error customizado */
