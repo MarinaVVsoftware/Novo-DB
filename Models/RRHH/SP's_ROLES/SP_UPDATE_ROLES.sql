@@ -2,13 +2,13 @@
 CREATE PROCEDURE `SP_UPDATE_ROLES`
 /*DECLARACIÓN DE VARIABLES*/
 (
-_Id_Rol INT, 
-_Rol_Name VARCHAR (100),
-_Jsn JSON,
-_Id_Grade INT
+_id_rol INT, 
+_rol_name VARCHAR (100),
+_jsn JSON,
+_id_grade INT
 )
 BEGIN
 /*CONSULTA A LA BD*/
-UPDATE roles set Rol_Name = _Rol_Name,Jsn = _Jsn,Id_Grade = _Id_Grade WHERE Id_Rol = _Id_Rol;
+UPDATE roles set rol_name = _rol_name,jsn = _jsn,id_grade = _id_grade WHERE id_rol = _id_rol;
 
 END

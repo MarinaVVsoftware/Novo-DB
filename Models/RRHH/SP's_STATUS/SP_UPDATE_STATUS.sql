@@ -2,8 +2,8 @@
 STATUS*/
 CREATE PROCEDURE `SP_UPDATE_STATUS`
 /*DECLARACIÓN DE VARIABLES*/
-(IN _Id_Status INT,IN _Status VARCHAR(100))
+(IN _id_status INT,IN _status VARCHAR(100))
 BEGIN
 /*CONSULTA A LA BD*/
-UPDATE status SET Status= _Status WHERE Id_Status = _Id_Status;
+UPDATE status SET Status= _status WHERE id_status = _id_status;
 END

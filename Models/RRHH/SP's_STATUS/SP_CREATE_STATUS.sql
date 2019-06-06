@@ -2,10 +2,10 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_STATUS`
 /*VARIBALES*/
 (
-_Id_Status INT,
-_Status VARCHAR(100)
+_id_status INT,
+_status VARCHAR(100)
 )
 BEGIN
 /*CONSULTA A LA BD*/
-INSERT INTO status(Id_Status, Status)VALUE(_Id_Status,_Status);
+INSERT INTO status(id_status, status)VALUE(_id_status,_status);
 END

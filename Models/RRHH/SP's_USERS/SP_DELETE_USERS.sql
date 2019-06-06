@@ -2,9 +2,9 @@
 CREATE PROCEDURE `SP_DELETE_USERS`
 /*DECLARACIÓN DE VARIABLES*/
 (
-v_Id_User INT
+v_id_user INT
 )
 BEGIN
 /*CONSULTA A LA BD*/
-DELETE FROM USERS WHERE Id_User = v_Id_User;
+DELETE FROM users WHERE id_user = v_id_user;
 END

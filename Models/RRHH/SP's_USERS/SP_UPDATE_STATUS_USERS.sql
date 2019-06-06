@@ -2,9 +2,9 @@
 CREATE  PROCEDURE `SP_UPDATE_STATUS_USERS`
 /*DECLARACIÓN DE VARIABLES*/
 (
-IN V_Id_User INT,
-IN V_Status INT)
+IN v_id_user INT,
+IN v_status INT)
 BEGIN
 /*CONSULTA A LA BD*/
-UPDATE USERS SET Status = V_Status WHERE Id_User = V_Id_User;
+UPDATE users SET status = v_status WHERE id_user = v_id_user;
 END

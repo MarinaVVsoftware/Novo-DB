@@ -2,10 +2,10 @@
 CREATE PROCEDURE `SP_CREATE_GRADES`
 /*DECLARACIÓN DE VARIABLES*/
 (
-_Name VARCHAR(100),
-_type_Grade INT
+_name VARCHAR(100),
+_type_grade INT
 )
 BEGIN
 /*CONSULTA A LA BD*/
-INSERT INTO grade( Name, type_Grade) VALUE (_Name,_type_Grade);
+INSERT INTO grade( name, type_grade) VALUE (_name,_type_grade);
 END

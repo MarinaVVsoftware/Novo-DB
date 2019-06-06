@@ -2,15 +2,15 @@
 CREATE PROCEDURE `SP_UPDATE_USERS`
 /*DECLARACIÓN DE VARIABLES*/
 (
-V_Id_User INT,
-V_User_Name VARCHAR(200),
-V_Email VARCHAR(150),
-V_rol INT,
-V_Status INT
+v_id_user INT,
+v_user_name VARCHAR(200),
+v_email VARCHAR(150),
+v_rol INT,
+v_status INT
 )
 BEGIN
 /*CONSULTA A LA BD*/
-UPDATE USERS SET 
-User_Name = V_User_Name,Email = V_Email, rol = V_rol, Status = V_Status
-WHERE Id_User= V_Id_User;
+UPDATE users SET 
+user_name = v_user_name,email = v_email, rol = v_rol, status = v_status
+WHERE id_user= v_id_user;
 END

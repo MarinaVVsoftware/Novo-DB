@@ -2,12 +2,12 @@
 CREATE PROCEDURE `SP_CREATE_ROLES`
 /*DECLARACIÓN DE VARIABLES*/
 (
- _Rol_Name VARCHAR(100), 
- _Jsn JSON, 
- _Id_Grade INT
+ _rol_name VARCHAR(100), 
+ _jsn JSON, 
+ _id_grade INT
  )
 BEGIN
 /*CONSULTA A LA BD*/
-INSERT INTO roles (Rol_Name,Jsn,Id_Grade) 
-VALUES(_Rol_Name,_Jsn,_Id_Grade);
+INSERT INTO roles (rol_name,jsn,id_grade) 
+VALUES(_rol_name,_jsn,_id_grade);
 END

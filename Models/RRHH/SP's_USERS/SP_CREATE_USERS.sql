@@ -3,14 +3,14 @@
 CREATE PROCEDURE `SP_CREATE_USER`
 /* DECALRACIÓN DE VARIABLES*/
 (
-User_Name VARCHAR(200),
-Email VARCHAR(150),
-rol INT, 
-Status INT
+_user_name VARCHAR(200),
+_email VARCHAR(150),
+_rol INT, 
+_status INT
 )
 BEGIN
 /*CONSULTA A LA BD*/
-INSERT INTO USERS 
-(User_Name,Email,rol,Status)
-VALUE(User_Name,Email,rol,Status);
+INSERT INTO users 
+(user_name,email,rol,status)
+VALUE(_user_name,_email,_rol,_status);
 END
