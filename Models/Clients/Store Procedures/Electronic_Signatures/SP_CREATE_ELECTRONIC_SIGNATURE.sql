@@ -7,7 +7,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_ELECTRONIC_SIGNATURES`
 
 BEGIN
 
-INSERT INTO Electonic_Signatures
+INSERT INTO electonic_signatures
 (
     signature,
     attemps,
