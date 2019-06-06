@@ -7,7 +7,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_UPDATE_ELECTRONIC_SIGNATURES`
 )
 BEGIN
 
-UPDATE Electonic_Signatures SET  
+UPDATE electonic_signatures SET  
     signature = _signature,
     attemps = _attemps,
     attemps_reset_date = _attemps_reset_date
