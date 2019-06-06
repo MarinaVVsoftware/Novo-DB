@@ -72,7 +72,8 @@ BEGIN
 		total,
 		monthly_quotation,
 		semiannual_quotation,
-		annual_quotation
+		annual_quotation,
+        creation_responsable
 	) values (
 		_boat_id,
 		_marina_quotation_status_id,
@@ -91,7 +92,8 @@ BEGIN
 		_total,
 		_monthly_quotation,
 		_semiannual_quotation,
-		_annual_quotation
+		_annual_quotation,
+        _creation_responsable
 	);
 
 	SELECT LAST_INSERT_ID() INTO @last_quotation_id;
