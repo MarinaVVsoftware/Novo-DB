@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS Marina_Quotations (
     total DECIMAL(12,4),
     monthly_quotation BOOLEAN,
     annual_quotation BOOLEAN,
-    semiannual_quotation BOOLEAN, 
+    semiannual_quotation BOOLEAN,
+    group_quotation VARCHAR(50), 
     creation_responsable VARCHAR(100),
     creation_date DATETIME DEFAULT NOW(),
 
