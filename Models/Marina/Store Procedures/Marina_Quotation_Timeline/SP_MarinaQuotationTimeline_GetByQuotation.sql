@@ -3,6 +3,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_MarinaQuotationTimeline_GetByQuo
     _marina_quotation_id INT
 )
 BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM marina_quotations 
+        WHERE marina_quotation_id = _marina_quotation_id 
+    )
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Doesn't exist that marina quotation. Can't get quotation timeline without a marina quotation valid.";
+    END IF;
+
     /* Busca todos los eventos de timeline de una cotización y los ordena por fecha de creación.*/
     SELECT
         _quotation_timeline.marina_quotation_id,
