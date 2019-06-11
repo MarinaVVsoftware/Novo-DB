@@ -4,7 +4,7 @@ Cada ocupación es representada por un rango de fechas + slip + note asociados.
 
 slip_occupation_id          -> ID natural
 slip_id                     -> ID del slip asociado a la ocupación
-boat_id                     -> ID del bote que está asignado a ese slip
+marina_quotation_id         -> ID de la cotización a la que está asociada la ocupación
 start_date                  -> Fecha de inicio de ocupación
 end_date                    -> Fecha de finalización de ocupación
 creation_date               -> Fecha de creación de la ocupación
@@ -17,7 +17,7 @@ PK = slip_id
 CREATE TABLE IF NOT EXISTS slips_occupation(
     slip_occupation_id INT NOT NULL AUTO_INCREMENT,
     slip_id INT NOT NULL,
-    boat_id INT NOT NULL,
+    marina_quotation_id INT NOT NULL,
     start_date DATETIME NOT NULL,
     end_date DATETIME NOT NULL,
     creation_date DATETIME DEFAULT NOW(),
