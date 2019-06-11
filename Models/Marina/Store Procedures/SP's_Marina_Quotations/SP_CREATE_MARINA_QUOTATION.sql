@@ -16,6 +16,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_CREATE_MARINA_QUOTATION`(
     _monthly_quotation BOOLEAN,
     _annual_quotation BOOLEAN,
     _semiannual_quotation BOOLEAN, 
+    _group_quotation INT,
     _creation_responsable VARCHAR(100),
 
     /* Electricity */
@@ -31,7 +32,6 @@ BEGIN
 
     SET @electricity_id = null;
     SET @last_quotation_id = null;
-	SET @group_quotation = null;
 
 	IF(
 		_electricity_tariff IS NULL OR 
@@ -55,10 +55,6 @@ BEGIN
 			@electricity_id
 		);
     END IF;
-
-	IF( _monthly_quotation IS NOT NULL) THEN
-		SET @group_quotation = CONCAT(_boat_id, "-", _client_id, "-", NOW());
-	END IF;
     
 	INSERT INTO marina_quotations (
 		boat_id,
@@ -79,7 +75,7 @@ BEGIN
 		monthly_quotation,
 		semiannual_quotation,
 		annual_quotation,
-		group_quotation,
+        group_quotation,
         creation_responsable
 	) values (
 		_boat_id,
@@ -100,7 +96,7 @@ BEGIN
 		_monthly_quotation,
 		_semiannual_quotation,
 		_annual_quotation,
-		@group_quotation
+        _group_quotation,
         _creation_responsable
 	);
 
