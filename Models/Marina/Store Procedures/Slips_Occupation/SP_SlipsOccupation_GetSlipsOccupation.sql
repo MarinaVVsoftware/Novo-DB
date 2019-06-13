@@ -15,5 +15,6 @@ BEGIN
     LEFT OUTER JOIN slips AS _slips
     ON (_slips.slip_id = _slips_occupation.slip_id)
     WHERE _slips_occupation.logical_deleted = 0
-    ORDER BY _slips.slip_id ASC;
+    ORDER BY _slips.slip_id ASC,
+    _slips_occupation.start_date ASC;
 END
