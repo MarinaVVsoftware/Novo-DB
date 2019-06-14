@@ -9,7 +9,7 @@ DROP PROCEDURE IF EXISTS SP_BoatDocuments_GetByClient;
 DROP PROCEDURE IF EXISTS SP_BoatDocuments_PutByBoat;
 
 /* tabla boat_electricity */
-DROP PROCEDURE IF EXISTS SP_Boatelectricity_DeleteByBoat;
+DROP PROCEDURE IF EXISTS SP_BoatElectricity_DeleteByBoat;
 DROP PROCEDURE IF EXISTS SP_BoatElectricity_DeleteByElectricityId;
 DROP PROCEDURE IF EXISTS SP_BoatElectricity_GetByBoat;
 DROP PROCEDURE IF EXISTS SP_BoatElectricity_GetByClient;

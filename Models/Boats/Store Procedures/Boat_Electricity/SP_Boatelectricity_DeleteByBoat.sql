@@ -1,6 +1,6 @@
 /* SP SP_Boatelectricity_DeleteByBoat: Elimina las 
 relaciones de configuración eléctrica de un barco. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Boatelectricity_DeleteByBoat`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BoatElectricity_DeleteByBoat`(
     _client_id INT,    
     _boat_name VARCHAR(100)
 )
