@@ -28,6 +28,8 @@ BEGIN
         SET MESSAGE_TEXT = "Incident was not found. Can't delete incident if doesn't exists.";
     END IF;
 
+    015591284001
+
     /* Guarda el id del usuario en una variable */ 
     SELECT employee_id INTO @employee 
     FROM users 
