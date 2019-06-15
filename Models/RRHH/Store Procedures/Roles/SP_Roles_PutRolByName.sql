@@ -25,12 +25,6 @@ BEGIN
         AND logical_deleted = 0
     )
     THEN
-        UPDATE roles SET
-            rank_id = _rank_id,
-            rol_name = _rol_name,
-            permissions = _permissions
-        WHERE rol_name = _old_rol_name;
-    ELSE
         INSERT INTO roles (
             rank_id,
             rol_name,
@@ -39,7 +33,14 @@ BEGIN
         values (
             _rank_id,
             _rol_name,
-            _permission
+            _permissions
         );
+    ELSE
+
+        UPDATE roles SET
+            rank_id = _rank_id,
+            rol_name = _rol_name,
+            permissions = _permissions
+        WHERE rol_name = _old_rol_name;
     END IF;
 END

@@ -4,7 +4,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Users_PutByName`(
     _rol_id INT,
     _status_id INT,
     _email VARCHAR(200),
-    _username VARCHAR(200)
+    _username VARCHAR(200),
+    _recruitment_date DATETIME
 )
 BEGIN
     /* verifica que exista el rol. de lo contrario tira una excepción. */
@@ -38,24 +39,27 @@ BEGIN
         AND logical_deleted = 0
     ) 
     THEN
-        UPDATE users SET
-            username = _username,
-            rol_id = _rol_id,
-            status_id = _status_id,
-            email = _email
-        WHERE username = _old_username;
-    ELSE
         INSERT INTO users (
             rol_id,
             status_id,
             email,
-            username
+            username,
+            recruitment_date
         )
         VALUES (
             _rol_id,
             _status_id,
             _email,
-            _username
+            _username,
+            _recruitment_date
         );
+    ELSE
+        UPDATE users SET
+            username = _username,
+            rol_id = _rol_id,
+            status_id = _status_id,
+            email = _email,
+            recruitment_date = _recruitment_date
+        WHERE username = _old_username;
     END IF;
 END

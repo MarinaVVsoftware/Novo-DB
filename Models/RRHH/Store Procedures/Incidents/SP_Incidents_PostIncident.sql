@@ -29,16 +29,22 @@ BEGIN
         SET MESSAGE_TEXT = "Incident type doesn't exist. Can't create incident without an incident type.";
     END IF;
 
+    /* Guarda el id del usuario en una variable */ 
+    SELECT employee_id INTO @employee 
+    FROM users 
+    WHERE username = _username
+    AND logical_deleted = 0;
+
     INSERT INTO incidents (
-        _employee_id,
-        _incident_type_id,
-        _title,
-        _description
-    )
-    VALUES (
         employee_id,
         incident_type_id,
         title,
         description
+    )
+    VALUES (
+        @employee,
+        _incident_type_id,
+        _title,
+        _description
     );
 END
