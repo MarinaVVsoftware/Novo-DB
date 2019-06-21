@@ -11192,6 +11192,104 @@
 							"headNameLabel": {
 								"$ref": "AAAAAAFrQiZVjhBMACA="
 							}
+						},
+						{
+							"_type": "ERDEntityView",
+							"_id": "AAAAAAFre9PZXWXgD8A=",
+							"_parent": {
+								"$ref": "AAAAAAFLzntJC6ElOqo="
+							},
+							"model": {
+								"$ref": "AAAAAAFre9PZXWXeqH4="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAFre9PZXWXhYno=",
+									"_parent": {
+										"$ref": "AAAAAAFre9PZXWXgD8A="
+									},
+									"font": "Arial;13;1",
+									"left": 344,
+									"top": 2029,
+									"width": 241.42138671875,
+									"height": 13,
+									"text": "daily_currency"
+								},
+								{
+									"_type": "ERDColumnCompartmentView",
+									"_id": "AAAAAAFre9PZXWXiGsM=",
+									"_parent": {
+										"$ref": "AAAAAAFre9PZXWXgD8A="
+									},
+									"model": {
+										"$ref": "AAAAAAFre9PZXWXeqH4="
+									},
+									"subViews": [
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFre9QS+mXufAo=",
+											"_parent": {
+												"$ref": "AAAAAAFre9PZXWXiGsM="
+											},
+											"model": {
+												"$ref": "AAAAAAFre9QSpmXrV04="
+											},
+											"font": "Arial;13;0",
+											"left": 349,
+											"top": 2052,
+											"width": 231.42138671875,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFre9W2YmX5L4g=",
+											"_parent": {
+												"$ref": "AAAAAAFre9PZXWXiGsM="
+											},
+											"model": {
+												"$ref": "AAAAAAFre9W2CGX2rsg="
+											},
+											"font": "Arial;13;0",
+											"left": 349,
+											"top": 2067,
+											"width": 231.42138671875,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFre9YlRWYAg3o=",
+											"_parent": {
+												"$ref": "AAAAAAFre9PZXWXiGsM="
+											},
+											"model": {
+												"$ref": "AAAAAAFre9YlBmX9LcA="
+											},
+											"font": "Arial;13;0",
+											"left": 349,
+											"top": 2082,
+											"width": 231.42138671875,
+											"height": 13
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 344,
+									"top": 2047,
+									"width": 241.42138671875,
+									"height": 53
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 344,
+							"top": 2024,
+							"width": 241.42138671875,
+							"height": 76,
+							"nameLabel": {
+								"$ref": "AAAAAAFre9PZXWXhYno="
+							},
+							"columnCompartment": {
+								"$ref": "AAAAAAFre9PZXWXiGsM="
+							}
 						}
 					]
 				},
@@ -17607,6 +17705,46 @@
 							},
 							"name": "body_html",
 							"type": "TEXT",
+							"length": 0
+						}
+					]
+				},
+				{
+					"_type": "ERDEntity",
+					"_id": "AAAAAAFre9PZXWXeqH4=",
+					"_parent": {
+						"$ref": "AAAAAAFLzntJC6EktCk="
+					},
+					"name": "daily_currency",
+					"columns": [
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFre9QSpmXrV04=",
+							"_parent": {
+								"$ref": "AAAAAAFre9PZXWXeqH4="
+							},
+							"name": "daily_currency_id",
+							"type": "INT",
+							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFre9W2CGX2rsg=",
+							"_parent": {
+								"$ref": "AAAAAAFre9PZXWXeqH4="
+							},
+							"name": "daily_currency_date",
+							"type": "DATETIME",
+							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFre9YlBmX9LcA=",
+							"_parent": {
+								"$ref": "AAAAAAFre9PZXWXeqH4="
+							},
+							"name": "daily_currency_amount",
+							"type": "DECIMAL",
 							"length": 0
 						}
 					]
