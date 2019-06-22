@@ -3742,7 +3742,7 @@
 									},
 									"font": "Arial;13;1",
 									"left": 704,
-									"top": 1413,
+									"top": 1421,
 									"width": 261.6259765625,
 									"height": 13,
 									"text": "payment_methods"
@@ -3768,7 +3768,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 709,
-											"top": 1436,
+											"top": 1444,
 											"width": 251.6259765625,
 											"height": 13
 										},
@@ -3783,21 +3783,21 @@
 											},
 											"font": "Arial;13;0",
 											"left": 709,
-											"top": 1451,
+											"top": 1459,
 											"width": 251.6259765625,
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 704,
-									"top": 1431,
+									"top": 1439,
 									"width": 261.6259765625,
 									"height": 38
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 1408,
+							"top": 1416,
 							"width": 261.6259765625,
 							"height": 61,
 							"nameLabel": {
@@ -4831,9 +4831,9 @@
 									"font": "Arial;13;1",
 									"left": 2032,
 									"top": 1101,
-									"width": 255.90673828125,
+									"width": 349.0712890625,
 									"height": 13,
-									"text": "marina_services"
+									"text": "marina_quotation_service_types"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -4857,7 +4857,7 @@
 											"font": "Arial;13;0",
 											"left": 2037,
 											"top": 1124,
-											"width": 245.90673828125,
+											"width": 339.0712890625,
 											"height": 13
 										},
 										{
@@ -4872,7 +4872,7 @@
 											"font": "Arial;13;0",
 											"left": 2037,
 											"top": 1139,
-											"width": 245.90673828125,
+											"width": 339.0712890625,
 											"height": 13
 										},
 										{
@@ -4887,21 +4887,21 @@
 											"font": "Arial;13;0",
 											"left": 2037,
 											"top": 1154,
-											"width": 245.90673828125,
+											"width": 339.0712890625,
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2032,
 									"top": 1119,
-									"width": 255.90673828125,
+									"width": 349.0712890625,
 									"height": 53
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 2032,
 							"top": 1096,
-							"width": 255.90673828125,
+							"width": 349.0712890625,
 							"height": 76,
 							"nameLabel": {
 								"$ref": "AAAAAAFqktxOu7w0ymk="
@@ -5658,6 +5658,21 @@
 										},
 										{
 											"_type": "ERDColumnView",
+											"_id": "AAAAAAFqkzq04r5p+yI=",
+											"_parent": {
+												"$ref": "AAAAAAFqkzOY7b4EHoc="
+											},
+											"model": {
+												"$ref": "AAAAAAFqkzq0db5m/+E="
+											},
+											"font": "Arial;13;0",
+											"left": 1661,
+											"top": 1184,
+											"width": 298.85888671875,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
 											"_id": "AAAAAAFqkzdzaL4/6+U=",
 											"_parent": {
 												"$ref": "AAAAAAFqkzOY7b4EHoc="
@@ -5667,7 +5682,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1661,
-											"top": 1184,
+											"top": 1199,
 											"width": 298.85888671875,
 											"height": 13
 										},
@@ -5682,7 +5697,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1661,
-											"top": 1199,
+											"top": 1214,
 											"width": 298.85888671875,
 											"height": 13
 										},
@@ -5694,21 +5709,6 @@
 											},
 											"model": {
 												"$ref": "AAAAAAFqkzcu97412P0="
-											},
-											"font": "Arial;13;0",
-											"left": 1661,
-											"top": 1214,
-											"width": 298.85888671875,
-											"height": 13
-										},
-										{
-											"_type": "ERDColumnView",
-											"_id": "AAAAAAFqkzq04r5p+yI=",
-											"_parent": {
-												"$ref": "AAAAAAFqkzOY7b4EHoc="
-											},
-											"model": {
-												"$ref": "AAAAAAFqkzq0db5m/+E="
 											},
 											"font": "Arial;13;0",
 											"left": 1661,
@@ -5803,16 +5803,16 @@
 										"$ref": "AAAAAAFqkzp+7r5V0pg="
 									},
 									"font": "Arial;13;0",
-									"left": 1959,
+									"left": 1944,
 									"top": 1080,
-									"width": 94.6435546875,
+									"width": 187.1669921875,
 									"height": 13,
-									"alpha": 0.4048917000782042,
-									"distance": 45.69463863518345,
+									"alpha": 0.24175283602274697,
+									"distance": 75.18643494673756,
 									"hostEdge": {
 										"$ref": "AAAAAAFqkzp+7r5V0pg="
 									},
-									"text": "marina_services"
+									"text": "marina_quotation_service_types"
 								}
 							],
 							"font": "Arial;13;0",
@@ -7008,7 +7008,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 1616,
-									"top": 1208,
+									"top": 1200,
 									"width": 31.8017578125,
 									"height": 13,
 									"alpha": 0.11272760456050103,
@@ -7044,7 +7044,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 1630,
-									"top": 1211,
+									"top": 1203,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -7061,7 +7061,7 @@
 								"$ref": "AAAAAAFqb9kMxr0sbiY="
 							},
 							"lineStyle": 2,
-							"points": "1472:980;1472:1232;1656:1232",
+							"points": "1472:980;1472:1224;1656:1224",
 							"nameLabel": {
 								"$ref": "AAAAAAFqk8ya+dJii7U="
 							},
@@ -9130,7 +9130,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 451,
-									"top": 1479,
+									"top": 1483,
 									"width": 139.48974609375,
 									"height": 13,
 									"alpha": -1.6951517533929419,
@@ -9149,7 +9149,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 420,
-									"top": 1451,
+									"top": 1459,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -9183,7 +9183,7 @@
 								"$ref": "AAAAAAFqcBqD7sEh/gM="
 							},
 							"lineStyle": 2,
-							"points": "395:1472;600:1472;600:1520;640:1520",
+							"points": "395:1480;600:1480;600:1520;640:1520",
 							"nameLabel": {
 								"$ref": "AAAAAAFq1y0cLT1toLs="
 							},
@@ -9212,11 +9212,11 @@
 									},
 									"font": "Arial;13;0",
 									"left": 671,
-									"top": 1471,
+									"top": 1479,
 									"width": 36.84814453125,
 									"height": 13,
-									"alpha": 0.1087396792952473,
-									"distance": 230.36058690670154,
+									"alpha": 0.1050965753758597,
+									"distance": 238.3149177034455,
 									"hostEdge": {
 										"$ref": "AAAAAAFq2ppq/j3ekIk="
 									},
@@ -9751,9 +9751,9 @@
 									"font": "Arial;13;1",
 									"left": 680,
 									"top": 1165,
-									"width": 294.91943359375,
+									"width": 354.1240234375,
 									"height": 13,
-									"text": "marina_payment_services"
+									"text": "marina_payment_quotation_services"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -9777,7 +9777,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1188,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9792,7 +9792,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1203,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9807,7 +9807,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1218,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9822,7 +9822,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1233,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9837,7 +9837,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1248,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9852,7 +9852,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1263,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9867,7 +9867,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1278,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9882,7 +9882,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1293,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9897,7 +9897,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1308,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9912,7 +9912,7 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1323,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										},
 										{
@@ -9927,21 +9927,21 @@
 											"font": "Arial;13;0",
 											"left": 685,
 											"top": 1338,
-											"width": 284.91943359375,
+											"width": 344.1240234375,
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 680,
 									"top": 1183,
-									"width": 294.91943359375,
+									"width": 354.1240234375,
 									"height": 173
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 680,
 							"top": 1160,
-							"width": 294.91943359375,
+							"width": 354.1240234375,
 							"height": 196,
 							"nameLabel": {
 								"$ref": "AAAAAAFq2qbhSj8mdMw="
@@ -9967,12 +9967,12 @@
 										"$ref": "AAAAAAFq2qfp4j802CI="
 									},
 									"font": "Arial;13;0",
-									"left": 983,
-									"top": 1257,
+									"left": 1047,
+									"top": 1231,
 									"width": 160.41796875,
 									"height": 13,
-									"alpha": 0.059453661662373314,
-									"distance": 252.44603383693712,
+									"alpha": -0.04605037175951887,
+									"distance": 217.23029254687293,
 									"hostEdge": {
 										"$ref": "AAAAAAFq2qfp4j802CI="
 									},
@@ -10003,7 +10003,7 @@
 										"$ref": "AAAAAAFq2qfp4j802CI="
 									},
 									"font": "Arial;13;0",
-									"left": 999,
+									"left": 1058,
 									"top": 1256,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -10021,7 +10021,7 @@
 								"$ref": "AAAAAAFqkzOY7b4CzaY="
 							},
 							"lineStyle": 2,
-							"points": "1656:1248;974:1248",
+							"points": "1656:1248;1033:1248",
 							"nameLabel": {
 								"$ref": "AAAAAAFq2qfp4z81MwM="
 							},
@@ -10049,12 +10049,12 @@
 										"$ref": "AAAAAAFq2qlqlj9a1a0="
 									},
 									"font": "Arial;13;0",
-									"left": 830,
+									"left": 838,
 									"top": 1360,
 									"width": 108.392578125,
 									"height": 13,
-									"alpha": -4.932637350980109,
-									"distance": 68.65857557508748,
+									"alpha": -5.023935523407461,
+									"distance": 61.98386886924694,
 									"hostEdge": {
 										"$ref": "AAAAAAFq2qlqlj9a1a0="
 									},
@@ -10069,7 +10069,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 937,
-									"top": 1376,
+									"top": 1384,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -10103,7 +10103,7 @@
 								"$ref": "AAAAAAFqcC8W0MMwcyc="
 							},
 							"lineStyle": 2,
-							"points": "952:1408;952:1355",
+							"points": "952:1416;952:1355",
 							"nameLabel": {
 								"$ref": "AAAAAAFq2qlqlj9bhOU="
 							},
@@ -10133,7 +10133,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 438,
-									"top": 1493,
+									"top": 1497,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -10150,7 +10150,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 678,
-									"top": 1464,
+									"top": 1472,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -10186,7 +10186,7 @@
 								"$ref": "AAAAAAFqcC8W0MMwcyc="
 							},
 							"lineStyle": 2,
-							"points": "704:1456;424:1456;424:1544;401:1544",
+							"points": "704:1464;424:1464;424:1544;401:1544",
 							"nameLabel": {
 								"$ref": "AAAAAAFq2qsMGj99Ag4="
 							},
@@ -15414,7 +15414,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFLzntJC6EktCk="
 					},
-					"name": "marina_services",
+					"name": "marina_quotation_service_types",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -15438,7 +15438,7 @@
 								"_parent": {
 									"$ref": "AAAAAAFqkzp+7r5ReAA="
 								},
-								"name": "marina_services",
+								"name": "marina_quotation_service_types",
 								"reference": {
 									"$ref": "AAAAAAFqkzOY7b4AHx0="
 								},
@@ -15453,7 +15453,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFqktxOurwxg9w="
 							},
-							"name": "marina_service_id",
+							"name": "marina_quotation_service_type_id",
 							"type": "INTEGER",
 							"length": "5",
 							"primaryKey": true
@@ -15892,8 +15892,18 @@
 								"$ref": "AAAAAAFqkzOY7b4AHx0="
 							},
 							"name": "done_status",
-							"type": "BOOL",
+							"type": "BOOLEAN",
 							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFqkzq0db5m/+E=",
+							"_parent": {
+								"$ref": "AAAAAAFqkzOY7b4AHx0="
+							},
+							"name": "quantity",
+							"type": "INTEGER",
+							"length": "10"
 						},
 						{
 							"_type": "ERDColumn",
@@ -15924,16 +15934,6 @@
 							"name": "total",
 							"type": "DECIMAL",
 							"length": 0
-						},
-						{
-							"_type": "ERDColumn",
-							"_id": "AAAAAAFqkzq0db5m/+E=",
-							"_parent": {
-								"$ref": "AAAAAAFqkzOY7b4AHx0="
-							},
-							"name": "quantity",
-							"type": "INTEGER",
-							"length": "10"
 						},
 						{
 							"_type": "ERDColumn",
@@ -17387,7 +17387,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFLzntJC6EktCk="
 					},
-					"name": "marina_payment_services",
+					"name": "marina_payment_quotation_services",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -17395,7 +17395,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFq2qbhST8jwPY="
 							},
-							"name": "marina_payment_service_id",
+							"name": "marina_payment_quotation_service_id",
 							"type": "INTEGER",
 							"length": 0,
 							"primaryKey": true
