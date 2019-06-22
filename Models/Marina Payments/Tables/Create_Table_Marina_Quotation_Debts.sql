@@ -4,7 +4,7 @@ húmeda. Hasta que el cliente aborda en la marina es cuando se genera una deuda
 (dado que ya está consumiento el servicio).
 
 marina_quotation_debt_id    -> ID natural
-marina_quotation_id         -> FK de la cotización de Marina
+marina_quotation_id         -> FK de la cotización de Marina. Es unique para prevenir cargos adicionales.
 subtotal                    -> Monto a pagar sin impuestos
 tax                         -> Impuestos sobre el subtotal
 total                       -> Subtotal mas impuestos
@@ -16,7 +16,7 @@ PK = marina_quotation_debt_id
 */
  CREATE TABLE IF NOT EXISTS marina_quotation_debts (
 	marina_quotation_debt_id INT NOT NULL AUTO_INCREMENT,
-    marina_quotation_id INT NOT NULL,
+    marina_quotation_id INT UNIQUE NOT NULL,
     subtotal DECIMAL(12,4) NOT NULL,
     tax DECIMAL(12,4) NOT NULL,
     total DECIMAL(12,4) NOT NULL,
