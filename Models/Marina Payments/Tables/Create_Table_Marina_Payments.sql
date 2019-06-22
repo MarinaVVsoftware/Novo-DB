@@ -5,8 +5,8 @@ puesto que ya se encuentra consumiendo el servicio formalmente.
 
 marina_payments             -> ID natural
 payment_method_id           -> FK de la cotización
-currency                    -> monto a pagar sin impuestos
-cyrrency_date               -> fecha del
+currency                    -> valor del dolar
+cyrrency_date               -> fecha del monto del dolar
 payment_received            -> Monto del pago recibido
 converted_amount            -> Monto del pago en pesos
 client_responsable_payment  -> Responsable del pago por parte del cliente (cliente, responsable o capitán)
