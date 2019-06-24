@@ -20,7 +20,7 @@ PK = marina_quotation_debt_id
     subtotal DECIMAL(12,4) NOT NULL,
     tax DECIMAL(12,4) NOT NULL,
     total DECIMAL(12,4) NOT NULL,
-    paid BOOLEAN NOT NULL,
+    paid BOOLEAN DEFAULT 0,
     creation_responsable VARCHAR(200) NOT NULL,
     creation_date DATETIME DEFAULT NOW(),
 

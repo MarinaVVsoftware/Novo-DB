@@ -22,22 +22,24 @@ BEGIN
     END IF;
 
     /* Crea el pago */
-    INSERT INTO marina_payments (
-        payment_method_id,
-        currency,
-        cyrrency_date,
-        payment_received,
-        converted_amount,
-        client_responsable_payment,
+    INSERT INTO marina_moratorium_charges (
+        marina_quotation_id,
+        debt_origin,
+        moratorium_percentage,
+        subtotal,
+        tax,
+        total,
+        paid,
         creation_responsable
     )
     VALUES (
-        _payment_method_id,
-        _currency,
-        _cyrrency_date,
-        _payment_received,
-        _converted_amount,
-        _client_responsable_payment,
+        _marina_quotation_id,
+        _debt_origin,
+        _moratorium_percentage,
+        _subtotal,
+        _tax,
+        _total,
+        _paid,
         _creation_responsable
     );
 END
