@@ -6,6 +6,10 @@ BEGIN
     INSERT INTO ranks (rank_name, rank_weight) VALUES ("Alta", 2);
     INSERT INTO ranks (rank_name, rank_weight) VALUES ("Baja", 3);
 
+    INSERT INTO roles (rank_id, rol_name, permissions) VALUES (1, "Super Administrator", "{}");
+    INSERT INTO roles (rank_id, rol_name, permissions) VALUES (2, "Administrator", "{}");
+    INSERT INTO roles (rank_id, rol_name, permissions) VALUES (3, "Supervisor", "{}");
+
     INSERT INTO status (status_name) VALUES ("Activo");
     INSERT INTO status (status_name) VALUES ("Inactivo");
     INSERT INTO status (status_name) VALUES ("Baja");

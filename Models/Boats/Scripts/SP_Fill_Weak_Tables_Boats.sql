@@ -1,6 +1,6 @@
 
 /* SP SP_FillWeakBoatTables: Llena las tablas debiles del modelo de botes */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_FillWeakBoatTables`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Fill_Weak_Tables_Boats`()
 BEGIN
     /* Llena la tabla "Cable_Types" de cables */
     CALL SP_CableTypes_PostCableType('50V', '50', 'Cable de 50V', '4.88');

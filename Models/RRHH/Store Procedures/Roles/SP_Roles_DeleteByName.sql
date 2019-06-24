@@ -15,7 +15,7 @@ BEGIN
         SET MESSAGE_TEXT = "Rol was not found. Can't delete rol if doesn't exists.";
     END IF;
 
-    UPDATE incidents SET
+    UPDATE roles SET
         logical_deleted = 1,
         logical_deleted_date = NOW()
     WHERE rol_name = _rol_name;
