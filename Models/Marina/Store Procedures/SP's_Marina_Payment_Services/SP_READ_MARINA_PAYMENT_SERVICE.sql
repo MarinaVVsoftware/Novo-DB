@@ -1,7 +1,0 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_PAYMENT_SERVICE`()
-
-BEGIN
-
-SELECT * FROM Marina_Payment_Services;
-
-END
