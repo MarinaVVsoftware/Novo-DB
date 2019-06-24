@@ -1,4 +1,4 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_QUOTATIONS_LIST`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Marina_GetQuotationsByGroup`(
     _filterBy VARCHAR(30)
 )
 

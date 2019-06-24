@@ -105,15 +105,19 @@ BEGIN
 
     /* Crea los tipos de eventos de timeline */
     CALL SP_MarinaQuotationTimelineTypes_PostType("draft");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("formal");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("accept");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("validate");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("pay");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("pay moratorium");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("add moratorium");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("cancel");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("delete");
-    CALL SP_MarinaQuotationTimelineTypes_PostType("arrive");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("sent");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("accepted");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("validated");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("declined");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("pay added");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("moratorium paid");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("moratorium added");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("suspended");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("closed");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("paid");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("canceled");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("deleted");
+    CALL SP_MarinaQuotationTimelineTypes_PostType("arrived");
 
 END
 

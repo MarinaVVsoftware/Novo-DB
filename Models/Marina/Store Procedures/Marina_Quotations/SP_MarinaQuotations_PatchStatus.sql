@@ -1,4 +1,4 @@
-CREATE PROCEDURE `SP_UPDATE_MARINA_QUOTATION_STATUS` (
+CREATE PROCEDURE `SP_MarinaQuotations_PatchStatus` (
 	_id INT,
   _status_id INT
 )

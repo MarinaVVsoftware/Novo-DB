@@ -1,4 +1,4 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_QUOTATION`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_MarinaQuotations_GetQuotationById`(
     _quotation_id INT
 )
 BEGIN
