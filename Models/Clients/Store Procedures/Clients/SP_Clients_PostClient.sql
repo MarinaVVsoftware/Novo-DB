@@ -7,6 +7,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Clients_PostClient`(
     _address VARCHAR(300)
 )
 BEGIN
+    /* verifica que exista el cliente. si no existe, lo crea. Si existe arroja
+    un error dado que no puede haber duplicidad de clientes. */
+    IF EXISTS (
+        SELECT 1 FROM clients
+        WHERE email = _email
+        AND logical_deleted = 0
+    )
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Client already exists. Can't post client with the same email.";
+    END IF;
+
     /* verifica que exista el status. de lo contrario tira una excepción. */
     IF NOT EXISTS (
         SELECT 1 FROM status 
@@ -15,34 +28,21 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Status doesn't exist. Can't put client.";
+        SET MESSAGE_TEXT = "Status doesn't exist. Can't post client without a status valid.";
     END IF;
 
-    /* verifica que exista el usuario. si no existe, lo crea. Si existe arroja
-    un error dado que no puede haber duplicidad de clientes. */
-    IF NOT EXISTS (
-        SELECT 1 FROM users 
-        WHERE email = _email
-        AND logical_deleted = 0
-    ) 
-    THEN
-        /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client already exists. Can't create two clients with same email.";
-    ELSE
-        INSERT INTO clients (
-            status_id,
-            name,
-            email,
-            phone,
-            address
-        )
-        VALUES (
-            _status_id,
-            _name,
-            _email,
-            _phone,
-            _address
-        );
-    END IF;
+    INSERT INTO clients (
+        status_id,
+        name,
+        email,
+        phone,
+        address
+    )
+    VALUES (
+        _status_id,
+        _name,
+        _email,
+        _phone,
+        _address
+    );
 END

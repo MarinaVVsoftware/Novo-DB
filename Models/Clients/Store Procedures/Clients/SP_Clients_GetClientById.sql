@@ -1,5 +1,5 @@
-/* SP SP_Clients_DeleteClient: Elimina un cliente. */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Clients_DeleteClient`(
+/* SP SP_Clients_GetClientById: Trae un cliente basado en su id. */
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Clients_GetClientById`(
     _client_id INT
 )
 BEGIN
@@ -12,12 +12,18 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client was not found. Can't delete client without a client id valid.";
+        SET MESSAGE_TEXT = "Client was not found. Can't get client without a client id valid.";
     END IF;
 
-    UPDATE clients SET
-        logical_deleted = 1,
-        logical_deleted_date = NOW()
+    SELECT 
+       	client_id,
+        status_id,
+        name,
+        email,
+        phone,
+        address,
+        creation_date
+    FROM clients
     WHERE client_id = _client_id
     AND logical_deleted = 0;
 END
