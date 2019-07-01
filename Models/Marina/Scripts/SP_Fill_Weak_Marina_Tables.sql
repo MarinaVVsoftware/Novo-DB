@@ -1,6 +1,6 @@
 
 /* SP SP_FillWeakBoatTables: Llena las tablas debiles del modelo de botes */
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_FillWeakMarinaTables`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Fill_Weak_Tables_Marina`()
 BEGIN
     /* Tipos de Slips */
     CALL SP_SlipTypes_PostSlipType("Slip Chico", 1, 46);
