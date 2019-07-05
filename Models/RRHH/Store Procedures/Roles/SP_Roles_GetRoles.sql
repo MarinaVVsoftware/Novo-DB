@@ -2,11 +2,11 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Roles_GetRoles`()
 BEGIN
     SELECT 
-        rol_id,
-        rank_id,
-        rol_name,
+        rol_id AS rolId,
+        rank_id AS rankId,
+        rol_name AS rolName,
         permissions,
-        creation_date
+        creation_date AS creationDate
     FROM roles 
     WHERE logical_deleted = 0;
 END
