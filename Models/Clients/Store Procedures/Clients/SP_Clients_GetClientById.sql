@@ -16,13 +16,13 @@ BEGIN
     END IF;
 
     SELECT 
-       	client_id,
-        status_id,
+       	client_id AS clientId,
+        status_id AS statusId,
         name,
         email,
         phone,
         address,
-        creation_date
+        creation_date AS creationDate
     FROM clients
     WHERE client_id = _client_id
     AND logical_deleted = 0;
