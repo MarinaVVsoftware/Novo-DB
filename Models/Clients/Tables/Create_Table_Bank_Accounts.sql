@@ -15,9 +15,9 @@ PK = bank_account_id
  CREATE TABLE IF NOT EXISTS bank_accounts (
 	bank_account_id INT NOT NULL AUTO_INCREMENT,
     client_id INT NOT NULL,
+    account_number VARCHAR(50) UNIQUE NOT NULL,
     alias VARCHAR(50) NOT NULL,
     bank VARCHAR(100) NOT NULL,
-    account_number VARCHAR(50) NOT NULL,
     clabe VARCHAR(50) NOT NULL,
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,
