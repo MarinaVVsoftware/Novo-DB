@@ -27,8 +27,8 @@ BEGIN
         SET MESSAGE_TEXT = "Bank account was not found. Can't delete bank account if doesn't exists.";
     END IF;
 
-            UPDATE bank_accounts SET
-            logical_deleted = 1,
-            logical_deleted_date = NOW()
-        WHERE account_number = _account_number;
+    UPDATE bank_accounts SET
+        logical_deleted = 1,
+        logical_deleted_date = NOW()
+    WHERE account_number = _account_number;
 END
