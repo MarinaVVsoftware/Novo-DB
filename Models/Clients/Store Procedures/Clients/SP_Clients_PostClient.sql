@@ -45,4 +45,7 @@ BEGIN
         _phone,
         _address
     );
+
+    /* retorna el id del row insertado */
+    SELECT LAST_INSERT_ID();
 END
