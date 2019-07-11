@@ -23,6 +23,7 @@ BEGIN
     IF EXISTS (
         SELECT 1 FROM bank_accounts 
         WHERE account_number = _old_account_number
+        AND logical_deleted = 0
     )
     THEN
         UPDATE bank_accounts SET

@@ -23,6 +23,7 @@ BEGIN
     IF EXISTS (
         SELECT 1 FROM social_reasons 
         WHERE rfc = _rfc
+        AND logical_deleted = 0
     )
     THEN
         UPDATE social_reasons SET
