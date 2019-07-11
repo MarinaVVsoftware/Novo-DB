@@ -11,7 +11,7 @@ PK = social_reason_id
  CREATE TABLE IF NOT EXISTS electronic_wallet (
 	electronic_wallet_id INT NOT NULL AUTO_INCREMENT,
     client_id INT NOT NULL,
-    marina_amount DECIMAL(12,4) NOT NULL,
+    marina_amount DECIMAL(12,4) NOT NULL DEFAULT 0,
 
     PRIMARY KEY (electronic_wallet_id)
 );

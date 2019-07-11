@@ -16,9 +16,9 @@ PK = electronic_wallet_historic_id
  CREATE TABLE IF NOT EXISTS electronic_wallet_historic (
 	electronic_wallet_historic_id INT NOT NULL AUTO_INCREMENT,
     client_id DECIMAL(12,4) NOT NULL,
-    description VARCHAR(200),
     previous_amount DECIMAL(12,4) NOT NULL,
     new_amount DECIMAL(12,4) NOT NULL,
+    description VARCHAR(200),
     alter_responsable VARCHAR(200) NOT NULL,
     creation_date DATETIME DEFAULT NOW(),
 
