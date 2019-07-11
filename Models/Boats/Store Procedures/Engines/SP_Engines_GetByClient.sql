@@ -28,5 +28,6 @@ BEGIN
         FROM boats 
         WHERE client_id = _client_id
     )
-    AND logical_deleted = 0;
+    AND logical_deleted = 0
+    ORDER BY boat_id ASC, engine_id ASC;
 END

@@ -17,16 +17,16 @@ BEGIN
     
     /* obtiene todas las relaciones de todos los barcos de un cliente. */
     SELECT
-        _boat_electricity.boat_electricity_id AS boat_electricity_id,
-        _boat_electricity.boat_id AS boat_id,
-        _cable_types.cable_type_id AS cable_type_id,
-        _cable_types.cable_type AS cable_type,
-        _cable_types.voltage AS cable_voltage,
-        _cable_types.price AS cable_price,
-        _cable_types.description AS cable_description,
-        _socket_types.socket_type_id AS socket_type_id,
-        _socket_types.socket_type AS socket_type,
-        _socket_types.description AS socket_description
+        _boat_electricity.boat_electricity_id AS boatElectricityId,
+        _boat_electricity.boat_id AS boatId,
+        _cable_types.cable_type_id AS cableTypeId,
+        _cable_types.cable_type AS cableType,
+        _cable_types.voltage AS cableVoltage,
+        _cable_types.price AS cablePrice,
+        _cable_types.description AS cableDescription,
+        _socket_types.socket_type_id AS socketTypeId,
+        _socket_types.socket_type AS socketType,
+        _socket_types.description AS socketDescription
     FROM boat_electricity AS _boat_electricity
     LEFT OUTER JOIN cable_types AS _cable_types
     ON (_cable_types.cable_type_id = _boat_electricity.cable_type_id)
@@ -38,5 +38,6 @@ BEGIN
         FROM boats 
         WHERE client_id = _client_id
     )
-    AND _boat_electricity.logical_deleted = 0;
+    AND _boat_electricity.logical_deleted = 0
+    ORDER BY _cable_types.cable_type_id ASC;
 END

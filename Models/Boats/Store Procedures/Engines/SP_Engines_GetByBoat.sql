@@ -50,11 +50,12 @@ BEGIN
 
     /* obtiene todos los engines de un bote. */
     SELECT 
-        engine_id,
-        boat_id,
+        engine_id AS engineId,
+        boat_id AS boatId,
         model,
         brand
     FROM engines 
     WHERE boat_id = @boat
-    AND logical_deleted = 0;
+    AND logical_deleted = 0
+    ORDER BY engine_id ASC;
 END

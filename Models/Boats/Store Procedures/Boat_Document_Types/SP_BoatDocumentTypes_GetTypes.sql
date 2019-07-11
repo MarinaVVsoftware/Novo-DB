@@ -2,9 +2,10 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_BoatDocumentTypes_GetTypes`()
 BEGIN
     SELECT
-        boat_document_type_id,
-        boat_document_type,
+        boat_document_type_id AS boatDocumentTypeId,
+        boat_document_type AS boatDocumentType,
         required
     FROM boat_document_types 
-    WHERE logical_deleted = 0;
+    WHERE logical_deleted = 0
+    ORDER BY boat_document_type_id ASC;
 END

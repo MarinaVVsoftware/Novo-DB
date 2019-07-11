@@ -49,13 +49,13 @@ BEGIN
 
     /* Realiza el select del capitán */
     SELECT
-        captain_id,
-        boat_id,
+        captain_id AS captainId,
+        boat_id AS captainId,
         name,
         phone,
         email,
-        payment_permission,
-        aceptation_permission
+        payment_permission AS emailPermission,
+        aceptation_permission AS aceptationPermission
     FROM captains 
     WHERE boat_id = @boat 
     AND logical_deleted = 0;

@@ -47,7 +47,15 @@ BEGIN
     WHERE name = _boat_name
     AND logical_deleted = 0;
 
-    SELECT * FROM responsible 
+    SELECT 
+        responsable_id AS responsableId,
+        boat_id AS responsableId,
+        name,
+        phone,
+        email,
+        payment_permission AS emailPermission,
+        aceptation_permission AS aceptationPermission
+    FROM responsible 
     WHERE boat_id = @boat
     AND logical_deleted = 0;
 END

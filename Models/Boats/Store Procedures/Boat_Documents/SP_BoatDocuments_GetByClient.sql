@@ -17,12 +17,12 @@ BEGIN
     
     /* Busca todos los documentos de cada bote del cliente. */
     SELECT
-        _boat_documents.boat_id AS boat_id,
-        _boat_documents.boat_document_id AS boat_document_id,
-        _boat_document_types.boat_document_type AS boat_document_type,
+        _boat_documents.boat_id AS boatId,
+        _boat_documents.boat_document_id AS boatDocumentId,
+        _boat_document_types.boat_document_type AS boatDocumentType,
         _boat_document_types.required AS required,
         _boat_documents.url AS url,
-        _boat_documents.last_update_date AS last_update_date
+        _boat_documents.last_update_date AS lastUpdateDate
     FROM boat_documents AS _boat_documents
     LEFT OUTER JOIN boat_document_types AS _boat_document_types
     ON (_boat_document_types.boat_document_type_id = _boat_documents.boat_document_type_id
@@ -33,5 +33,6 @@ BEGIN
         FROM boats 
         WHERE boats.client_id = _client_id 
         AND boats.logical_deleted = 0
-    );
+    )
+    ORDER BY _boat_documents.boat_document_id ASC;
 END
