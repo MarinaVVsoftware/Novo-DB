@@ -68,5 +68,5 @@ BEGIN
         AND _boat_electricity.logical_deleted = 0)
     WHERE (boat_id = @boat
         AND _boat_electricity.logical_deleted = 0)
-    ORDER BY _cable_types.cable_type_id ASC;
+    ORDER BY _boat_electricity.boat_electricity_id ASC;
 END
