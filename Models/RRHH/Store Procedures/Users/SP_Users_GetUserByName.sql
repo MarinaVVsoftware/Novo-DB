@@ -1,4 +1,4 @@
-/* SP SP_Users_GetUsers: Trae la lista de usuarios. */
+/* SP SP_Users_GetUserByName: Trae la lista de usuarios. */
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Users_GetUserByName`(
     _username VARCHAR(200)
 )
@@ -17,7 +17,6 @@ BEGIN
 
     SELECT 
        	employee_id AS employeeId,
-        rol_id AS rolId,
         status_id AS statusId,
         email,
         username,
