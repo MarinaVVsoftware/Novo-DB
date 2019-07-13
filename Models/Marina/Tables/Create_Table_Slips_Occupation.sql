@@ -12,7 +12,7 @@ creation_date_responsable   -> Responsable de la creación
 logic_deleted               -> Borrado lógico
 logic_deleted_date          -> Fecha de borrado lógico
 
-PK = slip_id 
+PK = slip_occupation_id 
 */
 CREATE TABLE IF NOT EXISTS slips_occupation(
     slip_occupation_id INT NOT NULL AUTO_INCREMENT,
