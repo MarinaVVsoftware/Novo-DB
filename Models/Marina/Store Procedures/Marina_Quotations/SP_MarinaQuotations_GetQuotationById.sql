@@ -2,6 +2,17 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_MarinaQuotations_GetQuotationByI
     _quotation_id INT
 )
 BEGIN
+    /* verifica que exista el rol. de lo contrario tira una excepción. */
+    IF NOT EXISTS (
+        SELECT 1 FROM marina_quotations 
+        WHERE marina_quotation_id = _quotation_id
+    )
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Marina quotation doesn't exist. Can't get marina quotation'.";
+    END IF;
+
 	SET @quotation_period := NULL;
     SELECT IF(monthly_quotation = 1, @quotation_period := 'Cotización Mensual', @quotation_period) INTO @monthly_quotation FROM marina_quotations WHERE marina_quotation_id = _quotation_id;
     SELECT IF(semiannual_quotation = 1, @quotation_period := 'Cotización Semestral', @quotation_period) INTO @semiannual_quotation FROM marina_quotations WHERE marina_quotation_id = _quotation_id;
