@@ -119,5 +119,16 @@ BEGIN
     CALL SP_MarinaQuotationTimelineTypes_PostType("deleted");
     CALL SP_MarinaQuotationTimelineTypes_PostType("arrived");
 
+    /* Inserta los tipos de notificaciones */
+    INSERT INTO notification_types (notification_type) VALUES ("Aviso pago pendiente");
+    INSERT INTO notification_types (notification_type) VALUES ("Aviso Cargo Moratorio");
+    INSERT INTO notification_types (notification_type) VALUES ("Aviso Suspensión");
+    INSERT INTO notification_types (notification_type) VALUES ("Aplicación Cargo Moratorio");
+    INSERT INTO notification_types (notification_type) VALUES ("Aplicación Suspensión");
+
+    /* Inserta los status de las notificaciones */
+    INSERT INTO notification_status_types (notification_status) VALUES ("Pendiente");
+    INSERT INTO notification_status_types (notification_status) VALUES ("Cancelado");
+    INSERT INTO notification_status_types (notification_status) VALUES ("Enviado");
 END
 

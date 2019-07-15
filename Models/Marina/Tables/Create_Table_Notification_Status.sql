@@ -1,4 +1,4 @@
-/* Table "Notification_Status_Types"
+/* Table "Notification_Status"
 Almacena los diferentes tipos de estados de las notificaciones,
 que indica la situación del mismo.
 
@@ -9,7 +9,7 @@ logic_deleted_date      -> Fecha de borrado lógico
 
 PK = notification_status_id 
 */
-CREATE TABLE IF NOT EXISTS notification_status_types(
+CREATE TABLE IF NOT EXISTS notification_status(
     notification_status_id INT NOT NULL AUTO_INCREMENT,
     notification_status VARCHAR(100) NOT NULL,
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,

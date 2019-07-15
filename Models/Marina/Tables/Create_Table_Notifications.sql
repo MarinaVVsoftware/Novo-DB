@@ -24,10 +24,10 @@ CREATE TABLE IF NOT EXISTS notifications(
     notification_status_id INT NOT NULL,
     marina_quotation_id INT NOT NULL,
     marina_quotation_services_id INT NOT NULL,
-    title VARCHAR(200 NOT NULL
+    title VARCHAR(200) NOT NULL,
     message VARCHAR(500) NOT NULL,
     creation_responsable VARCHAR(100) NOT NULL,
-    creation_date DATETIME NOT NULL DEFAULT NOW(),
+    creation_date DATETIME DEFAULT NOW(),
     date_to_send DATETIME NOT NULL,
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,
