@@ -1,7 +1,14 @@
-/* CREATE TABLE Marina_Mooring_Rates_Types */
-CREATE TABLE IF NOT EXISTS Marina_Mooring_Tariff_Types (
+/* Table "marina_mooring_tariff_types" - TABLA DEBIL
+Almacena los tipos de tarifas
+
+marina_mooring_tariff_type_id   -> ID natural
+tariff_type                    -> Nombre del tipo de tarifa
+
+PK = incident_type_id 
+*/
+CREATE TABLE IF NOT EXISTS marina_mooring_tariff_types (
     marina_mooring_tariff_type_id INT NOT NULL AUTO_INCREMENT, 
-    type VARCHAR(100),
+    tariff_type VARCHAR(100) NOT NULL,
 
     PRIMARY KEY(marina_mooring_tariff_type_id)
 );

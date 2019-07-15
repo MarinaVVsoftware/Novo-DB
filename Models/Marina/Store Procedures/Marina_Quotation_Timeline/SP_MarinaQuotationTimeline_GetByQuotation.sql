@@ -15,13 +15,13 @@ BEGIN
 
     /* Busca todos los eventos de timeline de una cotización y los ordena por fecha de creación.*/
     SELECT
-        _quotation_timeline.marina_quotation_id,
-        _quotation_timeline.marina_quotation_timeline_id,
-        _timeline_types.timeline_type,
+        _quotation_timeline.marina_quotation_id AS marinaQuotationId,
+        _quotation_timeline.marina_quotation_timeline_id AS marinaQuotationTimelineId,
+        _timeline_types.timeline_type AS timelineType,
         _quotation_timeline.title,
         _quotation_timeline.description,
-        _quotation_timeline.creation_responsible,
-        _quotation_timeline.creation_date
+        _quotation_timeline.creation_responsible AS creationResponsable,
+        _quotation_timeline.creation_date AS creationDate
     FROM marina_quotation_timeline AS _quotation_timeline
     LEFT OUTER JOIN marina_quotation_timeline_types AS _timeline_types
     ON (_timeline_types.marina_quotation_timeline_type_id = _quotation_timeline.marina_quotation_timeline_id 
