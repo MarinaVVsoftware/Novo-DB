@@ -17,6 +17,7 @@ BEGIN
 
     SELECT 
        	employee_id AS employeeId,
+        rol_id AS rolId,
         status_id AS statusId,
         email,
         username,
