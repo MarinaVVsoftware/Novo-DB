@@ -10,6 +10,18 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Notifications_PostNotification`(
     _date_to_send DATETIME
 )
 BEGIN
+    /* verifica que exista el cliente. de lo contrario tira una excepción. */
+    IF NOT EXISTS (
+        SELECT 1 FROM clients 
+        WHERE client_id = _client_id
+        AND logical_deleted = 0
+    )
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Client was not found. Can't post notification without a client id.";
+    END IF;
+
     /* verifica que exista el notification status. de lo contrario tira una excepción. */
     IF NOT EXISTS (
         SELECT 1 FROM notification_status 
@@ -24,12 +36,23 @@ BEGIN
     /* verifica que exista el notification type. de lo contrario tira una excepción. */
     IF NOT EXISTS (
         SELECT 1 FROM notification_types
-        WHERE notification_status_id = _notification_status_id
+        WHERE notification_type_id = _notification_type_id
     )
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
         SET MESSAGE_TEXT = "Notification type was not found. Can't post notification without a notification type valid.";
+    END IF;
+
+    /* verifica que exista la cotización. de lo contrario tira una excepción. */
+    IF NOT EXISTS (
+        SELECT 1 FROM marina_quotations 
+        WHERE marina_quotation_id = _marina_quotation_id
+    )
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45000"
+        SET MESSAGE_TEXT = "Quotation was not found. Can't post notification without a marina quotation id valid.";
     END IF;
 
     INSERT INTO notifications(

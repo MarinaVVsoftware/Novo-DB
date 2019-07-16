@@ -6,7 +6,6 @@ client_id                       -> FK con "clients"
 notification_type_id            -> FK con "notification_types"
 notification_status_id          -> FK con "notificacion_status"
 marina_quotation_id             -> FK con "marina_quotations"
-marina_quotation_services_id    -> FK con la tabla "marina_quotation_services"
 title                           -> Título de la notificación
 message                         -> Mensaje
 creation_responsable            -> Responsable de la creación
@@ -23,7 +22,6 @@ CREATE TABLE IF NOT EXISTS notifications(
     notification_type_id INT NOT NULL,
     notification_status_id INT NOT NULL,
     marina_quotation_id INT NOT NULL,
-    marina_quotation_services_id INT NOT NULL,
     title VARCHAR(200) NOT NULL,
     message VARCHAR(500) NOT NULL,
     creation_responsable VARCHAR(100) NOT NULL,
