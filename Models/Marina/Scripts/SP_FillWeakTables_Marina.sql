@@ -130,5 +130,12 @@ BEGIN
     INSERT INTO notification_status_types (notification_status) VALUES ("Pendiente");
     INSERT INTO notification_status_types (notification_status) VALUES ("Cancelado");
     INSERT INTO notification_status_types (notification_status) VALUES ("Enviado");
+
+    /* Inserta la lista de servicios adicionales de marina húmeda */
+    INSERT INTO marina_quotation_service_types (service, price) VALUES ("Peaje", 1001.00);
+    INSERT INTO marina_quotation_service_types (service, price) VALUES ("Desazolve", 100.00);
+    INSERT INTO marina_quotation_service_types (service, price) VALUES ("Almacenamiento", 850.00);
+    INSERT INTO marina_quotation_service_types (service, price) VALUES ("Aceite", 40.00);
+
 END
 

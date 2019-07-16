@@ -16,7 +16,7 @@ PK = marina_quotation_service_id
 CREATE TABLE IF NOT EXISTS marina_quotation_services(
     marina_quotation_service_id INT NOT NULL AUTO_INCREMENT,
     boat_id INT NOT NULL,
-    marina_quotation_service_id INT NOT NULL,
+    marina_quotation_service_type_id INT NOT NULL,
     done_status BOOLEAN NOT NULL DEFAULT 0,
     quantity SMALLINT NOT NULL,
     subtotal DECIMAL(12,4) NOT NULL,
