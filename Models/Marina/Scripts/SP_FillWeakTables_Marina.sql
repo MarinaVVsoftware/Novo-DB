@@ -137,5 +137,11 @@ BEGIN
     INSERT INTO marina_quotation_service_types (service, price) VALUES ("Almacenamiento", 850.00);
     INSERT INTO marina_quotation_service_types (service, price) VALUES ("Aceite", 40.00);
 
+    /* Inserta la lista de tipos de tarifa de amarre */
+    INSERT INTO marina_mooring_tariff_types (tariff_type) VALUES ("General");
+    INSERT INTO marina_mooring_tariff_types (tariff_type) VALUES ("Especial");
+    INSERT INTO marina_mooring_tariff_types (tariff_type) VALUES ("No Autorizada");
+
+
 END
 
