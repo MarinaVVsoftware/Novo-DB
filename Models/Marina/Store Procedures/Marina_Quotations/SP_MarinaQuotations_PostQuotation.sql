@@ -14,8 +14,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_MarinaQuotations_PostQuotation`(
     _subtotal DECIMAL(12,4),
     _total DECIMAL(12,4),
     _monthly_quotation BOOLEAN,
-    _annual_quotation BOOLEAN,
     _semiannual_quotation BOOLEAN, 
+    _annual_quotation BOOLEAN,
     _group_quotation INT,
     _creation_responsable VARCHAR(100)
 )
@@ -45,7 +45,7 @@ BEGIN
 
     /* verifica que exista la tarifa. de lo contrario tira una excepción. */
     IF NOT EXISTS (
-        SELECT 1 FROM _marina_mooring_tariff
+        SELECT 1 FROM marina_mooring_tariff
         WHERE marina_mooring_tariff_id = _marina_mooring_tariff_id
     ) 
     THEN
@@ -54,10 +54,45 @@ BEGIN
         SET MESSAGE_TEXT = "Morring tariff doesn't exist. Can't post quotation without a tariff valid.";
     END IF;
 
-    INSERT INTO notifications(
-        date_to_send
+    
+    INSERT INTO marina_quotations(
+        boat_id,
+        marina_quotation_status_id,
+        marina_mooring_tariff_id,
+        arrival_date,
+        departure_date,
+        mooring_tariff,
+        loa,
+        days_stay, 
+        discount_stay_percentage,
+        currency_amount,
+        tax,
+        subtotal,
+        total,
+        monthly_quotation,
+        annual_quotation,
+        semiannual_quotation, 
+        group_quotation,
+        creation_responsable
     )
     VALUES(
-        _date_to_send
+        _boat_id,
+        _marina_quotation_status_id,
+        _marina_mooring_tariff_id,
+        _arrival_date,
+        _departure_date,
+        _mooring_tariff,
+        _loa,
+        _days_stay, 
+        _discount_stay_percentage,
+        _currency_amount,
+        _tax,
+        _subtotal,
+        _total,
+        _monthly_quotation,
+        _annual_quotation,
+        _semiannual_quotation, 
+        _group_quotation,
+        _creation_responsable
     );
 END

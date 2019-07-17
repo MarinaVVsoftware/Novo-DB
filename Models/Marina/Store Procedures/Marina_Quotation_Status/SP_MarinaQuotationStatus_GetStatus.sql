@@ -3,5 +3,5 @@ BEGIN
     SELECT
         marina_quotation_status_id AS marinaQuotationStatusId,
         status
-    FROM marina_quotations_status;
+    FROM marina_quotation_status;
 END

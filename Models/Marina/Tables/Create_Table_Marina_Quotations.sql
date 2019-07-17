@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS marina_quotations (
     monthly_quotation BOOLEAN DEFAULT 0,
     semiannual_quotation BOOLEAN DEFAULT 0,
     annual_quotation BOOLEAN DEFAULT 0,
-    group_quotation VARCHAR(50) NOT NULL,
+    group_quotation VARCHAR(50) DEFAULT NULL,
     creation_responsable VARCHAR(100) NOT NULL,
     creation_date DATETIME DEFAULT NOW(),
 

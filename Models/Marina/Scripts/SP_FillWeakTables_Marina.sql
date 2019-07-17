@@ -104,20 +104,20 @@ BEGIN
     CALL SP_Slips_PostSlip(4, "1");
 
     /* Crea los marina quotation status */
-    INSERT INTO marina_quotations_status (status) VALUES ("Borrador");
-    INSERT INTO marina_quotations_status (status) VALUES ("Enviado");
-    INSERT INTO marina_quotations_status (status) VALUES ("Aceptado");
-    INSERT INTO marina_quotations_status (status) VALUES ("Validado");
-    INSERT INTO marina_quotations_status (status) VALUES ("Declinado");
-    INSERT INTO marina_quotations_status (status) VALUES ("Sin Pagos");
-    INSERT INTO marina_quotations_status (status) VALUES ("Pago Parcial");
-    INSERT INTO marina_quotations_status (status) VALUES ("Cargo Moratorio");
-    INSERT INTO marina_quotations_status (status) VALUES ("Suspendido");
-    INSERT INTO marina_quotations_status (status) VALUES ("Pagado");
-    INSERT INTO marina_quotations_status (status) VALUES ("Terminado");
-    INSERT INTO marina_quotations_status (status) VALUES ("Cancelado");
-    INSERT INTO marina_quotations_status (status) VALUES ("Eliminado");
-    INSERT INTO marina_quotations_status (status) VALUES ("Caducado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Borrador");
+    INSERT INTO marina_quotation_status (status) VALUES ("Enviado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Aceptado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Validado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Declinado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Sin Pagos");
+    INSERT INTO marina_quotation_status (status) VALUES ("Pago Parcial");
+    INSERT INTO marina_quotation_status (status) VALUES ("Cargo Moratorio");
+    INSERT INTO marina_quotation_status (status) VALUES ("Suspendido");
+    INSERT INTO marina_quotation_status (status) VALUES ("Pagado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Terminado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Cancelado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Eliminado");
+    INSERT INTO marina_quotation_status (status) VALUES ("Caducado");
 
 
     /* Crea los tipos de eventos de timeline */
