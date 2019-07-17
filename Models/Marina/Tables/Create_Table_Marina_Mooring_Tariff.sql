@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS marina_mooring_tariff (
     price DECIMAL(12,4) NOT NULL,
     is_conditional BOOLEAN DEFAULT 1,
     creation_responsable VARCHAR(100) NOT NULL,
-    creation_date DATETIME DEFUALT NOW(),
+    creation_date DATETIME DEFAULT NOW(),
     logical_deleted BOOLEAN NOT NULL DEFAULT 0,
     logical_deleted_date DATETIME DEFAULT NULL,
     
