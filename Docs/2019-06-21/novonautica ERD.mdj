@@ -4029,21 +4029,6 @@
 										},
 										{
 											"_type": "ERDColumnView",
-											"_id": "AAAAAAFrD4BwQQgEhf8=",
-											"_parent": {
-												"$ref": "AAAAAAFqjxTWt7pPUhw="
-											},
-											"model": {
-												"$ref": "AAAAAAFrD4BwBQgBBRk="
-											},
-											"font": "Arial;13;0",
-											"left": 1677,
-											"top": 1392,
-											"width": 314.74072265625,
-											"height": 13
-										},
-										{
-											"_type": "ERDColumnView",
 											"_id": "AAAAAAFqkoarL7p/8Bc=",
 											"_parent": {
 												"$ref": "AAAAAAFqjxTWt7pPUhw="
@@ -4053,7 +4038,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1407,
+											"top": 1392,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4068,7 +4053,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1422,
+											"top": 1407,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4083,7 +4068,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1437,
+											"top": 1422,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4098,7 +4083,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1452,
+											"top": 1437,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4113,7 +4098,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1467,
+											"top": 1452,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4128,7 +4113,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1482,
+											"top": 1467,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4143,7 +4128,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1497,
+											"top": 1482,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4158,7 +4143,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1512,
+											"top": 1497,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4173,7 +4158,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1527,
+											"top": 1512,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4188,7 +4173,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1542,
+											"top": 1527,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4203,7 +4188,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1557,
+											"top": 1542,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4218,7 +4203,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1572,
+											"top": 1557,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4233,7 +4218,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1587,
+											"top": 1572,
 											"width": 314.74072265625,
 											"height": 13
 										},
@@ -4248,7 +4233,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1677,
-											"top": 1602,
+											"top": 1587,
 											"width": 314.74072265625,
 											"height": 13
 										}
@@ -4257,7 +4242,7 @@
 									"left": 1672,
 									"top": 1327,
 									"width": 324.74072265625,
-									"height": 293
+									"height": 278
 								}
 							],
 							"font": "Arial;13;0",
@@ -15153,17 +15138,6 @@
 							"name": "marina_mooring_tariff_id",
 							"type": "INTEGER",
 							"length": "5",
-							"foreignKey": true
-						},
-						{
-							"_type": "ERDColumn",
-							"_id": "AAAAAAFrD4BwBQgBBRk=",
-							"_parent": {
-								"$ref": "AAAAAAFqjxTWtrpLr4c="
-							},
-							"name": "marina_quotation_electricity_id",
-							"type": "INTEGER",
-							"length": 0,
 							"foreignKey": true
 						},
 						{
