@@ -12,7 +12,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Quotation was not found. Can't patch notification without a marina quotation id valid.";
+        SET MESSAGE_TEXT = "Quotation was not found. Can't delete notification without a marina quotation id valid.";
     END IF;
 
     /* verifica que exista la notificación. de lo contrario tira una excepción. */
@@ -24,7 +24,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Notification was not found. Can't patch notification without an id valid.";
+        SET MESSAGE_TEXT = "Notification was not found. Can't delete notification without an id valid.";
     END IF;
 
     /* verifica que exista la notificación. de lo contrario tira una excepción. */
