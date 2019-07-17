@@ -1,7 +1,7 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_READ_MARINA_QUOTATION_STATUS`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_MarinaQuotationStatus_GetStatus`()
 BEGIN
     SELECT
         marina_quotation_status_id AS marinaQuotationStatusId,
         status
-    FROM SP_MarinaQuotationStatus_GetStatus;
+    FROM marina_quotations_status;
 END
