@@ -30,10 +30,11 @@ BEGIN
         subtotal,
         total,
         monthly_quotation AS monthlyQuotation,
-        annual_quotation AS annualQuotation,
         semiannual_quotation AS semiannualQuotation, 
+        annual_quotation AS annualQuotation,
         group_quotation AS groupQuotation,
-        creation_responsable AS creationResponsable
+        creation_responsable AS creationResponsable,
+        creation_date AS creationDate
     FROM marina_quotations 
     WHERE marina_quotation_id = _marina_quotation_id;
 END
