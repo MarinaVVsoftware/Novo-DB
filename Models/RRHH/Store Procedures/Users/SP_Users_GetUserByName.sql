@@ -12,7 +12,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "User was not found. Can't get user without an username valid.";
+        SET MESSAGE_TEXT = "El usuario no existe. Inserte un usuario válido.";
     END IF;
 
     SELECT 

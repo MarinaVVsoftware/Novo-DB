@@ -17,7 +17,6 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Rol doesn't exist. Can't put user.";
     END IF;
 
     /* verifica que exista el status. de lo contrario tira una excepción. */
@@ -27,8 +26,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Status doesn't exist. Can't put user.";
+        SIGNAL SQLSTATE "45001"
     END IF;
 
     /* verifica que exista el usuario. si no existe, lo crea. si existe

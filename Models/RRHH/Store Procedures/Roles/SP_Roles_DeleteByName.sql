@@ -12,7 +12,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Rol was not found. Can't delete rol if doesn't exists.";
+        SET MESSAGE_TEXT = "El rol no existe. Seleccione un rol válido.";
     END IF;
 
     UPDATE roles SET

@@ -12,7 +12,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "User was not found. Can't delete user without an email valid.";
+        SET MESSAGE_TEXT = "El usuario no existe. Inserte un email de usuario válido.";
     END IF;
 
     UPDATE users SET

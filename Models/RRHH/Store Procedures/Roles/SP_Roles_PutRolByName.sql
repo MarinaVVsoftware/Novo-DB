@@ -14,7 +14,7 @@ BEGIN
     THEN
         /* Arroja un error customizado */
         SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Rank was not found. Can't update rol if rank doesn't exist.";
+        SET MESSAGE_TEXT = "La jerarquía no existe. Seleccione una jerarquía válida.";
     END IF;
 
     /* verifica que exista el rol. si no existe, lo crea. si existe
