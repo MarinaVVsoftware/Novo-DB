@@ -16,8 +16,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client already exists. Can't post client with the same email.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     /* verifica que exista el status. de lo contrario tira una excepción. */
@@ -27,8 +26,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Status doesn't exist. Can't post client without a status valid.";
+        SIGNAL SQLSTATE "45001";
     END IF;
 
     INSERT INTO clients (

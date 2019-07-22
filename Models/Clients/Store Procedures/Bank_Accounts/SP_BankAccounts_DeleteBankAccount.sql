@@ -12,8 +12,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client was not found. Can't delete bank account without a client id valid.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     IF NOT EXISTS (
@@ -23,8 +22,19 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Bank account was not found. Can't delete bank account if doesn't exists.";
+        SIGNAL SQLSTATE "45001";
+    END IF;
+
+    /* verifica que exista la relación entre el cliente y la cuenta bancaria. de lo contrario tira una excepción. */
+    IF NOT EXISTS (
+        SELECT 1 FROM bank_accounts
+        WHERE client_id = _client_id
+        AND account_number = _account_number
+        AND logical_deleted = 0
+    )
+    THEN
+        /* Arroja un error customizado */
+        SIGNAL SQLSTATE "45002";
     END IF;
 
     UPDATE bank_accounts SET

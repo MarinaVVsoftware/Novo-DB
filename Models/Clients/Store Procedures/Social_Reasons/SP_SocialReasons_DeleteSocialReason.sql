@@ -12,8 +12,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client was not found. Can't delete social reason without a client id valid.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     IF NOT EXISTS (
@@ -23,8 +22,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Social reason was not found. Can't delete social reason if doesn't exists.";
+        SIGNAL SQLSTATE "45001";
     END IF;
 
     UPDATE social_reasons SET

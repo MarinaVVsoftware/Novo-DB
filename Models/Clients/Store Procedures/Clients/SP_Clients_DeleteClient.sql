@@ -11,8 +11,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client was not found. Can't delete client without a client id valid.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     UPDATE clients SET
