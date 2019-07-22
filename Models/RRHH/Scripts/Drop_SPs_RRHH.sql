@@ -4,7 +4,7 @@ DROP PROCEDURE IF EXISTS SP_IncidentTypes_GetTypes;
 /* Incidents */
 DROP PROCEDURE IF EXISTS SP_Incidents_DeleteById;
 DROP PROCEDURE IF EXISTS SP_Incidents_DeleteByUser;
-DROP PROCEDURE IF EXISTS SP_Incidents_GetIncidents;
+DROP PROCEDURE IF EXISTS SP_Incidents_GetIncidentsByUser;
 DROP PROCEDURE IF EXISTS SP_Incidents_PostIncident;
 DROP PROCEDURE IF EXISTS SP_Incidents_PutById;
 
