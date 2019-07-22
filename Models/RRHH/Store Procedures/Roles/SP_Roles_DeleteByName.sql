@@ -11,8 +11,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "El rol no existe. Seleccione un rol válido.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     UPDATE roles SET

@@ -11,8 +11,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "El usuario no existe. Inserte un email de usuario válido.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     UPDATE users SET

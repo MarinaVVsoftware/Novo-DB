@@ -11,8 +11,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "User was not found. Can't delete all user incidents without an user valid.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     /* Guarda el id del usuario en una variable */ 

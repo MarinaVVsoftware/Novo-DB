@@ -14,8 +14,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "User was not found. Can't create incident without an user valid.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     /* verifica que exista el incident type. de lo contrario tira una excepción. */
@@ -25,8 +24,7 @@ BEGIN
     ) 
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Incident type doesn't exist. Can't create incident without an incident type.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     /* Guarda el id del usuario en una variable */ 
