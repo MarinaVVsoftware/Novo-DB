@@ -95,4 +95,7 @@ BEGIN
         _group_quotation,
         _creation_responsable
     );
+
+    /* retorna el id del row insertado */
+        SELECT LAST_INSERT_ID();
 END

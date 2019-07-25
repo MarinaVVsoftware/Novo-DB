@@ -21,9 +21,9 @@ CREATE TABLE IF NOT EXISTS marina_quotation_electricity(
     total_days INT NOT NULL,
     discount_electricity_percentage DECIMAL(12,4) NOT NULL,
     currency_amount DECIMAL(12,4) NOT NULL,
+    subtotal DECIMAL(12,4) NOT NULL,
     tax DECIMAL(12,4) NOT NULL,
     total DECIMAL(12,4) NOT NULL,
-    subtotal DECIMAL(12,4) NOT NULL,
 
     PRIMARY KEY (marina_quotation_electricity_id)
 );
