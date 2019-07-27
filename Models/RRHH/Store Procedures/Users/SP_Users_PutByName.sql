@@ -16,7 +16,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     /* verifica que exista el status. de lo contrario tira una excepción. */
@@ -26,7 +26,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45001"
+        SIGNAL SQLSTATE "45001";
     END IF;
 
     /* verifica que exista el usuario. si no existe, lo crea. si existe
