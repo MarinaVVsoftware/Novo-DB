@@ -3,7 +3,7 @@ Almacena el monto que se le debe cobrar a un cliente por una cotización.
 En el momento que el cliente llega, se crea una deuda para el cliente
 puesto que ya se encuentra consumiendo el servicio formalmente.
 
-marina_payments             -> ID natural
+marina_payment_id           -> ID natural
 payment_method_id           -> FK de la cotización
 currency                    -> valor del dolar
 cyrrency_date               -> fecha del monto del dolar
@@ -13,7 +13,7 @@ client_responsable_payment  -> Responsable del pago por parte del cliente (clien
 creation_responsable        -> Responsable de haber creado el pago
 creation_date               -> Fecha de creación del pago
 
-PK = marina_payments 
+PK = marina_payment_id 
 */
  CREATE TABLE IF NOT EXISTS marina_payments (
 	marina_payment_id INT NOT NULL AUTO_INCREMENT,
@@ -22,9 +22,9 @@ PK = marina_payments
     cyrrency_date DATETIME NOT NULL,
     payment_received DECIMAL(12,4) NOT NULL,
     converted_amount DECIMAL(12,4) NOT NULL,
-    client_responsable_payment DATETIME VARCHAR(200) NOT NULL,
-    creation_responsable DATETIME VARCHAR(200) NOT NULL,
+    client_responsable_payment VARCHAR(200) NOT NULL,
+    creation_responsable VARCHAR(200) NOT NULL,
     creation_date DATETIME DEFAULT NOW(),
 
-    PRIMARY KEY (marina_payments)
+    PRIMARY KEY (marina_payment_id)
 );

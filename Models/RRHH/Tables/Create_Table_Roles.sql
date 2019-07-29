@@ -18,7 +18,7 @@ PK = rol_id
 	rol_id INT NOT NULL AUTO_INCREMENT,
     rank_id INT NOT NULL,
 	rol_name VARCHAR(50) UNIQUE NOT NULL,
-	permissions JSON NOT NULL,
+	permissions LONGTEXT NOT NULL,
 	creation_date DATETIME DEFAULT NOW(),
 	logical_deleted BOOLEAN DEFAULT 0,
 	logical_deleted_date DATETIME DEFAULT NULL,

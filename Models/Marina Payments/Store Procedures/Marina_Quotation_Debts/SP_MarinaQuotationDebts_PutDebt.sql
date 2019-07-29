@@ -49,7 +49,7 @@ BEGIN
             marina_quotation_id = _marina_quotation_id,
             subtotal = _subtotal,
             tax = _tax,
-            total _total,
+            total = _total,
             creation_responsable = _creation_responsable
         WHERE marina_quotation_debt_id = @debt ;
     END IF;
