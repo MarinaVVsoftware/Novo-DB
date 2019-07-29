@@ -1,6 +1,6 @@
 /* SP SP_Incidents_GetIncidentsByUser: Trae la lista de incidentes. */
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Incidents_GetIncidentsByUser`(
-    _username INT
+    _username VARCHAR(200)
 )
 BEGIN
     /* verifica que exista el user. de lo contrario tira una excepción. */

@@ -3,7 +3,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_Roles_PutRolByName`(
     _old_rol_name VARCHAR(50),
     _rank_id INT,
 	_rol_name VARCHAR(50),
-	_permissions JSON
+	_permissions LONGTEXT
 )
 BEGIN
     /* verifica que exista el rank a modificar. de lo contrario tira una excepción. */

@@ -7,8 +7,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_MarinaPayments_CreateDebtPayment
     _cyrrency_date DATETIME,
     _payment_received DECIMAL(12,4),
     _converted_amount DECIMAL(12,4),
-    _client_responsable_payment DATETIME VARCHAR(200),
-    _creation_responsable DATETIME VARCHAR(200)
+    _client_responsable_payment VARCHAR(200),
+    _creation_responsable VARCHAR(200)
 )
 BEGIN
     /* verifica que exista el método de pago. de lo contrario tira una excepción. */
