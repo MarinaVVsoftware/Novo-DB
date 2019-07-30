@@ -12,8 +12,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Client was not found. Can't read responsable without a client id valid.";
+        SIGNAL SQLSTATE "45000";
     END IF;
 
     /* verifica que exista el bote. de lo contrario tira una excepción. */
@@ -24,8 +23,7 @@ BEGIN
     )
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Boat does exist. Can't bring back responsable with no boat.";
+        SIGNAL SQLSTATE "45001";
     END IF;
     
     /* Verifica si el cliente tiene un bote con ese id. de lo contrario tira una excepción */
@@ -37,8 +35,7 @@ BEGIN
     ) 
     THEN
         /* Arroja un error customizado */
-        SIGNAL SQLSTATE "45000"
-        SET MESSAGE_TEXT = "Doesn't exist that boat related with that client.";
+        SIGNAL SQLSTATE "45002";
     END IF;
 
     /* Guarda el id del bote en una variable */
